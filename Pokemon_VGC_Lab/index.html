@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon VGC Strategy Lab</title>
+    <!-- Tailwind CSS สำหรับตกแต่ง UI สไตล์ E-sports -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Rajdhani (แนวเกมมิ่ง) และ Prompt (ภาษาไทย) -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome สำหรับ Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Vue 3 สำหรับทำ SPA และจัดการ State -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style>
+        body { font-family: 'Prompt', sans-serif; background-color: #0f172a; color: #e2e8f0; }
+        h1, h2, h3, .esport-font { font-family: 'Rajdhani', sans-serif; text-transform: uppercase; }
+        .neon-text { text-shadow: 0 0 10px rgba(56, 189, 248, 0.7); }
+        .neon-border { box-shadow: 0 0 15px rgba(168, 85, 247, 0.4); border: 1px solid #a855f7; }
+        /* ซ่อน Scrollbar แต่ยังเลื่อนได้ */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        .fade-enter-active, .fade-leave-active { transition: opacity 0.3s ease; }
+        .fade-enter-from, .fade-leave-to { opacity: 0; }
+    </style>
+</head>
+<body class="flex h-screen overflow-hidden">
+    <div id="app" class="flex w-full h-full">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="w-64 bg-slate-900 border-r border-slate-700 flex flex-col justify-between hidden md:flex">
+            <div>
+                <div class="p-6 border-b border-slate-700 text-center">
+                    <h1 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 neon-text">VGC LAB</h1>
+                    <p class="text-xs text-slate-400 mt-1">DOUBLE BATTLE STRATEGY</p>
+                </div>
+                <nav class="p-4 space-y-2">
+                    <button @click="currentTab = 'home'" :class="{'bg-purple-600 text-white': currentTab === 'home', 'hover:bg-slate-800': currentTab !== 'home'}" class="w-full text-left px-4 py-3 rounded-lg font-semibold transition flex items-center gap-3"><i class="fas fa-home w-5"></i> หน้าแรก (Guide)</button>
+                    <button @click="currentTab = 'database'" :class="{'bg-purple-600 text-white': currentTab === 'database', 'hover:bg-slate-800': currentTab !== 'database'}" class="w-full text-left px-4 py-3 rounded-lg font-semibold transition flex items-center gap-3"><i class="fas fa-database w-5"></i> คลังข้อมูล & Type Chart</button>
+                    <button @click="currentTab = 'builder'" :class="{'bg-purple-600 text-white': currentTab === 'builder', 'hover:bg-slate-800': currentTab !== 'builder'}" class="w-full text-left px-4 py-3 rounded-lg font-semibold transition flex items-center gap-3"><i class="fas fa-tools w-5"></i> ระบบจัดทีม (Builder)</button>
+                    <button @click="currentTab = 'ai'" :class="{'bg-purple-600 text-white': currentTab === 'ai', 'hover:bg-slate-800': currentTab !== 'ai'}" class="w-full text-left px-4 py-3 rounded-lg font-semibold transition flex items-center gap-3"><i class="fas fa-robot w-5"></i> AI วิเคราะห์ทีม</button>
+                    <button @click="currentTab = 'teams'" :class="{'bg-purple-600 text-white': currentTab === 'teams', 'hover:bg-slate-800': currentTab !== 'teams'}" class="w-full text-left px-4 py-3 rounded-lg font-semibold transition flex items-center gap-3"><i class="fas fa-trophy w-5"></i> ตัวอย่างทีมเมต้า (10)</button>
+                </nav>
+            </div>
+            <!-- Mockup Auth UI -->
+            <div class="p-4 border-t border-slate-700">
+                <div v-if="!isLoggedin" class="space-y-2">
+                    <button @click="isLoggedin = true" class="w-full bg-blue-600 hover:bg-blue-500 py-2 rounded font-bold transition">LOGIN</button>
+                    <button class="w-full bg-slate-700 hover:bg-slate-600 py-2 rounded font-bold transition">REGISTER</button>
+                </div>
+                <div v-else class="flex items-center gap-3">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=ProGamer" class="w-10 h-10 rounded-full bg-slate-800">
+                    <div>
+                        <p class="text-sm font-bold text-purple-400">ProTrainer_TH</p>
+                        <p class="text-xs text-green-400">Online</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 bg-slate-800 overflow-y-auto p-6 md:p-10">
+            <transition name="fade" mode="out-in">
+                
+                <!-- ส่วนที่ 2: หน้าแรก (Home & Educational Guide) -->
+                <div v-if="currentTab === 'home'" key="home" class="max-w-5xl mx-auto space-y-8">
+                    <h2 class="text-4xl font-bold esport-font text-white border-l-4 border-purple-500 pl-4">Double Battle 2v2: The Core Mechanics</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-slate-900 p-6 rounded-xl neon-border">
+                            <h3 class="text-2xl font-bold text-blue-400 mb-4"><i class="fas fa-gavel"></i> กฎพื้นฐาน (Basic Rules)</h3>
+                            <ul class="list-disc list-inside space-y-2 text-slate-300">
+                                <li>สั่งการโปเกมอน 2 ตัวพร้อมกันในแต่ละเทิร์น</li>
+                                <li>ลำดับการโจมตี (Turn Order) ตัดสินจากค่า <strong>Speed</strong> และ <strong>Priority</strong> ของท่า (เช่น Fake Out +3, Protect +4)</li>
+                                <li>ศิลปะแห่ง <strong>Prediction</strong> (การคาดเดา): ต้องอ่านเกมล่วงหน้าว่าศัตรูจะโจมตีใคร หรือจะสลับตัว (Pivot) หนีหรือไม่</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-900 p-6 rounded-xl neon-border">
+                            <h3 class="text-2xl font-bold text-red-400 mb-4"><i class="fas fa-chess-king"></i> 4 เสาหลัก (Win Condition)</h3>
+                            <ul class="space-y-2 text-slate-300">
+                                <li>⚔️ <strong>แรงกดดัน (Offense/Speed Control):</strong> การคุมบอร์ดทำดาเมจ และคุมสปีด (Tailwind, Trick Room)</li>
+                                <li>🛡️ <strong>ความปลอดภัย (Defense/Pivot):</strong> การมีตัวรับดาเมจ (Resist) การใช้ Fake Out หรือเปลี่ยนตัว</li>
+                                <li>🌪️ <strong>การควบคุม (Field/Weather):</strong> การคุมสภาพอากาศหรือสนามเพื่อบัฟทีมตัวเอง</li>
+                                <li>🧩 <strong>ความยืดหยุ่น (Flexibility):</strong> มีแผนสำรองเสมอ ไม่พึ่งพาคอมโบเดียว (No 1-Trick Pony)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 p-8 rounded-xl shadow-lg">
+                        <h3 class="text-3xl font-bold text-purple-400 mb-6 esport-font">6 ขั้นตอนการสร้างทีมระดับโปร</h3>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div v-for="(step, index) in steps" :key="index" class="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-purple-500 transition">
+                                <h4 class="text-xl font-bold text-white mb-2"><span class="text-purple-500">#{{index+1}}</span> {{step.title}}</h4>
+                                <p class="text-sm text-slate-400">{{step.desc}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ส่วนที่ 3: คลังข้อมูล (Database & Type Chart) -->
+                <div v-if="currentTab === 'database'" key="database" class="max-w-6xl mx-auto space-y-8">
+                    <h2 class="text-4xl font-bold esport-font text-white border-l-4 border-blue-500 pl-4">Meta Database & Type Chart</h2>
+                    
+                    <!-- Type Chart Interactive -->
+                    <div class="bg-slate-900 p-6 rounded-xl overflow-x-auto">
+                        <h3 class="text-2xl font-bold mb-4">Interactive Type Chart</h3>
+                        <p class="text-sm text-slate-400 mb-4">ตารางความแพ้-ชนะธาตุ <span class="text-green-400 px-2">2x (Super Effective)</span> <span class="text-red-400 px-2">0.5x (Resist)</span> <span class="text-gray-500 px-2">0x (Immune)</span></p>
+                        <table class="w-full text-xs text-center border-collapse">
+                            <tr>
+                                <th class="p-1 border border-slate-700">ATK \ DEF</th>
+                                <th v-for="type in typesList" :key="type" :class="getTypeColor(type)" class="p-1 border border-slate-700 font-bold rounded">{{type.substring(0,3).toUpperCase()}}</th>
+                            </tr>
+                            <tr v-for="atk in typesList" :key="atk">
+                                <th :class="getTypeColor(atk)" class="p-1 border border-slate-700 font-bold rounded">{{atk.substring(0,3).toUpperCase()}}</th>
+                                <td v-for="def in typesList" :key="def" class="p-1 border border-slate-700 font-bold" :class="getTypeEffectColor(getTypeEffectiveness(atk, def))">
+                                    {{ getTypeEffectiveness(atk, def) }}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Abilities -->
+                        <div class="bg-slate-900 p-6 rounded-xl h-96 overflow-y-auto">
+                            <h3 class="text-2xl font-bold text-yellow-400 mb-4 sticky top-0 bg-slate-900 pb-2">Top 20+ Meta Abilities</h3>
+                            <div v-for="abil in metaAbilities" :key="abil.name" class="mb-4 border-b border-slate-700 pb-2">
+                                <h4 class="font-bold text-white">{{abil.name}} <span class="text-xs bg-slate-700 px-2 rounded ml-2">{{abil.category}}</span></h4>
+                                <p class="text-sm text-slate-400">{{abil.desc}}</p>
+                            </div>
+                        </div>
+                        <!-- Moves -->
+                        <div class="bg-slate-900 p-6 rounded-xl h-96 overflow-y-auto">
+                            <h3 class="text-2xl font-bold text-green-400 mb-4 sticky top-0 bg-slate-900 pb-2">Crucial Meta Moves</h3>
+                            <div v-for="move in metaMoves" :key="move.name" class="mb-4 border-b border-slate-700 pb-2">
+                                <h4 class="font-bold text-white">{{move.name}} <span class="text-xs bg-slate-700 px-2 rounded ml-2">{{move.type}}</span></h4>
+                                <p class="text-sm text-slate-400">{{move.desc}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ส่วนที่ 4: ระบบจัดทีม (Interactive Team Builder) -->
+                <div v-if="currentTab === 'builder'" key="builder" class="max-w-6xl mx-auto">
+                    <div class="flex justify-between items-end mb-6">
+                        <h2 class="text-4xl font-bold esport-font text-white border-l-4 border-green-500 pl-4">Interactive Team Builder</h2>
+                        <button @click="resetTeam" class="bg-red-600 hover:bg-red-500 px-4 py-2 rounded font-bold text-sm transition"><i class="fas fa-trash"></i> Reset Team</button>
+                    </div>
+
+                    <div class="flex flex-col xl:flex-row gap-6">
+                        <!-- 6 Slots -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 flex-1">
+                            <div v-for="(slot, index) in teamSlots" :key="index" class="bg-slate-900 p-4 rounded-xl border-2 transition" :class="slot.pokemon ? 'border-green-500' : 'border-slate-700 border-dashed hover:border-slate-500 cursor-pointer'">
+                                
+                                <!-- Empty Slot -->
+                                <div v-if="!slot.pokemon" @click="openPokemonSearch(index)" class="h-48 flex flex-col items-center justify-center text-slate-500">
+                                    <i class="fas fa-plus-circle text-4xl mb-2"></i>
+                                    <p>Select Pokémon</p>
+                                </div>
+
+                                <!-- Filled Slot -->
+                                <div v-else class="space-y-3 relative">
+                                    <button @click="removePokemon(index)" class="absolute top-0 right-0 text-red-500 hover:text-red-400"><i class="fas fa-times"></i></button>
+                                    <div class="flex justify-between items-center border-b border-slate-700 pb-2">
+                                        <h4 class="font-bold text-lg text-white">{{slot.pokemon.name}}</h4>
+                                        <div class="flex gap-1">
+                                            <span v-for="t in slot.pokemon.types" :class="getTypeColor(t)" class="text-[10px] px-1 rounded">{{t}}</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- IV/EV Sliders -->
+                                    <div class="space-y-1 text-xs">
+                                        <div v-for="stat in ['hp','atk','def','spa','spd','spe']" :key="stat" class="flex items-center gap-2">
+                                            <span class="w-6 uppercase font-bold text-slate-400">{{stat}}</span>
+                                            <input type="range" min="0" max="252" step="4" v-model.number="slot.evs[stat]" class="flex-1 h-1 bg-slate-700 rounded-lg appearance-none cursor-pointer">
+                                            <span class="w-6 text-right text-purple-400">{{slot.evs[stat]}}</span>
+                                            <span class="w-8 text-right font-bold text-white">{{calculateStat(slot, stat)}}</span>
+                                        </div>
+                                        <div class="text-right mt-1" :class="totalEVs(slot.evs) > 510 ? 'text-red-500' : 'text-slate-400'">EVs: {{totalEVs(slot.evs)}} / 510</div>
+                                    </div>
+
+                                    <!-- Nature & Ability -->
+                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                        <select v-model="slot.nature" class="bg-slate-800 text-white rounded p-1 border border-slate-700">
+                                            <option v-for="n in natures" :value="n.name">{{n.name}} (+{{n.plus}} -{{n.minus}})</option>
+                                        </select>
+                                        <select v-model="slot.ability" class="bg-slate-800 text-white rounded p-1 border border-slate-700">
+                                            <option v-for="a in slot.pokemon.abilities" :value="a">{{a}}</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Moves Placeholder -->
+                                    <div class="grid grid-cols-2 gap-1 text-xs">
+                                        <input v-for="m in 4" type="text" placeholder="Move" class="bg-slate-800 border border-slate-700 rounded p-1 text-white text-center">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dashboard จุดอ่อน-จุดแข็ง -->
+                        <div class="w-full xl:w-80 bg-slate-900 p-6 rounded-xl neon-border h-fit">
+                            <h3 class="text-xl font-bold text-white mb-4 esport-font"><i class="fas fa-chart-pie text-purple-500"></i> Team Type Analyzer</h3>
+                            <div v-if="teamSlots.filter(s => s.pokemon).length === 0" class="text-sm text-slate-400 text-center">เพิ่มโปเกมอนเพื่อดูการวิเคราะห์ธาตุ</div>
+                            <div v-else class="space-y-4 max-h-96 overflow-y-auto">
+                                <div>
+                                    <h4 class="text-red-400 font-bold text-sm mb-2">จุดอ่อนร่วม (Shared Weaknesses)</h4>
+                                    <div class="space-y-1">
+                                        <div v-for="(count, type) in calculateTeamWeaknesses" :key="type" class="flex justify-between items-center bg-slate-800 p-1 px-2 rounded">
+                                            <span :class="getTypeColor(type)" class="text-xs px-2 py-0.5 rounded">{{type}}</span>
+                                            <span class="text-xs font-bold text-white" :class="count >= 3 ? 'text-red-500' : ''">{{count}} ตัวแพ้ธาตุนี้</span>
+                                        </div>
+                                    </div>
+                                    <p v-if="hasMajorWeakness" class="text-xs text-red-500 mt-2 font-bold">⚠️ คำเตือน: ทีมมีตัวแพ้ทางธาตุเดียวกันเกิน 3 ตัว!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search Modal -->
+                    <div v-if="showSearchModal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+                        <div class="bg-slate-800 rounded-xl w-full max-w-2xl max-h-[80vh] flex flex-col border border-slate-600">
+                            <div class="p-4 border-b border-slate-700 flex justify-between items-center">
+                                <h3 class="text-xl font-bold text-white">Select Pokémon for Slot {{activeSearchSlot + 1}}</h3>
+                                <button @click="showSearchModal = false" class="text-slate-400 hover:text-white"><i class="fas fa-times text-xl"></i></button>
+                            </div>
+                            <div class="p-4 border-b border-slate-700">
+                                <input type="text" v-model="searchQuery" placeholder="Search by name or type..." class="w-full bg-slate-900 border border-slate-600 rounded p-2 text-white outline-none focus:border-purple-500">
+                            </div>
+                            <div class="p-4 overflow-y-auto grid grid-cols-2 md:grid-cols-3 gap-2 flex-1">
+                                <button v-for="p in filteredPokemon" :key="p.name" @click="selectPokemon(p)" class="bg-slate-700 hover:bg-purple-600 p-2 rounded text-left transition flex justify-between items-center">
+                                    <span class="font-bold text-sm text-white">{{p.name}}</span>
+                                    <div class="flex flex-col gap-1">
+                                        <span v-for="t in p.types" :class="getTypeColor(t)" class="text-[8px] px-1 rounded text-center">{{t}}</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ส่วนที่ 5: AI Team Analyst -->
+                <div v-if="currentTab === 'ai'" key="ai" class="max-w-4xl mx-auto text-center space-y-6">
+                    <h2 class="text-4xl font-bold esport-font text-white border-l-4 border-yellow-500 pl-4 text-left">AI Team Analyst</h2>
+                    
+                    <div class="bg-slate-900 p-10 rounded-xl border border-slate-700">
+                        <div v-if="teamSlots.filter(s => s.pokemon).length < 6">
+                            <i class="fas fa-robot text-6xl text-slate-600 mb-4"></i>
+                            <h3 class="text-2xl font-bold text-slate-400">กรุณาจัดทีมให้ครบ 6 ตัวในหน้า Builder ก่อน</h3>
+                        </div>
+                        <div v-else-if="!aiAnalyzed && !aiLoading">
+                            <i class="fas fa-brain text-6xl text-purple-500 mb-4 animate-pulse"></i>
+                            <h3 class="text-2xl font-bold text-white mb-4">ทีมพร้อมสำหรับการวิเคราะห์ด้วย AI</h3>
+                            <button @click="analyzeTeam" class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 px-8 py-3 rounded-full font-bold text-lg transition shadow-[0_0_15px_rgba(168,85,247,0.5)]">
+                                Analyze Team with AI <i class="fas fa-magic ml-2"></i>
+                            </button>
+                        </div>
+                        <div v-else-if="aiLoading" class="py-10">
+                            <i class="fas fa-circle-notch fa-spin text-6xl text-blue-500 mb-4"></i>
+                            <h3 class="text-xl text-blue-300">AI is analyzing synergy, meta matchups, and win conditions...</h3>
+                        </div>
+                        
+                        <!-- AI Results -->
+                        <div v-else class="text-left space-y-6">
+                            <div class="flex justify-between items-center mb-6">
+                                <h3 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">AI Analysis Complete</h3>
+                                <button @click="aiAnalyzed = false" class="text-slate-400 hover:text-white text-sm border border-slate-600 px-3 py-1 rounded">Re-Analyze</button>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-slate-800 p-5 rounded-lg border-l-4 border-green-500">
+                                    <h4 class="font-bold text-green-400 text-lg mb-2"><i class="fas fa-arrow-up"></i> จุดเด่นของทีม (Strengths)</h4>
+                                    <p class="text-sm text-slate-300">{{aiReport.strengths}}</p>
+                                </div>
+                                <div class="bg-slate-800 p-5 rounded-lg border-l-4 border-red-500">
+                                    <h4 class="font-bold text-red-400 text-lg mb-2"><i class="fas fa-arrow-down"></i> จุดอ่อนของทีม (Weaknesses)</h4>
+                                    <p class="text-sm text-slate-300">{{aiReport.weaknesses}}</p>
+                                </div>
+                                <div class="bg-slate-800 p-5 rounded-lg border-l-4 border-blue-500">
+                                    <h4 class="font-bold text-blue-400 text-lg mb-2"><i class="fas fa-gamepad"></i> วิธีการเล่น (Playstyle/Lead)</h4>
+                                    <p class="text-sm text-slate-300">{{aiReport.playstyle}}</p>
+                                </div>
+                                <div class="bg-slate-800 p-5 rounded-lg border-l-4 border-yellow-500">
+                                    <h4 class="font-bold text-yellow-400 text-lg mb-2"><i class="fas fa-shield-alt"></i> การแก้ทาง (Counters)</h4>
+                                    <p class="text-sm text-slate-300">{{aiReport.counters}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ส่วนที่ 6: ตัวอย่างทีมแข่งขัน (10 Sample Teams) -->
+                <div v-if="currentTab === 'teams'" key="teams" class="max-w-6xl mx-auto">
+                    <h2 class="text-4xl font-bold esport-font text-white border-l-4 border-red-500 pl-4 mb-8">VGC Meta Sample Teams (10 Archetypes)</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div v-for="(team, index) in sampleTeams" :key="index" class="bg-slate-900 border border-slate-700 rounded-xl overflow-hidden hover:border-red-500 transition cursor-pointer" @click="viewTeam(team)">
+                            <div class="bg-slate-800 p-3 border-b border-slate-700 flex justify-between items-center">
+                                <h3 class="font-bold text-white esport-font text-xl">{{team.name}}</h3>
+                                <span class="text-xs bg-red-600 text-white px-2 py-1 rounded">{{team.archetype}}</span>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex gap-2 flex-wrap mb-4">
+                                    <span v-for="mon in team.members" class="text-sm font-bold bg-slate-800 border border-slate-600 px-2 py-1 rounded">{{mon}}</span>
+                                </div>
+                                <p class="text-sm text-slate-400 line-clamp-2">{{team.desc}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal ดูรายละเอียดทีม -->
+                    <div v-if="selectedTeam" class="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4">
+                        <div class="bg-slate-900 rounded-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto border border-slate-600">
+                            <div class="p-6 border-b border-slate-700 flex justify-between items-center sticky top-0 bg-slate-900 z-10">
+                                <div>
+                                    <h2 class="text-2xl font-bold text-white">{{selectedTeam.name}}</h2>
+                                    <p class="text-red-400">{{selectedTeam.archetype}}</p>
+                                </div>
+                                <button @click="selectedTeam = null" class="text-slate-400 hover:text-white"><i class="fas fa-times text-2xl"></i></button>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-slate-300 mb-6 leading-relaxed">{{selectedTeam.desc}}</p>
+                                <h4 class="font-bold text-purple-400 mb-2">Showdown Paste (จำลอง):</h4>
+                                <div class="bg-slate-950 p-4 rounded font-mono text-xs text-green-400 whitespace-pre-line border border-slate-800">
+                                    {{selectedTeam.paste}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </transition>
+        </main>
+    </div>
+
+    <!-- โหลดสคริปต์แยก (ในโปรเจกต์จริงให้แยกไฟล์ แต่เพื่อความสมบูรณ์ในการส่งงาน ผมรวมไว้ที่นี่) -->
+    <script src="database.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
