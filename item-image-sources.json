@@ -1,0 +1,2306 @@
+{
+  "abilityshield": {
+    "src": "assets/items/abilityshield.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ability-shield.png"
+  },
+  "abomasite": {
+    "src": "assets/items/abomasite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/abomasite.png"
+  },
+  "absolite": {
+    "src": "assets/items/absolite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/absolite.png"
+  },
+  "absolitez": {
+    "src": "assets/items/absolitez.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/absolite-z.png"
+  },
+  "absorbbulb": {
+    "src": "assets/items/absorbbulb.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/absorb-bulb.png"
+  },
+  "adamantcrystal": {
+    "src": "assets/items/adamantcrystal.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/adamant-crystal.png"
+  },
+  "adamantorb": {
+    "src": "assets/items/adamantorb.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/adamant-orb.png"
+  },
+  "adrenalineorb": {
+    "src": "assets/items/adrenalineorb.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/adrenaline-orb.png"
+  },
+  "aerodactylite": {
+    "src": "assets/items/aerodactylite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/aerodactylite.png"
+  },
+  "aggronite": {
+    "src": "assets/items/aggronite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/aggronite.png"
+  },
+  "aguavberry": {
+    "src": "assets/items/aguavberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/aguav-berry.png"
+  },
+  "airballoon": {
+    "src": "assets/items/airballoon.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/air-balloon.png"
+  },
+  "alakazite": {
+    "src": "assets/items/alakazite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/alakazite.png"
+  },
+  "aloraichiumz": {
+    "src": "assets/items/aloraichiumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/aloraichium-z--held.png"
+  },
+  "altarianite": {
+    "src": "assets/items/altarianite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/altarianite.png"
+  },
+  "ampharosite": {
+    "src": "assets/items/ampharosite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ampharosite.png"
+  },
+  "apicotberry": {
+    "src": "assets/items/apicotberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/apicot-berry.png"
+  },
+  "armorfossil": {
+    "src": "assets/items/armorfossil.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/armor-fossil.png"
+  },
+  "aspearberry": {
+    "src": "assets/items/aspearberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/aspear-berry.png"
+  },
+  "assaultvest": {
+    "src": "assets/items/assaultvest.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/assault-vest.png"
+  },
+  "audinite": {
+    "src": "assets/items/audinite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/audinite.png"
+  },
+  "auspiciousarmor": {
+    "src": "assets/items/auspiciousarmor.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/auspicious-armor.png"
+  },
+  "babiriberry": {
+    "src": "assets/items/babiriberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/babiri-berry.png"
+  },
+  "banettite": {
+    "src": "assets/items/banettite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/banettite.png"
+  },
+  "barbaracite": {
+    "src": "assets/items/barbaracite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/barbaracite.png"
+  },
+  "baxcalibrite": {
+    "src": "assets/items/baxcalibrite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/baxcalibrite.png"
+  },
+  "beastball": {
+    "src": "assets/items/beastball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/beast-ball.png"
+  },
+  "beedrillite": {
+    "src": "assets/items/beedrillite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/beedrillite.png"
+  },
+  "belueberry": {
+    "src": "assets/items/belueberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/belue-berry.png"
+  },
+  "berryjuice": {
+    "src": "assets/items/berryjuice.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/berry-juice.png"
+  },
+  "berrysweet": {
+    "src": "assets/items/berrysweet.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/berry-sweet.png"
+  },
+  "bignugget": {
+    "src": "assets/items/bignugget.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/big-nugget.png"
+  },
+  "bigroot": {
+    "src": "assets/items/bigroot.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/big-root.png"
+  },
+  "bindingband": {
+    "src": "assets/items/bindingband.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/binding-band.png"
+  },
+  "blackaugurite": {
+    "src": "assets/items/blackaugurite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/black-augurite.png"
+  },
+  "blackbelt": {
+    "src": "assets/items/blackbelt.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/black-belt.png"
+  },
+  "blackglasses": {
+    "src": "assets/items/blackglasses.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/black-glasses.png"
+  },
+  "blacksludge": {
+    "src": "assets/items/blacksludge.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/black-sludge.png"
+  },
+  "blankplate": {
+    "src": "assets/items/blankplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/blank-plate.png"
+  },
+  "blastoisinite": {
+    "src": "assets/items/blastoisinite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/blastoisinite.png"
+  },
+  "blazikenite": {
+    "src": "assets/items/blazikenite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/blazikenite.png"
+  },
+  "blueorb": {
+    "src": "assets/items/blueorb.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/blue-orb.png"
+  },
+  "blukberry": {
+    "src": "assets/items/blukberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/bluk-berry.png"
+  },
+  "blunderpolicy": {
+    "src": "assets/items/blunderpolicy.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/blunder-policy.png"
+  },
+  "boosterenergy": {
+    "src": "assets/items/boosterenergy.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/booster-energy.png"
+  },
+  "bottlecap": {
+    "src": "assets/items/bottlecap.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/bottle-cap.png"
+  },
+  "brightpowder": {
+    "src": "assets/items/brightpowder.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/bright-powder.png"
+  },
+  "buggem": {
+    "src": "assets/items/buggem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/bug-gem.png"
+  },
+  "buginiumz": {
+    "src": "assets/items/buginiumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/buginium-z--held.png"
+  },
+  "bugmemory": {
+    "src": "assets/items/bugmemory.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/bug-memory.png"
+  },
+  "burndrive": {
+    "src": "assets/items/burndrive.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/burn-drive.png"
+  },
+  "cameruptite": {
+    "src": "assets/items/cameruptite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/cameruptite.png"
+  },
+  "cellbattery": {
+    "src": "assets/items/cellbattery.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/cell-battery.png"
+  },
+  "chandelurite": {
+    "src": "assets/items/chandelurite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/chandelurite.png"
+  },
+  "charcoal": {
+    "src": "assets/items/charcoal.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/charcoal.png"
+  },
+  "charizarditex": {
+    "src": "assets/items/charizarditex.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/charizardite-x.png"
+  },
+  "charizarditey": {
+    "src": "assets/items/charizarditey.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/charizardite-y.png"
+  },
+  "chartiberry": {
+    "src": "assets/items/chartiberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/charti-berry.png"
+  },
+  "cheriberry": {
+    "src": "assets/items/cheriberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/cheri-berry.png"
+  },
+  "cherishball": {
+    "src": "assets/items/cherishball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/cherish-ball.png"
+  },
+  "chesnaughtite": {
+    "src": "assets/items/chesnaughtite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/chesnaughtite.png"
+  },
+  "chestoberry": {
+    "src": "assets/items/chestoberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/chesto-berry.png"
+  },
+  "chilanberry": {
+    "src": "assets/items/chilanberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/chilan-berry.png"
+  },
+  "chilldrive": {
+    "src": "assets/items/chilldrive.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/chill-drive.png"
+  },
+  "chimechite": {
+    "src": "assets/items/chimechite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/chimechite.png"
+  },
+  "chippedpot": {
+    "src": "assets/items/chippedpot.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/chipped-pot.png"
+  },
+  "choiceband": {
+    "src": "assets/items/choiceband.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/choice-band.png"
+  },
+  "choicescarf": {
+    "src": "assets/items/choicescarf.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/choice-scarf.png"
+  },
+  "choicespecs": {
+    "src": "assets/items/choicespecs.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/choice-specs.png"
+  },
+  "chopleberry": {
+    "src": "assets/items/chopleberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/chople-berry.png"
+  },
+  "clawfossil": {
+    "src": "assets/items/clawfossil.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/claw-fossil.png"
+  },
+  "clearamulet": {
+    "src": "assets/items/clearamulet.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/clear-amulet.png"
+  },
+  "clefablite": {
+    "src": "assets/items/clefablite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/clefablite.png"
+  },
+  "cloversweet": {
+    "src": "assets/items/cloversweet.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/clover-sweet.png"
+  },
+  "cobaberry": {
+    "src": "assets/items/cobaberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/coba-berry.png"
+  },
+  "colburberry": {
+    "src": "assets/items/colburberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/colbur-berry.png"
+  },
+  "cornerstonemask": {
+    "src": "assets/items/cornerstonemask.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/cornerstone-mask.png"
+  },
+  "cornnberry": {
+    "src": "assets/items/cornnberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/cornn-berry.png"
+  },
+  "coverfossil": {
+    "src": "assets/items/coverfossil.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/cover-fossil.png"
+  },
+  "covertcloak": {
+    "src": "assets/items/covertcloak.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/covert-cloak.png"
+  },
+  "crabominite": {
+    "src": "assets/items/crabominite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/crabominite.png"
+  },
+  "crackedpot": {
+    "src": "assets/items/crackedpot.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/cracked-pot.png"
+  },
+  "custapberry": {
+    "src": "assets/items/custapberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/custap-berry.png"
+  },
+  "damprock": {
+    "src": "assets/items/damprock.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/damp-rock.png"
+  },
+  "darkgem": {
+    "src": "assets/items/darkgem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dark-gem.png"
+  },
+  "darkiniumz": {
+    "src": "assets/items/darkiniumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/darkinium-z--held.png"
+  },
+  "darkmemory": {
+    "src": "assets/items/darkmemory.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dark-memory.png"
+  },
+  "darkranite": {
+    "src": "assets/items/darkranite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/darkranite.png"
+  },
+  "dawnstone": {
+    "src": "assets/items/dawnstone.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dawn-stone.png"
+  },
+  "decidiumz": {
+    "src": "assets/items/decidiumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/decidium-z--held.png"
+  },
+  "deepseascale": {
+    "src": "assets/items/deepseascale.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/deep-sea-scale.png"
+  },
+  "deepseatooth": {
+    "src": "assets/items/deepseatooth.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/deep-sea-tooth.png"
+  },
+  "delphoxite": {
+    "src": "assets/items/delphoxite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/delphoxite.png"
+  },
+  "destinyknot": {
+    "src": "assets/items/destinyknot.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/destiny-knot.png"
+  },
+  "diancite": {
+    "src": "assets/items/diancite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/diancite.png"
+  },
+  "diveball": {
+    "src": "assets/items/diveball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dive-ball.png"
+  },
+  "domefossil": {
+    "src": "assets/items/domefossil.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dome-fossil.png"
+  },
+  "dousedrive": {
+    "src": "assets/items/dousedrive.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/douse-drive.png"
+  },
+  "dracoplate": {
+    "src": "assets/items/dracoplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/draco-plate.png"
+  },
+  "dragalgite": {
+    "src": "assets/items/dragalgite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dragalgite.png"
+  },
+  "dragonfang": {
+    "src": "assets/items/dragonfang.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dragon-fang.png"
+  },
+  "dragongem": {
+    "src": "assets/items/dragongem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dragon-gem.png"
+  },
+  "dragoninite": {
+    "src": "assets/items/dragoninite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dragoninite.png"
+  },
+  "dragoniumz": {
+    "src": "assets/items/dragoniumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dragonium-z--held.png"
+  },
+  "dragonmemory": {
+    "src": "assets/items/dragonmemory.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dragon-memory.png"
+  },
+  "dragonscale": {
+    "src": "assets/items/dragonscale.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dragon-scale.png"
+  },
+  "drampanite": {
+    "src": "assets/items/drampanite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/drampanite.png"
+  },
+  "dreadplate": {
+    "src": "assets/items/dreadplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dread-plate.png"
+  },
+  "dreamball": {
+    "src": "assets/items/dreamball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dream-ball.png"
+  },
+  "dubiousdisc": {
+    "src": "assets/items/dubiousdisc.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dubious-disc.png"
+  },
+  "durinberry": {
+    "src": "assets/items/durinberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/durin-berry.png"
+  },
+  "duskball": {
+    "src": "assets/items/duskball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dusk-ball.png"
+  },
+  "duskstone": {
+    "src": "assets/items/duskstone.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dusk-stone.png"
+  },
+  "earthplate": {
+    "src": "assets/items/earthplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/earth-plate.png"
+  },
+  "eelektrossite": {
+    "src": "assets/items/eelektrossite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/eelektrossite.png"
+  },
+  "eeviumz": {
+    "src": "assets/items/eeviumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/eevium-z--held.png"
+  },
+  "ejectbutton": {
+    "src": "assets/items/ejectbutton.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/eject-button.png"
+  },
+  "ejectpack": {
+    "src": "assets/items/ejectpack.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/eject-pack.png"
+  },
+  "electirizer": {
+    "src": "assets/items/electirizer.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/electirizer.png"
+  },
+  "electricgem": {
+    "src": "assets/items/electricgem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/electric-gem.png"
+  },
+  "electricmemory": {
+    "src": "assets/items/electricmemory.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/electric-memory.png"
+  },
+  "electricseed": {
+    "src": "assets/items/electricseed.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/electric-seed.png"
+  },
+  "electriumz": {
+    "src": "assets/items/electriumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/electrium-z--held.png"
+  },
+  "emboarite": {
+    "src": "assets/items/emboarite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/emboarite.png"
+  },
+  "enigmaberry": {
+    "src": "assets/items/enigmaberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/enigma-berry.png"
+  },
+  "eviolite": {
+    "src": "assets/items/eviolite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/eviolite.png"
+  },
+  "excadrite": {
+    "src": "assets/items/excadrite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/excadrite.png"
+  },
+  "expertbelt": {
+    "src": "assets/items/expertbelt.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/expert-belt.png"
+  },
+  "fairiumz": {
+    "src": "assets/items/fairiumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fairium-z--held.png"
+  },
+  "fairyfeather": {
+    "src": "assets/items/fairyfeather.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fairy-feather.png"
+  },
+  "fairygem": {
+    "src": "assets/items/fairygem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fairy-gem.png"
+  },
+  "fairymemory": {
+    "src": "assets/items/fairymemory.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fairy-memory.png"
+  },
+  "falinksite": {
+    "src": "assets/items/falinksite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/falinksite.png"
+  },
+  "fastball": {
+    "src": "assets/items/fastball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fast-ball.png"
+  },
+  "feraligite": {
+    "src": "assets/items/feraligite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/feraligite.png"
+  },
+  "fightinggem": {
+    "src": "assets/items/fightinggem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fighting-gem.png"
+  },
+  "fightingmemory": {
+    "src": "assets/items/fightingmemory.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fighting-memory.png"
+  },
+  "fightiniumz": {
+    "src": "assets/items/fightiniumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fightinium-z--held.png"
+  },
+  "figyberry": {
+    "src": "assets/items/figyberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/figy-berry.png"
+  },
+  "firegem": {
+    "src": "assets/items/firegem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fire-gem.png"
+  },
+  "firememory": {
+    "src": "assets/items/firememory.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fire-memory.png"
+  },
+  "firestone": {
+    "src": "assets/items/firestone.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fire-stone.png"
+  },
+  "firiumz": {
+    "src": "assets/items/firiumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/firium-z--held.png"
+  },
+  "fistplate": {
+    "src": "assets/items/fistplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fist-plate.png"
+  },
+  "flameorb": {
+    "src": "assets/items/flameorb.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/flame-orb.png"
+  },
+  "flameplate": {
+    "src": "assets/items/flameplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/flame-plate.png"
+  },
+  "floatstone": {
+    "src": "assets/items/floatstone.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/float-stone.png"
+  },
+  "floettite": {
+    "src": "assets/items/floettite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/floettite.png"
+  },
+  "flowersweet": {
+    "src": "assets/items/flowersweet.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/flower-sweet.png"
+  },
+  "flyinggem": {
+    "src": "assets/items/flyinggem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/flying-gem.png"
+  },
+  "flyingmemory": {
+    "src": "assets/items/flyingmemory.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/flying-memory.png"
+  },
+  "flyiniumz": {
+    "src": "assets/items/flyiniumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/flyinium-z--held.png"
+  },
+  "focusband": {
+    "src": "assets/items/focusband.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/focus-band.png"
+  },
+  "focussash": {
+    "src": "assets/items/focussash.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/focus-sash.png"
+  },
+  "fossilizedbird": {
+    "src": "assets/items/fossilizedbird.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fossilized-bird.png"
+  },
+  "fossilizeddino": {
+    "src": "assets/items/fossilizeddino.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fossilized-dino.png"
+  },
+  "fossilizeddrake": {
+    "src": "assets/items/fossilizeddrake.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fossilized-drake.png"
+  },
+  "fossilizedfish": {
+    "src": "assets/items/fossilizedfish.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fossilized-fish.png"
+  },
+  "friendball": {
+    "src": "assets/items/friendball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/friend-ball.png"
+  },
+  "froslassite": {
+    "src": "assets/items/froslassite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/froslassite.png"
+  },
+  "fullincense": {
+    "src": "assets/items/fullincense.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/full-incense.png"
+  },
+  "galaricacuff": {
+    "src": "assets/items/galaricacuff.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/galarica-cuff.png"
+  },
+  "galaricawreath": {
+    "src": "assets/items/galaricawreath.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/galarica-wreath.png"
+  },
+  "galladite": {
+    "src": "assets/items/galladite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/galladite.png"
+  },
+  "ganlonberry": {
+    "src": "assets/items/ganlonberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ganlon-berry.png"
+  },
+  "garchompite": {
+    "src": "assets/items/garchompite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/garchompite.png"
+  },
+  "garchompitez": {
+    "src": "assets/items/garchompitez.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/garchompite-z.png"
+  },
+  "gardevoirite": {
+    "src": "assets/items/gardevoirite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/gardevoirite.png"
+  },
+  "gengarite": {
+    "src": "assets/items/gengarite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/gengarite.png"
+  },
+  "ghostgem": {
+    "src": "assets/items/ghostgem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ghost-gem.png"
+  },
+  "ghostiumz": {
+    "src": "assets/items/ghostiumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ghostium-z--held.png"
+  },
+  "ghostmemory": {
+    "src": "assets/items/ghostmemory.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ghost-memory.png"
+  },
+  "glalitite": {
+    "src": "assets/items/glalitite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/glalitite.png"
+  },
+  "glimmoranite": {
+    "src": "assets/items/glimmoranite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/glimmoranite.png"
+  },
+  "goldbottlecap": {
+    "src": "assets/items/goldbottlecap.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/gold-bottle-cap.png"
+  },
+  "golisopite": {
+    "src": "assets/items/golisopite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/golisopite.png"
+  },
+  "golurkite": {
+    "src": "assets/items/golurkite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/golurkite.png"
+  },
+  "grassgem": {
+    "src": "assets/items/grassgem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/grass-gem.png"
+  },
+  "grassiumz": {
+    "src": "assets/items/grassiumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/grassium-z--held.png"
+  },
+  "grassmemory": {
+    "src": "assets/items/grassmemory.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/grass-memory.png"
+  },
+  "grassyseed": {
+    "src": "assets/items/grassyseed.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/grassy-seed.png"
+  },
+  "greatball": {
+    "src": "assets/items/greatball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/great-ball.png"
+  },
+  "greninjite": {
+    "src": "assets/items/greninjite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/greninjite.png"
+  },
+  "grepaberry": {
+    "src": "assets/items/grepaberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/grepa-berry.png"
+  },
+  "gripclaw": {
+    "src": "assets/items/gripclaw.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/grip-claw.png"
+  },
+  "griseouscore": {
+    "src": "assets/items/griseouscore.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/griseous-core.png"
+  },
+  "griseousorb": {
+    "src": "assets/items/griseousorb.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/griseous-orb.png"
+  },
+  "groundgem": {
+    "src": "assets/items/groundgem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ground-gem.png"
+  },
+  "groundiumz": {
+    "src": "assets/items/groundiumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/groundium-z--held.png"
+  },
+  "groundmemory": {
+    "src": "assets/items/groundmemory.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ground-memory.png"
+  },
+  "gyaradosite": {
+    "src": "assets/items/gyaradosite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/gyaradosite.png"
+  },
+  "habanberry": {
+    "src": "assets/items/habanberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/haban-berry.png"
+  },
+  "hardstone": {
+    "src": "assets/items/hardstone.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/hard-stone.png"
+  },
+  "hawluchanite": {
+    "src": "assets/items/hawluchanite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/hawluchanite.png"
+  },
+  "healball": {
+    "src": "assets/items/healball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/heal-ball.png"
+  },
+  "hearthflamemask": {
+    "src": "assets/items/hearthflamemask.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/hearthflame-mask.png"
+  },
+  "heatranite": {
+    "src": "assets/items/heatranite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/heatranite.png"
+  },
+  "heatrock": {
+    "src": "assets/items/heatrock.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/heat-rock.png"
+  },
+  "heavyball": {
+    "src": "assets/items/heavyball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/heavy-ball.png"
+  },
+  "heavydutyboots": {
+    "src": "assets/items/heavydutyboots.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/heavy-duty-boots.png"
+  },
+  "helixfossil": {
+    "src": "assets/items/helixfossil.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/helix-fossil.png"
+  },
+  "heracronite": {
+    "src": "assets/items/heracronite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/heracronite.png"
+  },
+  "hondewberry": {
+    "src": "assets/items/hondewberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/hondew-berry.png"
+  },
+  "houndoominite": {
+    "src": "assets/items/houndoominite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/houndoominite.png"
+  },
+  "iapapaberry": {
+    "src": "assets/items/iapapaberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/iapapa-berry.png"
+  },
+  "icegem": {
+    "src": "assets/items/icegem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ice-gem.png"
+  },
+  "icememory": {
+    "src": "assets/items/icememory.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ice-memory.png"
+  },
+  "icestone": {
+    "src": "assets/items/icestone.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ice-stone.png"
+  },
+  "icicleplate": {
+    "src": "assets/items/icicleplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/icicle-plate.png"
+  },
+  "iciumz": {
+    "src": "assets/items/iciumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/icium-z--held.png"
+  },
+  "icyrock": {
+    "src": "assets/items/icyrock.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/icy-rock.png"
+  },
+  "inciniumz": {
+    "src": "assets/items/inciniumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/incinium-z--held.png"
+  },
+  "insectplate": {
+    "src": "assets/items/insectplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/insect-plate.png"
+  },
+  "ironball": {
+    "src": "assets/items/ironball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/iron-ball.png"
+  },
+  "ironplate": {
+    "src": "assets/items/ironplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/iron-plate.png"
+  },
+  "jabocaberry": {
+    "src": "assets/items/jabocaberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/jaboca-berry.png"
+  },
+  "jawfossil": {
+    "src": "assets/items/jawfossil.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/jaw-fossil.png"
+  },
+  "kangaskhanite": {
+    "src": "assets/items/kangaskhanite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/kangaskhanite.png"
+  },
+  "kasibberry": {
+    "src": "assets/items/kasibberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/kasib-berry.png"
+  },
+  "kebiaberry": {
+    "src": "assets/items/kebiaberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/kebia-berry.png"
+  },
+  "keeberry": {
+    "src": "assets/items/keeberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/kee-berry.png"
+  },
+  "kelpsyberry": {
+    "src": "assets/items/kelpsyberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/kelpsy-berry.png"
+  },
+  "kingsrock": {
+    "src": "assets/items/kingsrock.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/kings-rock.png"
+  },
+  "kommoniumz": {
+    "src": "assets/items/kommoniumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/kommonium-z--held.png"
+  },
+  "laggingtail": {
+    "src": "assets/items/laggingtail.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/lagging-tail.png"
+  },
+  "lansatberry": {
+    "src": "assets/items/lansatberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/lansat-berry.png"
+  },
+  "latiasite": {
+    "src": "assets/items/latiasite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/latiasite.png"
+  },
+  "latiosite": {
+    "src": "assets/items/latiosite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/latiosite.png"
+  },
+  "laxincense": {
+    "src": "assets/items/laxincense.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/lax-incense.png"
+  },
+  "leafstone": {
+    "src": "assets/items/leafstone.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/leaf-stone.png"
+  },
+  "leek": {
+    "src": "assets/items/leek.png",
+    "source": "https://raw.githubusercontent.com/smogon/sprites/master/src/minisprites/items/ileek.png"
+  },
+  "leftovers": {
+    "src": "assets/items/leftovers.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/leftovers.png"
+  },
+  "legendplate": {
+    "src": "assets/items/legendplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/legend-plate.png"
+  },
+  "leppaberry": {
+    "src": "assets/items/leppaberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/leppa-berry.png"
+  },
+  "levelball": {
+    "src": "assets/items/levelball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/level-ball.png"
+  },
+  "liechiberry": {
+    "src": "assets/items/liechiberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/liechi-berry.png"
+  },
+  "lifeorb": {
+    "src": "assets/items/lifeorb.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/life-orb.png"
+  },
+  "lightball": {
+    "src": "assets/items/lightball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/light-ball.png"
+  },
+  "lightclay": {
+    "src": "assets/items/lightclay.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/light-clay.png"
+  },
+  "loadeddice": {
+    "src": "assets/items/loadeddice.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/loaded-dice.png"
+  },
+  "lopunnite": {
+    "src": "assets/items/lopunnite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/lopunnite.png"
+  },
+  "loveball": {
+    "src": "assets/items/loveball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/love-ball.png"
+  },
+  "lovesweet": {
+    "src": "assets/items/lovesweet.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/love-sweet.png"
+  },
+  "lucarionite": {
+    "src": "assets/items/lucarionite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/lucarionite.png"
+  },
+  "lucarionitez": {
+    "src": "assets/items/lucarionitez.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/lucarionite-z.png"
+  },
+  "luckypunch": {
+    "src": "assets/items/luckypunch.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/lucky-punch.png"
+  },
+  "lumberry": {
+    "src": "assets/items/lumberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/lum-berry.png"
+  },
+  "luminousmoss": {
+    "src": "assets/items/luminousmoss.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/luminous-moss.png"
+  },
+  "lunaliumz": {
+    "src": "assets/items/lunaliumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/lunalium-z--held.png"
+  },
+  "lureball": {
+    "src": "assets/items/lureball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/lure-ball.png"
+  },
+  "lustrousglobe": {
+    "src": "assets/items/lustrousglobe.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/lustrous-globe.png"
+  },
+  "lustrousorb": {
+    "src": "assets/items/lustrousorb.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/lustrous-orb.png"
+  },
+  "luxuryball": {
+    "src": "assets/items/luxuryball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/luxury-ball.png"
+  },
+  "lycaniumz": {
+    "src": "assets/items/lycaniumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/lycanium-z--held.png"
+  },
+  "machobrace": {
+    "src": "assets/items/machobrace.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/macho-brace.png"
+  },
+  "magearnite": {
+    "src": "assets/items/magearnite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/magearnite.png"
+  },
+  "magmarizer": {
+    "src": "assets/items/magmarizer.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/magmarizer.png"
+  },
+  "magnet": {
+    "src": "assets/items/magnet.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/magnet.png"
+  },
+  "magoberry": {
+    "src": "assets/items/magoberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/mago-berry.png"
+  },
+  "magostberry": {
+    "src": "assets/items/magostberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/magost-berry.png"
+  },
+  "mail": {
+    "src": "assets/items/mail.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/air-mail.png"
+  },
+  "malamarite": {
+    "src": "assets/items/malamarite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/malamarite.png"
+  },
+  "maliciousarmor": {
+    "src": "assets/items/maliciousarmor.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/malicious-armor.png"
+  },
+  "manectite": {
+    "src": "assets/items/manectite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/manectite.png"
+  },
+  "marangaberry": {
+    "src": "assets/items/marangaberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/maranga-berry.png"
+  },
+  "marshadiumz": {
+    "src": "assets/items/marshadiumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/marshadium-z--held.png"
+  },
+  "masterball": {
+    "src": "assets/items/masterball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png"
+  },
+  "masterpieceteacup": {
+    "src": "assets/items/masterpieceteacup.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/masterpiece-teacup.png"
+  },
+  "mawilite": {
+    "src": "assets/items/mawilite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/mawilite.png"
+  },
+  "meadowplate": {
+    "src": "assets/items/meadowplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/meadow-plate.png"
+  },
+  "medichamite": {
+    "src": "assets/items/medichamite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/medichamite.png"
+  },
+  "meganiumite": {
+    "src": "assets/items/meganiumite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/meganiumite.png"
+  },
+  "mentalherb": {
+    "src": "assets/items/mentalherb.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/mental-herb.png"
+  },
+  "meowsticite": {
+    "src": "assets/items/meowsticite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/meowsticite.png"
+  },
+  "metagrossite": {
+    "src": "assets/items/metagrossite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/metagrossite.png"
+  },
+  "metalalloy": {
+    "src": "assets/items/metalalloy.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/metal-alloy.png"
+  },
+  "metalcoat": {
+    "src": "assets/items/metalcoat.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/metal-coat.png"
+  },
+  "metalpowder": {
+    "src": "assets/items/metalpowder.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/metal-powder.png"
+  },
+  "metronome": {
+    "src": "assets/items/metronome.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/metronome.png"
+  },
+  "mewniumz": {
+    "src": "assets/items/mewniumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/mewnium-z--held.png"
+  },
+  "mewtwonitex": {
+    "src": "assets/items/mewtwonitex.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/mewtwonite-x.png"
+  },
+  "mewtwonitey": {
+    "src": "assets/items/mewtwonitey.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/mewtwonite-y.png"
+  },
+  "micleberry": {
+    "src": "assets/items/micleberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/micle-berry.png"
+  },
+  "mimikiumz": {
+    "src": "assets/items/mimikiumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/mimikium-z--held.png"
+  },
+  "mindplate": {
+    "src": "assets/items/mindplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/mind-plate.png"
+  },
+  "miracleseed": {
+    "src": "assets/items/miracleseed.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/miracle-seed.png"
+  },
+  "mirrorherb": {
+    "src": "assets/items/mirrorherb.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/mirror-herb.png"
+  },
+  "mistyseed": {
+    "src": "assets/items/mistyseed.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/misty-seed.png"
+  },
+  "moonball": {
+    "src": "assets/items/moonball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/moon-ball.png"
+  },
+  "moonstone": {
+    "src": "assets/items/moonstone.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/moon-stone.png"
+  },
+  "muscleband": {
+    "src": "assets/items/muscleband.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/muscle-band.png"
+  },
+  "mysticwater": {
+    "src": "assets/items/mysticwater.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/mystic-water.png"
+  },
+  "nanabberry": {
+    "src": "assets/items/nanabberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/nanab-berry.png"
+  },
+  "nestball": {
+    "src": "assets/items/nestball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/nest-ball.png"
+  },
+  "netball": {
+    "src": "assets/items/netball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/net-ball.png"
+  },
+  "nevermeltice": {
+    "src": "assets/items/nevermeltice.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/never-melt-ice.png"
+  },
+  "nomelberry": {
+    "src": "assets/items/nomelberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/nomel-berry.png"
+  },
+  "normalgem": {
+    "src": "assets/items/normalgem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/normal-gem.png"
+  },
+  "normaliumz": {
+    "src": "assets/items/normaliumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/normalium-z--held.png"
+  },
+  "occaberry": {
+    "src": "assets/items/occaberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/occa-berry.png"
+  },
+  "oddincense": {
+    "src": "assets/items/oddincense.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/odd-incense.png"
+  },
+  "oldamber": {
+    "src": "assets/items/oldamber.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/old-amber.png"
+  },
+  "oranberry": {
+    "src": "assets/items/oranberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/oran-berry.png"
+  },
+  "ovalstone": {
+    "src": "assets/items/ovalstone.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/oval-stone.png"
+  },
+  "pamtreberry": {
+    "src": "assets/items/pamtreberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/pamtre-berry.png"
+  },
+  "parkball": {
+    "src": "assets/items/parkball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/park-ball.png"
+  },
+  "passhoberry": {
+    "src": "assets/items/passhoberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/passho-berry.png"
+  },
+  "payapaberry": {
+    "src": "assets/items/payapaberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/payapa-berry.png"
+  },
+  "peatblock": {
+    "src": "assets/items/peatblock.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/peat-block.png"
+  },
+  "pechaberry": {
+    "src": "assets/items/pechaberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/pecha-berry.png"
+  },
+  "persimberry": {
+    "src": "assets/items/persimberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/persim-berry.png"
+  },
+  "petayaberry": {
+    "src": "assets/items/petayaberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/petaya-berry.png"
+  },
+  "pidgeotite": {
+    "src": "assets/items/pidgeotite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/pidgeotite.png"
+  },
+  "pikaniumz": {
+    "src": "assets/items/pikaniumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/pikanium-z--held.png"
+  },
+  "pikashuniumz": {
+    "src": "assets/items/pikashuniumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/pikashunium-z--held.png"
+  },
+  "pinapberry": {
+    "src": "assets/items/pinapberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/pinap-berry.png"
+  },
+  "pinsirite": {
+    "src": "assets/items/pinsirite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/pinsirite.png"
+  },
+  "pixieplate": {
+    "src": "assets/items/pixieplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/pixie-plate.png"
+  },
+  "plumefossil": {
+    "src": "assets/items/plumefossil.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/plume-fossil.png"
+  },
+  "poisonbarb": {
+    "src": "assets/items/poisonbarb.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poison-barb.png"
+  },
+  "poisongem": {
+    "src": "assets/items/poisongem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poison-gem.png"
+  },
+  "poisoniumz": {
+    "src": "assets/items/poisoniumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poisonium-z--held.png"
+  },
+  "poisonmemory": {
+    "src": "assets/items/poisonmemory.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poison-memory.png"
+  },
+  "pokeball": {
+    "src": "assets/items/pokeball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
+  },
+  "pomegberry": {
+    "src": "assets/items/pomegberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/pomeg-berry.png"
+  },
+  "poweranklet": {
+    "src": "assets/items/poweranklet.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/power-anklet.png"
+  },
+  "powerband": {
+    "src": "assets/items/powerband.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/power-band.png"
+  },
+  "powerbelt": {
+    "src": "assets/items/powerbelt.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/power-belt.png"
+  },
+  "powerbracer": {
+    "src": "assets/items/powerbracer.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/power-bracer.png"
+  },
+  "powerherb": {
+    "src": "assets/items/powerherb.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/power-herb.png"
+  },
+  "powerlens": {
+    "src": "assets/items/powerlens.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/power-lens.png"
+  },
+  "powerweight": {
+    "src": "assets/items/powerweight.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/power-weight.png"
+  },
+  "premierball": {
+    "src": "assets/items/premierball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/premier-ball.png"
+  },
+  "prettyfeather": {
+    "src": "assets/items/prettyfeather.png",
+    "source": "https://raw.githubusercontent.com/smogon/sprites/master/src/minisprites/items/ipretty_feather.png"
+  },
+  "primariumz": {
+    "src": "assets/items/primariumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/primarium-z--held.png"
+  },
+  "prismscale": {
+    "src": "assets/items/prismscale.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/prism-scale.png"
+  },
+  "protectivepads": {
+    "src": "assets/items/protectivepads.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/protective-pads.png"
+  },
+  "protector": {
+    "src": "assets/items/protector.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/protector.png"
+  },
+  "psychicgem": {
+    "src": "assets/items/psychicgem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/psychic-gem.png"
+  },
+  "psychicmemory": {
+    "src": "assets/items/psychicmemory.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/psychic-memory.png"
+  },
+  "psychicseed": {
+    "src": "assets/items/psychicseed.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/psychic-seed.png"
+  },
+  "psychiumz": {
+    "src": "assets/items/psychiumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/psychium-z--held.png"
+  },
+  "punchingglove": {
+    "src": "assets/items/punchingglove.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/punching-glove.png"
+  },
+  "pyroarite": {
+    "src": "assets/items/pyroarite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/pyroarite.png"
+  },
+  "qualotberry": {
+    "src": "assets/items/qualotberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/qualot-berry.png"
+  },
+  "quickball": {
+    "src": "assets/items/quickball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/quick-ball.png"
+  },
+  "quickclaw": {
+    "src": "assets/items/quickclaw.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/quick-claw.png"
+  },
+  "quickpowder": {
+    "src": "assets/items/quickpowder.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/quick-powder.png"
+  },
+  "rabutaberry": {
+    "src": "assets/items/rabutaberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/rabuta-berry.png"
+  },
+  "raichunitex": {
+    "src": "assets/items/raichunitex.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/raichunite-x.png"
+  },
+  "raichunitey": {
+    "src": "assets/items/raichunitey.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/raichunite-y.png"
+  },
+  "rarebone": {
+    "src": "assets/items/rarebone.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/rare-bone.png"
+  },
+  "rawstberry": {
+    "src": "assets/items/rawstberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/rawst-berry.png"
+  },
+  "razorclaw": {
+    "src": "assets/items/razorclaw.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/razor-claw.png"
+  },
+  "razorfang": {
+    "src": "assets/items/razorfang.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/razor-fang.png"
+  },
+  "razzberry": {
+    "src": "assets/items/razzberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/razz-berry.png"
+  },
+  "reapercloth": {
+    "src": "assets/items/reapercloth.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/reaper-cloth.png"
+  },
+  "redcard": {
+    "src": "assets/items/redcard.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/red-card.png"
+  },
+  "redorb": {
+    "src": "assets/items/redorb.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/red-orb.png"
+  },
+  "repeatball": {
+    "src": "assets/items/repeatball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/repeat-ball.png"
+  },
+  "ribbonsweet": {
+    "src": "assets/items/ribbonsweet.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ribbon-sweet.png"
+  },
+  "rindoberry": {
+    "src": "assets/items/rindoberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/rindo-berry.png"
+  },
+  "ringtarget": {
+    "src": "assets/items/ringtarget.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ring-target.png"
+  },
+  "rockgem": {
+    "src": "assets/items/rockgem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/rock-gem.png"
+  },
+  "rockincense": {
+    "src": "assets/items/rockincense.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/rock-incense.png"
+  },
+  "rockiumz": {
+    "src": "assets/items/rockiumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/rockium-z--held.png"
+  },
+  "rockmemory": {
+    "src": "assets/items/rockmemory.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/rock-memory.png"
+  },
+  "rockyhelmet": {
+    "src": "assets/items/rockyhelmet.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/rocky-helmet.png"
+  },
+  "roomservice": {
+    "src": "assets/items/roomservice.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/room-service.png"
+  },
+  "rootfossil": {
+    "src": "assets/items/rootfossil.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/root-fossil.png"
+  },
+  "roseincense": {
+    "src": "assets/items/roseincense.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/rose-incense.png"
+  },
+  "roseliberry": {
+    "src": "assets/items/roseliberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/roseli-berry.png"
+  },
+  "rowapberry": {
+    "src": "assets/items/rowapberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/rowap-berry.png"
+  },
+  "rustedshield": {
+    "src": "assets/items/rustedshield.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/rusted-shield.png"
+  },
+  "rustedsword": {
+    "src": "assets/items/rustedsword.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/rusted-sword.png"
+  },
+  "sablenite": {
+    "src": "assets/items/sablenite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sablenite.png"
+  },
+  "sachet": {
+    "src": "assets/items/sachet.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sachet.png"
+  },
+  "safariball": {
+    "src": "assets/items/safariball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/safari-ball.png"
+  },
+  "safetygoggles": {
+    "src": "assets/items/safetygoggles.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/safety-goggles.png"
+  },
+  "sailfossil": {
+    "src": "assets/items/sailfossil.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sail-fossil.png"
+  },
+  "salacberry": {
+    "src": "assets/items/salacberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/salac-berry.png"
+  },
+  "salamencite": {
+    "src": "assets/items/salamencite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/salamencite.png"
+  },
+  "sceptilite": {
+    "src": "assets/items/sceptilite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sceptilite.png"
+  },
+  "scizorite": {
+    "src": "assets/items/scizorite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/scizorite.png"
+  },
+  "scolipite": {
+    "src": "assets/items/scolipite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/scolipite.png"
+  },
+  "scopelens": {
+    "src": "assets/items/scopelens.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/scope-lens.png"
+  },
+  "scovillainite": {
+    "src": "assets/items/scovillainite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/scovillainite.png"
+  },
+  "scraftinite": {
+    "src": "assets/items/scraftinite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/scraftinite.png"
+  },
+  "seaincense": {
+    "src": "assets/items/seaincense.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sea-incense.png"
+  },
+  "sharpbeak": {
+    "src": "assets/items/sharpbeak.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sharp-beak.png"
+  },
+  "sharpedonite": {
+    "src": "assets/items/sharpedonite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sharpedonite.png"
+  },
+  "shedshell": {
+    "src": "assets/items/shedshell.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/shed-shell.png"
+  },
+  "shellbell": {
+    "src": "assets/items/shellbell.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/shell-bell.png"
+  },
+  "shinystone": {
+    "src": "assets/items/shinystone.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/shiny-stone.png"
+  },
+  "shockdrive": {
+    "src": "assets/items/shockdrive.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/shock-drive.png"
+  },
+  "shucaberry": {
+    "src": "assets/items/shucaberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/shuca-berry.png"
+  },
+  "silkscarf": {
+    "src": "assets/items/silkscarf.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/silk-scarf.png"
+  },
+  "silverpowder": {
+    "src": "assets/items/silverpowder.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/silver-powder.png"
+  },
+  "sitrusberry": {
+    "src": "assets/items/sitrusberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sitrus-berry.png"
+  },
+  "skarmorite": {
+    "src": "assets/items/skarmorite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/skarmorite.png"
+  },
+  "skullfossil": {
+    "src": "assets/items/skullfossil.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/skull-fossil.png"
+  },
+  "skyplate": {
+    "src": "assets/items/skyplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sky-plate.png"
+  },
+  "slowbronite": {
+    "src": "assets/items/slowbronite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/slowbronite.png"
+  },
+  "smoothrock": {
+    "src": "assets/items/smoothrock.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/smooth-rock.png"
+  },
+  "snorliumz": {
+    "src": "assets/items/snorliumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/snorlium-z--held.png"
+  },
+  "snowball": {
+    "src": "assets/items/snowball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/snowball.png"
+  },
+  "softsand": {
+    "src": "assets/items/softsand.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/soft-sand.png"
+  },
+  "solganiumz": {
+    "src": "assets/items/solganiumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/solganium-z--held.png"
+  },
+  "souldew": {
+    "src": "assets/items/souldew.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/soul-dew.png"
+  },
+  "spelltag": {
+    "src": "assets/items/spelltag.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/spell-tag.png"
+  },
+  "spelonberry": {
+    "src": "assets/items/spelonberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/spelon-berry.png"
+  },
+  "splashplate": {
+    "src": "assets/items/splashplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/splash-plate.png"
+  },
+  "spookyplate": {
+    "src": "assets/items/spookyplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/spooky-plate.png"
+  },
+  "sportball": {
+    "src": "assets/items/sportball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sport-ball.png"
+  },
+  "staraptite": {
+    "src": "assets/items/staraptite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/staraptite.png"
+  },
+  "starfberry": {
+    "src": "assets/items/starfberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/starf-berry.png"
+  },
+  "starminite": {
+    "src": "assets/items/starminite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/starminite.png"
+  },
+  "starsweet": {
+    "src": "assets/items/starsweet.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/star-sweet.png"
+  },
+  "steelgem": {
+    "src": "assets/items/steelgem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/steel-gem.png"
+  },
+  "steeliumz": {
+    "src": "assets/items/steeliumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/steelium-z--held.png"
+  },
+  "steelixite": {
+    "src": "assets/items/steelixite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/steelixite.png"
+  },
+  "steelmemory": {
+    "src": "assets/items/steelmemory.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/steel-memory.png"
+  },
+  "stick": {
+    "src": "assets/items/stick.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/stick.png"
+  },
+  "stickybarb": {
+    "src": "assets/items/stickybarb.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sticky-barb.png"
+  },
+  "stoneplate": {
+    "src": "assets/items/stoneplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/stone-plate.png"
+  },
+  "strangeball": {
+    "src": "assets/items/strangeball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/strange-ball.png"
+  },
+  "strawberrysweet": {
+    "src": "assets/items/strawberrysweet.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/strawberry-sweet.png"
+  },
+  "sunstone": {
+    "src": "assets/items/sunstone.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sun-stone.png"
+  },
+  "swampertite": {
+    "src": "assets/items/swampertite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/swampertite.png"
+  },
+  "sweetapple": {
+    "src": "assets/items/sweetapple.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/sweet-apple.png"
+  },
+  "syrupyapple": {
+    "src": "assets/items/syrupyapple.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/syrupy-apple.png"
+  },
+  "tamatoberry": {
+    "src": "assets/items/tamatoberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tamato-berry.png"
+  },
+  "tangaberry": {
+    "src": "assets/items/tangaberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tanga-berry.png"
+  },
+  "tapuniumz": {
+    "src": "assets/items/tapuniumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tapunium-z--held.png"
+  },
+  "tartapple": {
+    "src": "assets/items/tartapple.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tart-apple.png"
+  },
+  "tatsugirinite": {
+    "src": "assets/items/tatsugirinite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tatsugirinite.png"
+  },
+  "terrainextender": {
+    "src": "assets/items/terrainextender.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/terrain-extender.png"
+  },
+  "thickclub": {
+    "src": "assets/items/thickclub.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/thick-club.png"
+  },
+  "throatspray": {
+    "src": "assets/items/throatspray.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/throat-spray.png"
+  },
+  "thunderstone": {
+    "src": "assets/items/thunderstone.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/thunder-stone.png"
+  },
+  "timerball": {
+    "src": "assets/items/timerball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/timer-ball.png"
+  },
+  "toxicorb": {
+    "src": "assets/items/toxicorb.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/toxic-orb.png"
+  },
+  "toxicplate": {
+    "src": "assets/items/toxicplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/toxic-plate.png"
+  },
+  "tr00": {
+    "src": "assets/items/tr00.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr00.png"
+  },
+  "tr01": {
+    "src": "assets/items/tr01.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr01.png"
+  },
+  "tr02": {
+    "src": "assets/items/tr02.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr02.png"
+  },
+  "tr03": {
+    "src": "assets/items/tr03.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr03.png"
+  },
+  "tr04": {
+    "src": "assets/items/tr04.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr04.png"
+  },
+  "tr05": {
+    "src": "assets/items/tr05.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr05.png"
+  },
+  "tr06": {
+    "src": "assets/items/tr06.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr06.png"
+  },
+  "tr07": {
+    "src": "assets/items/tr07.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr07.png"
+  },
+  "tr08": {
+    "src": "assets/items/tr08.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr08.png"
+  },
+  "tr09": {
+    "src": "assets/items/tr09.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr09.png"
+  },
+  "tr10": {
+    "src": "assets/items/tr10.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr10.png"
+  },
+  "tr11": {
+    "src": "assets/items/tr11.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr11.png"
+  },
+  "tr12": {
+    "src": "assets/items/tr12.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr12.png"
+  },
+  "tr13": {
+    "src": "assets/items/tr13.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr13.png"
+  },
+  "tr14": {
+    "src": "assets/items/tr14.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr14.png"
+  },
+  "tr15": {
+    "src": "assets/items/tr15.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr15.png"
+  },
+  "tr16": {
+    "src": "assets/items/tr16.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr16.png"
+  },
+  "tr17": {
+    "src": "assets/items/tr17.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr17.png"
+  },
+  "tr18": {
+    "src": "assets/items/tr18.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr18.png"
+  },
+  "tr19": {
+    "src": "assets/items/tr19.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr19.png"
+  },
+  "tr20": {
+    "src": "assets/items/tr20.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr20.png"
+  },
+  "tr21": {
+    "src": "assets/items/tr21.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr21.png"
+  },
+  "tr22": {
+    "src": "assets/items/tr22.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr22.png"
+  },
+  "tr23": {
+    "src": "assets/items/tr23.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr23.png"
+  },
+  "tr24": {
+    "src": "assets/items/tr24.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr24.png"
+  },
+  "tr25": {
+    "src": "assets/items/tr25.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr25.png"
+  },
+  "tr26": {
+    "src": "assets/items/tr26.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr26.png"
+  },
+  "tr27": {
+    "src": "assets/items/tr27.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr27.png"
+  },
+  "tr28": {
+    "src": "assets/items/tr28.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr28.png"
+  },
+  "tr29": {
+    "src": "assets/items/tr29.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr29.png"
+  },
+  "tr30": {
+    "src": "assets/items/tr30.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr30.png"
+  },
+  "tr31": {
+    "src": "assets/items/tr31.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr31.png"
+  },
+  "tr32": {
+    "src": "assets/items/tr32.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr32.png"
+  },
+  "tr33": {
+    "src": "assets/items/tr33.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr33.png"
+  },
+  "tr34": {
+    "src": "assets/items/tr34.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr34.png"
+  },
+  "tr35": {
+    "src": "assets/items/tr35.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr35.png"
+  },
+  "tr36": {
+    "src": "assets/items/tr36.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr36.png"
+  },
+  "tr37": {
+    "src": "assets/items/tr37.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr37.png"
+  },
+  "tr38": {
+    "src": "assets/items/tr38.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr38.png"
+  },
+  "tr39": {
+    "src": "assets/items/tr39.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr39.png"
+  },
+  "tr40": {
+    "src": "assets/items/tr40.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr40.png"
+  },
+  "tr41": {
+    "src": "assets/items/tr41.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr41.png"
+  },
+  "tr42": {
+    "src": "assets/items/tr42.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr42.png"
+  },
+  "tr43": {
+    "src": "assets/items/tr43.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr43.png"
+  },
+  "tr44": {
+    "src": "assets/items/tr44.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr44.png"
+  },
+  "tr45": {
+    "src": "assets/items/tr45.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr45.png"
+  },
+  "tr46": {
+    "src": "assets/items/tr46.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr46.png"
+  },
+  "tr47": {
+    "src": "assets/items/tr47.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr47.png"
+  },
+  "tr48": {
+    "src": "assets/items/tr48.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr48.png"
+  },
+  "tr49": {
+    "src": "assets/items/tr49.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr49.png"
+  },
+  "tr50": {
+    "src": "assets/items/tr50.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr50.png"
+  },
+  "tr51": {
+    "src": "assets/items/tr51.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr51.png"
+  },
+  "tr52": {
+    "src": "assets/items/tr52.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr52.png"
+  },
+  "tr53": {
+    "src": "assets/items/tr53.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr53.png"
+  },
+  "tr54": {
+    "src": "assets/items/tr54.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr54.png"
+  },
+  "tr55": {
+    "src": "assets/items/tr55.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr55.png"
+  },
+  "tr56": {
+    "src": "assets/items/tr56.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr56.png"
+  },
+  "tr57": {
+    "src": "assets/items/tr57.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr57.png"
+  },
+  "tr58": {
+    "src": "assets/items/tr58.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr58.png"
+  },
+  "tr59": {
+    "src": "assets/items/tr59.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr59.png"
+  },
+  "tr60": {
+    "src": "assets/items/tr60.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr60.png"
+  },
+  "tr61": {
+    "src": "assets/items/tr61.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr61.png"
+  },
+  "tr62": {
+    "src": "assets/items/tr62.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr62.png"
+  },
+  "tr63": {
+    "src": "assets/items/tr63.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr63.png"
+  },
+  "tr64": {
+    "src": "assets/items/tr64.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr64.png"
+  },
+  "tr65": {
+    "src": "assets/items/tr65.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr65.png"
+  },
+  "tr66": {
+    "src": "assets/items/tr66.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr66.png"
+  },
+  "tr67": {
+    "src": "assets/items/tr67.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr67.png"
+  },
+  "tr68": {
+    "src": "assets/items/tr68.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr68.png"
+  },
+  "tr69": {
+    "src": "assets/items/tr69.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr69.png"
+  },
+  "tr70": {
+    "src": "assets/items/tr70.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr70.png"
+  },
+  "tr71": {
+    "src": "assets/items/tr71.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr71.png"
+  },
+  "tr72": {
+    "src": "assets/items/tr72.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr72.png"
+  },
+  "tr73": {
+    "src": "assets/items/tr73.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr73.png"
+  },
+  "tr74": {
+    "src": "assets/items/tr74.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr74.png"
+  },
+  "tr75": {
+    "src": "assets/items/tr75.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr75.png"
+  },
+  "tr76": {
+    "src": "assets/items/tr76.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr76.png"
+  },
+  "tr77": {
+    "src": "assets/items/tr77.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr77.png"
+  },
+  "tr78": {
+    "src": "assets/items/tr78.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr78.png"
+  },
+  "tr79": {
+    "src": "assets/items/tr79.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr79.png"
+  },
+  "tr80": {
+    "src": "assets/items/tr80.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr80.png"
+  },
+  "tr81": {
+    "src": "assets/items/tr81.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr81.png"
+  },
+  "tr82": {
+    "src": "assets/items/tr82.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr82.png"
+  },
+  "tr83": {
+    "src": "assets/items/tr83.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr83.png"
+  },
+  "tr84": {
+    "src": "assets/items/tr84.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr84.png"
+  },
+  "tr85": {
+    "src": "assets/items/tr85.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr85.png"
+  },
+  "tr86": {
+    "src": "assets/items/tr86.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr86.png"
+  },
+  "tr87": {
+    "src": "assets/items/tr87.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr87.png"
+  },
+  "tr88": {
+    "src": "assets/items/tr88.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr88.png"
+  },
+  "tr89": {
+    "src": "assets/items/tr89.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr89.png"
+  },
+  "tr90": {
+    "src": "assets/items/tr90.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr90.png"
+  },
+  "tr91": {
+    "src": "assets/items/tr91.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr91.png"
+  },
+  "tr92": {
+    "src": "assets/items/tr92.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr92.png"
+  },
+  "tr93": {
+    "src": "assets/items/tr93.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr93.png"
+  },
+  "tr94": {
+    "src": "assets/items/tr94.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr94.png"
+  },
+  "tr95": {
+    "src": "assets/items/tr95.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr95.png"
+  },
+  "tr96": {
+    "src": "assets/items/tr96.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr96.png"
+  },
+  "tr97": {
+    "src": "assets/items/tr97.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr97.png"
+  },
+  "tr98": {
+    "src": "assets/items/tr98.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr98.png"
+  },
+  "tr99": {
+    "src": "assets/items/tr99.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tr99.png"
+  },
+  "twistedspoon": {
+    "src": "assets/items/twistedspoon.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/twisted-spoon.png"
+  },
+  "tyranitarite": {
+    "src": "assets/items/tyranitarite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tyranitarite.png"
+  },
+  "ultraball": {
+    "src": "assets/items/ultraball.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ultra-ball.png"
+  },
+  "ultranecroziumz": {
+    "src": "assets/items/ultranecroziumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ultranecrozium-z--held.png"
+  },
+  "unremarkableteacup": {
+    "src": "assets/items/unremarkableteacup.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/unremarkable-teacup.png"
+  },
+  "upgrade": {
+    "src": "assets/items/upgrade.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/up-grade.png"
+  },
+  "utilityumbrella": {
+    "src": "assets/items/utilityumbrella.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/utility-umbrella.png"
+  },
+  "venusaurite": {
+    "src": "assets/items/venusaurite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/venusaurite.png"
+  },
+  "victreebelite": {
+    "src": "assets/items/victreebelite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/victreebelite.png"
+  },
+  "wacanberry": {
+    "src": "assets/items/wacanberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/wacan-berry.png"
+  },
+  "watergem": {
+    "src": "assets/items/watergem.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/water-gem.png"
+  },
+  "wateriumz": {
+    "src": "assets/items/wateriumz.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/waterium-z--held.png"
+  },
+  "watermemory": {
+    "src": "assets/items/watermemory.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/water-memory.png"
+  },
+  "waterstone": {
+    "src": "assets/items/waterstone.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/water-stone.png"
+  },
+  "watmelberry": {
+    "src": "assets/items/watmelberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/watmel-berry.png"
+  },
+  "waveincense": {
+    "src": "assets/items/waveincense.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/wave-incense.png"
+  },
+  "weaknesspolicy": {
+    "src": "assets/items/weaknesspolicy.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/weakness-policy.png"
+  },
+  "wellspringmask": {
+    "src": "assets/items/wellspringmask.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/wellspring-mask.png"
+  },
+  "wepearberry": {
+    "src": "assets/items/wepearberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/wepear-berry.png"
+  },
+  "whippeddream": {
+    "src": "assets/items/whippeddream.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/whipped-dream.png"
+  },
+  "whiteherb": {
+    "src": "assets/items/whiteherb.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/white-herb.png"
+  },
+  "widelens": {
+    "src": "assets/items/widelens.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/wide-lens.png"
+  },
+  "wikiberry": {
+    "src": "assets/items/wikiberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/wiki-berry.png"
+  },
+  "wiseglasses": {
+    "src": "assets/items/wiseglasses.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/wise-glasses.png"
+  },
+  "yacheberry": {
+    "src": "assets/items/yacheberry.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/yache-berry.png"
+  },
+  "zapplate": {
+    "src": "assets/items/zapplate.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/zap-plate.png"
+  },
+  "zeraorite": {
+    "src": "assets/items/zeraorite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/zeraorite.png"
+  },
+  "zoomlens": {
+    "src": "assets/items/zoomlens.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/zoom-lens.png"
+  },
+  "zygardite": {
+    "src": "assets/items/zygardite.png",
+    "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/zygardite.png"
+  },
+  "berry": null,
+  "berserkgene": {
+    "src": "assets/items/berserkgene.png",
+    "source": "https://raw.githubusercontent.com/smogon/sprites/master/src/minisprites/items/iberserk_gene.png"
+  },
+  "bitterberry": null,
+  "burntberry": null,
+  "goldberry": null,
+  "iceberry": null,
+  "mintberry": null,
+  "miracleberry": null,
+  "mysteryberry": null,
+  "pinkbow": null,
+  "polkadotbow": null,
+  "przcureberry": null,
+  "psncureberry": null
+}

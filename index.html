@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokémon VGC Strategy Lab</title>
+    <title>PokéTeam · จัดทีมโปเกมอนภาษาไทย</title>
     <!-- Tailwind CSS สำหรับตกแต่ง UI สไตล์ E-sports -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Rajdhani (แนวเกมมิ่ง) และ Prompt (ภาษาไทย) -->
@@ -13,72 +13,49 @@
     <!-- Vue 3 สำหรับทำ SPA และจัดการ State -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <style>
-        body { font-family: 'Prompt', sans-serif; background-color: #0f172a; color: #e2e8f0; }
-        h1, h2, h3, .esport-font { font-family: 'Rajdhani', sans-serif; text-transform: uppercase; }
-        .neon-text { text-shadow: 0 0 10px rgba(56, 189, 248, 0.7); }
-        .neon-border { box-shadow: 0 0 15px rgba(168, 85, 247, 0.4); border: 1px solid #a855f7; }
-        /* ซ่อน Scrollbar แต่ยังเลื่อนได้ */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
-        .fade-enter-active, .fade-leave-active { transition: opacity 0.3s ease; }
-        .fade-enter-from, .fade-leave-to { opacity: 0; }
-    </style>
+    <link rel="stylesheet" href="theme.css?v=team-ideas-1">
 </head>
-<body class="flex h-screen overflow-hidden">
-    <div id="app" class="flex w-full h-full">
+<body>
+    <div id="app" v-cloak class="app-shell">
         
-        <!-- Sidebar Navigation -->
-        <aside class="w-64 bg-slate-900 border-r border-slate-700 flex flex-col justify-between hidden md:flex">
-            <div>
-                <div class="p-6 border-b border-slate-700 text-center">
-                    <h1 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 neon-text">VGC LAB</h1>
-                    <p class="text-xs text-slate-400 mt-1">DOUBLE BATTLE STRATEGY</p>
-                </div>
-                <nav class="p-4 space-y-2">
-                    <button @click="currentTab = 'home'" :class="{'bg-purple-600 text-white': currentTab === 'home', 'hover:bg-slate-800': currentTab !== 'home'}" class="w-full text-left px-4 py-3 rounded-lg font-semibold transition flex items-center gap-3"><i class="fas fa-home w-5"></i> หน้าแรก (Guide)</button>
-                    <button @click="currentTab = 'database'" :class="{'bg-purple-600 text-white': currentTab === 'database', 'hover:bg-slate-800': currentTab !== 'database'}" class="w-full text-left px-4 py-3 rounded-lg font-semibold transition flex items-center gap-3"><i class="fas fa-database w-5"></i> คลังข้อมูล & Type Chart</button>
-                    <button @click="currentTab = 'builder'" :class="{'bg-purple-600 text-white': currentTab === 'builder', 'hover:bg-slate-800': currentTab !== 'builder'}" class="w-full text-left px-4 py-3 rounded-lg font-semibold transition flex items-center gap-3"><i class="fas fa-tools w-5"></i> ระบบจัดทีม (Builder)</button>
-                    <button @click="currentTab = 'ai'" :class="{'bg-purple-600 text-white': currentTab === 'ai', 'hover:bg-slate-800': currentTab !== 'ai'}" class="w-full text-left px-4 py-3 rounded-lg font-semibold transition flex items-center gap-3"><i class="fas fa-robot w-5"></i> AI วิเคราะห์ทีม</button>
-                    <button @click="currentTab = 'teams'" :class="{'bg-purple-600 text-white': currentTab === 'teams', 'hover:bg-slate-800': currentTab !== 'teams'}" class="w-full text-left px-4 py-3 rounded-lg font-semibold transition flex items-center gap-3"><i class="fas fa-trophy w-5"></i> ตัวอย่างทีมเมต้า (10)</button>
-                </nav>
-            </div>
-            <!-- Mockup Auth UI -->
-            <div class="p-4 border-t border-slate-700">
-                <div v-if="!isLoggedin" class="space-y-2">
-                    <button @click="isLoggedin = true" class="w-full bg-blue-600 hover:bg-blue-500 py-2 rounded font-bold transition">LOGIN</button>
-                    <button class="w-full bg-slate-700 hover:bg-slate-600 py-2 rounded font-bold transition">REGISTER</button>
-                </div>
-                <div v-else class="flex items-center gap-3">
-                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=ProGamer" class="w-10 h-10 rounded-full bg-slate-800">
-                    <div>
-                        <p class="text-sm font-bold text-purple-400">ProTrainer_TH</p>
-                        <p class="text-xs text-green-400">Online</p>
-                    </div>
-                </div>
-            </div>
-        </aside>
-
+        <header class="site-header">
+            <div class="header-inner"><button @click="currentTab='home'" class="brand" aria-label="กลับหน้าแรก"><span class="brand-ball" aria-hidden="true"></span><span>Poké<span class="brand-blue">Team</span><small>จัดทีมสนุก เข้าใจง่าย ในภาษาไทย</small></span></button>
+            <nav aria-label="เมนูหลัก" class="desktop-nav">
+<button @click="currentTab='home'" :class="{'is-active':currentTab==='home'}"><i class="fas fa-home" aria-hidden="true"></i> เริ่มต้น</button>
+<button @click="currentTab='database'" :class="{'is-active':currentTab==='database'}"><i class="fas fa-compass" aria-hidden="true"></i> โปเกเด็กซ์</button>
+<button @click="currentTab='builder'" :class="{'is-active':currentTab==='builder'}"><i class="fas fa-layer-group" aria-hidden="true"></i> จัดทีมของฉัน</button>
+<button @click="currentTab='ai'" :class="{'is-active':currentTab==='ai'}"><i class="fas fa-chart-pie" aria-hidden="true"></i> วิเคราะห์ทีม</button>
+<button @click="currentTab='teams'" :class="{'is-active':currentTab==='teams'}"><i class="fas fa-trophy" aria-hidden="true"></i> ไอเดียจัดทีม</button>
+</nav><button @click="currentTab='builder'" class="header-cta"><i class="fas fa-plus" aria-hidden="true"></i><span>สร้างทีม</span></button></div></header>
         <!-- Main Content Area -->
-        <main class="flex-1 bg-slate-800 overflow-y-auto p-4 md:p-10 pb-24 md:pb-10">
+        <main class="main-content">
+<div class="page-intro"><span class="eyebrow">EXPLORE · LEARN · BUILD</span><p>พื้นที่เล็ก ๆ สำหรับเทรนเนอร์ทุกคน <span class="intro-dot"></span> อ่านง่าย เล่นสนุก</p></div>
             <transition name="fade" mode="out-in">
                 
                 <!-- ส่วนที่ 2: หน้าแรก (Home & Educational Guide) -->
-                <div v-if="currentTab === 'home'" key="home" class="max-w-5xl mx-auto space-y-8">
-                    <h2 class="text-4xl font-bold esport-font text-white border-l-4 border-purple-500 pl-4">Double Battle 2v2: The Core Mechanics</h2>
+                <div v-if="currentTab === 'home'" key="home" class="max-w-6xl mx-auto space-y-8">
+                    <section class="artwork-hero">
+                        <div class="hero-copy"><span class="hero-badge"><span></span> คู่หูตัวโปรด ทีมในแบบของคุณ</span>
+                        <h1>ทุกทีมที่เก่ง<br>เริ่มจาก<span>โปเกมอนที่ชอบ</span></h1><p>ค้นพบคู่หู วางแผนไปด้วยกัน และสร้างทีมทั้ง 6 ตัว<br class="hidden md:block"> พร้อมคำอธิบายภาษาไทยที่เข้าใจง่าย</p>
+                        <div class="hero-actions"><button @click="currentTab='builder'" class="primary-button">เริ่มจัดทีมของฉัน <i class="fas fa-arrow-right" aria-hidden="true"></i></button><button @click="currentTab='database'" class="secondary-button">สำรวจโปเกเด็กซ์</button></div>
+                        <div class="hero-facts"><span><strong>1,025</strong> สายพันธุ์หลัก</span><span><strong>9</strong> เจเนอเรชัน</span><span><strong>TH</strong> อธิบายภาษาไทย</span></div></div>
+                        <div class="hero-art" aria-label="คู่หูโปเกมอน"><div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div><span class="hero-spark spark-one">✦</span><span class="hero-spark spark-two">✧</span><div class="hero-mon hero-mon-main"><pokemon-artwork name="Charizard (Mega Y)"></pokemon-artwork><span>พร้อมลุยไปด้วยกัน!</span></div><div class="hero-mon hero-mon-left"><pokemon-artwork name="Rillaboom"></pokemon-artwork></div><div class="hero-mon hero-mon-right"><pokemon-artwork name="Incineroar"></pokemon-artwork></div><div class="hero-caption"><span class="brand-ball" aria-hidden="true"></span> YOUR NEXT ADVENTURE STARTS HERE</div></div>
+                    </section>
+                    <section class="quick-paths" aria-label="เลือกสิ่งที่อยากทำ"><button @click="currentTab='database'"><span class="path-icon path-blue"><i class="fas fa-compass"></i></span><span><strong>รู้จักคู่หูให้มากขึ้น</strong><small>ค้นหาตาม Gen ธาตุ และบทบาท</small></span><i class="fas fa-arrow-right"></i></button><button @click="currentTab='builder'"><span class="path-icon path-coral"><i class="fas fa-layer-group"></i></span><span><strong>สร้างทีมในแบบคุณ</strong><small>เลือกท่า ไอเทม และความสามารถ</small></span><i class="fas fa-arrow-right"></i></button><button @click="currentTab='teams'"><span class="path-icon path-yellow"><i class="fas fa-lightbulb"></i></span><span><strong>หาไอเดียใหม่ ๆ</strong><small>ดูตัวอย่างและลองวางแผนทีม</small></span><i class="fas fa-arrow-right"></i></button></section>
+                    <h2 class="text-4xl font-bold esport-font text-slate-800 border-l-4 border-purple-500 pl-4">รู้จักศึกคู่ ก่อนเริ่มผจญภัย</h2>
                     
                     <div class="grid md:grid-cols-2 gap-6">
-                        <div class="bg-slate-900 p-6 rounded-xl neon-border">
-                            <h3 class="text-2xl font-bold text-blue-400 mb-4"><i class="fas fa-gavel"></i> กฎพื้นฐาน (Basic Rules)</h3>
-                            <ul class="list-disc list-inside space-y-2 text-slate-300">
+                        <div class="bg-white p-6 rounded-xl neon-border">
+                            <h3 class="text-2xl font-bold text-blue-700 mb-4"><i class="fas fa-gavel"></i> กฎพื้นฐาน (Basic Rules)</h3>
+                            <ul class="list-disc list-inside space-y-2 text-slate-600">
                                 <li>สั่งการโปเกมอน 2 ตัวพร้อมกันในแต่ละเทิร์น</li>
                                 <li>ลำดับการโจมตี (Turn Order) ตัดสินจากค่า <strong>Speed</strong> และ <strong>Priority</strong> ของท่า (เช่น Fake Out +3, Protect +4)</li>
                                 <li>ศิลปะแห่ง <strong>Prediction</strong> (การคาดเดา): ต้องอ่านเกมล่วงหน้าว่าศัตรูจะโจมตีใคร หรือจะสลับตัว (Pivot) หนีหรือไม่</li>
                             </ul>
                         </div>
-                        <div class="bg-slate-900 p-6 rounded-xl neon-border">
-                            <h3 class="text-2xl font-bold text-red-400 mb-4"><i class="fas fa-chess-king"></i> 4 เสาหลัก (Win Condition)</h3>
-                            <ul class="space-y-2 text-slate-300">
+                        <div class="bg-white p-6 rounded-xl neon-border">
+                            <h3 class="text-2xl font-bold text-red-700 mb-4"><i class="fas fa-chess-king"></i> 4 เสาหลัก (Win Condition)</h3>
+                            <ul class="space-y-2 text-slate-600">
                                 <li>⚔️ <strong>แรงกดดัน (Offense/Speed Control):</strong> การคุมบอร์ดทำดาเมจ และคุมสปีด (Tailwind, Trick Room)</li>
                                 <li>🛡️ <strong>ความปลอดภัย (Defense/Pivot):</strong> การมีตัวรับดาเมจ (Resist) การใช้ Fake Out หรือเปลี่ยนตัว</li>
                                 <li>🌪️ <strong>การควบคุม (Field/Weather):</strong> การคุมสภาพอากาศหรือสนามเพื่อบัฟทีมตัวเอง</li>
@@ -87,127 +64,157 @@
                         </div>
                     </div>
 
-                    <div class="bg-slate-900 p-8 rounded-xl shadow-lg">
-                        <h3 class="text-3xl font-bold text-purple-400 mb-6 esport-font">6 ขั้นตอนการสร้างทีมระดับโปร</h3>
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-3xl font-bold text-violet-700 mb-6 esport-font">6 ขั้นตอนการสร้างทีมระดับโปร</h3>
                         <div class="grid md:grid-cols-3 gap-6">
-                            <div v-for="(step, index) in steps" :key="index" class="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-purple-500 transition">
-                                <h4 class="text-xl font-bold text-white mb-2"><span class="text-purple-500">#{{index+1}}</span> {{step.title}}</h4>
-                                <p class="text-sm text-slate-400">{{step.desc}}</p>
+                            <div v-for="(step, index) in steps" :key="index" class="bg-slate-50 p-4 rounded-lg border border-slate-200 hover:border-purple-500 transition">
+                                <h4 class="text-xl font-bold text-slate-800 mb-2"><span class="text-purple-500">#{{index+1}}</span> {{step.title}}</h4>
+                                <p class="text-sm text-slate-500">{{step.desc}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- ส่วนที่ 3: คลังข้อมูล (Database & Type Chart) -->
-                <div v-if="currentTab === 'database'" key="database" class="max-w-6xl mx-auto space-y-8">
-                    <h2 class="text-4xl font-bold esport-font text-white border-l-4 border-blue-500 pl-4">Meta Database & Type Chart</h2>
+                <div v-else-if="currentTab === 'database'" key="database" class="max-w-6xl mx-auto space-y-8">
+                    <h2 class="text-4xl font-bold esport-font text-slate-800 border-l-4 border-blue-500 pl-4">คลังข้อมูลและตารางธาตุ</h2>
                     
+<section class="bg-white p-5 rounded-xl border border-slate-200">
+<h3 class="text-2xl text-blue-700 font-bold mb-3">Pokédex · {{filteredPokemon.length}} รายการ</h3>
+<label class="text-xs">ค้นหาชื่อหรือธาตุ<input type="search" v-model="searchQuery" class="field" placeholder="Pikachu, Fire, Dragon…"></label>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-3">
+<label class="text-xs text-slate-600">ธาตุ<select v-model="selectedType" class="field"><option value="all">ทุกธาตุ</option><option v-for="type in typesList" :key="type" :value="type">{{typeLabel(type)}}</option></select></label>
+<label class="text-xs text-slate-600">บทบาท<select v-model="selectedRole" class="field"><option value="all">ทุกบทบาท</option><option v-for="role in roleOptions" :value="role.id">{{role.name}}</option></select></label>
+<label class="text-xs text-slate-600">นับ Gen ตาม<select v-model="generationMode" class="field"><option value="generation">สายพันธุ์</option><option value="formGeneration">ร่างพิเศษ</option></select></label>
+<label class="text-xs text-slate-600">Gen<select v-model="selectedGeneration" class="field"><option value="all">ทุก Gen</option><option v-for="gen in generationOptions" :value="gen.id">Gen {{gen.id}} · {{gen.region}}</option></select></label>
+</div><label class="text-xs flex gap-2 items-center text-slate-600"><input type="checkbox" v-model="onlyEligible">แสดงเฉพาะตัวที่ผ่านเกณฑ์สายพันธุ์ของโหมด {{currentRule.name}}</label>
+<p class="text-[11px] text-slate-500 my-2">บทบาทเป็นคำแนะนำจากค่าสเตตัสและท่าที่เรียนได้ ไม่ใช่ประเภททางการ</p><button @click="clearPokemonFilters" class="text-xs underline text-blue-700 mb-3">ล้างตัวกรอง</button>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+<article v-for="p in visiblePokemon" :key="p.id" class="dex-card">
+<pokemon-artwork :name="p.name" class="picker-art"></pokemon-artwork><p class="text-xs text-slate-500">#{{p.dex.toString().padStart(4,'0')}}</p><h4 class="font-bold text-sm">{{p.name}}</h4><p class="text-xs text-blue-700 my-1">{{generationLabel(p.name)}}</p>
+<div class="flex justify-center gap-1"><span v-for="t in p.types" :class="getTypeColor(t)" class="text-[10px] px-1 rounded">{{typeLabel(t)}}</span></div>
+<p class="text-[11px] text-slate-500 mt-2">{{p.abilities.join(' / ')}}</p>
+<button @click="currentTab='builder';openPokemonSearch(teamSlots.findIndex(s=>!s.pokemon)>=0?teamSlots.findIndex(s=>!s.pokemon):0);selectPokemon(p)" class="text-xs bg-purple-600 rounded px-3 py-2 mt-2">เพิ่มเข้าทีม</button>
+</article></div><p v-if="!filteredPokemon.length" class="p-5 text-center text-slate-500">ไม่พบโปเกมอนตามตัวกรอง</p>
+<button v-if="visibleCount<filteredPokemon.length" @click="visibleCount+=60" class="action mt-4">โหลดเพิ่ม ({{visibleCount}} / {{filteredPokemon.length}})</button>
+</section>
+<section class="bg-white p-5 rounded-xl border border-slate-200">
+<h3 class="text-2xl text-violet-700 mb-3 font-bold">คลังท่า · ไอเทม · Ability</h3>
+<div class="flex flex-col sm:flex-row gap-3"><select v-model="catalogKind" class="field"><option value="moves">ท่าโจมตีและท่าสถานะ</option><option value="items">ไอเทม</option><option value="abilities">Ability</option></select><input type="search" v-model="catalogSearch" class="field" placeholder="ค้นหาชื่อ ธาตุ หรือคำอธิบายไทย / อังกฤษ"></div>
+<p class="text-xs text-slate-500 my-3">พบ {{catalogEntries.length}} รายการ · คำแปลช่วยอ่านจากข้อมูล Pokémon Showdown · คำไทยไม่ใช่ชื่อทางการ</p>
+<div class="grid md:grid-cols-2 gap-3"><article v-for="entry in catalogEntries.slice(0,catalogLimit)" :key="entry.id" class="bg-slate-50 p-3 rounded"><item-artwork v-if="catalogKind==='items'" :name="entry.name" class="catalog-item-art"></item-artwork><h4 class="font-bold">{{thaiName(catalogKind,entry.name)}} <span class="text-xs text-blue-700">{{typeLabel(entry.type)}} {{categoryLabel(entry.category)}}</span></h4><p v-if="entry.pp" class="text-xs text-slate-500">พลังท่า {{entry.basePower||'—'}} · ความแม่นยำ {{entry.accuracy===true?'ไม่เช็ก':entry.accuracy+'%'}} · จำนวนครั้งพื้นฐาน {{entry.pp}}</p><div class="thai-explanation text-xs mt-2"><p><strong class="text-blue-800">ทำอะไร:</strong> {{thaiEntry(catalogKind,entry.name).effect}}</p><template v-if="beginnerMode"><p><strong class="text-emerald-800">ใช้เมื่อ:</strong> {{thaiEntry(catalogKind,entry.name).use}}</p><p><strong class="text-amber-800">ข้อจำกัด:</strong> {{thaiEntry(catalogKind,entry.name).limit}}</p></template><p v-if="!thaiEntry(catalogKind,entry.name).reviewed" class="text-[10px] text-slate-500">ยังไม่มีคำแปลที่ตรวจสอบได้ · ดูข้อมูลต้นฉบับประกอบ</p><details class="text-[11px] text-slate-500"><summary class="cursor-pointer">ดูคำอธิบายอังกฤษต้นฉบับ</summary>{{originalDescription(catalogKind,entry.name)}}</details></div></article></div>
+<p v-if="!catalogEntries.length" class="p-4">ไม่พบข้อมูล</p><button v-if="catalogLimit<catalogEntries.length" @click="catalogLimit+=40" class="action mt-4">โหลดเพิ่ม</button>
+</section>
                     <!-- Type Chart Interactive -->
-                    <div class="bg-slate-900 p-6 rounded-xl overflow-x-auto">
-                        <h3 class="text-2xl font-bold mb-4">Interactive Type Chart</h3>
-                        <p class="text-sm text-slate-400 mb-4">ตารางความแพ้-ชนะธาตุ <span class="text-green-400 px-2">2x (Super Effective)</span> <span class="text-red-400 px-2">0.5x (Resist)</span> <span class="text-gray-500 px-2">0x (Immune)</span></p>
-                        <table class="w-full text-xs text-center border-collapse">
+                    <div class="bg-white p-6 rounded-xl overflow-x-auto">
+                        <h3 class="text-2xl font-bold mb-4">ตารางแพ้ชนะธาตุ</h3>
+                        <p class="text-sm text-slate-500 mb-4">ตารางความแพ้-ชนะธาตุ <span class="text-emerald-700 px-2">2x (Super Effective)</span> <span class="text-red-700 px-2">0.5x (Resist)</span> <span class="text-gray-500 px-2">0x (Immune)</span></p>
+                        <table class="w-full text-xs text-center border-collapse"><tbody>
                             <tr>
-                                <th class="p-1 border border-slate-700">ATK \ DEF</th>
-                                <th v-for="type in typesList" :key="type" :class="getTypeColor(type)" class="p-1 border border-slate-700 font-bold rounded">{{type.substring(0,3).toUpperCase()}}</th>
+                                <th class="p-1 border border-slate-200">โจมตี / รับ</th>
+                                <th v-for="type in typesList" :key="type" :class="getTypeColor(type)" class="p-1 border border-slate-200 font-bold rounded">{{typeLabel(type)}}</th>
                             </tr>
                             <tr v-for="atk in typesList" :key="atk">
-                                <th :class="getTypeColor(atk)" class="p-1 border border-slate-700 font-bold rounded">{{atk.substring(0,3).toUpperCase()}}</th>
-                                <td v-for="def in typesList" :key="def" class="p-1 border border-slate-700 font-bold" :class="getTypeEffectColor(getTypeEffectiveness(atk, def))">
+                                <th :class="getTypeColor(atk)" class="p-1 border border-slate-200 font-bold rounded">{{typeLabel(atk)}}</th>
+                                <td v-for="def in typesList" :key="def" class="p-1 border border-slate-200 font-bold" :class="getTypeEffectColor(getTypeEffectiveness(atk, def))">
                                     {{ getTypeEffectiveness(atk, def) }}
                                 </td>
                             </tr>
-                        </table>
+                        </tbody></table>
                     </div>
 
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <!-- Abilities -->
-                        <div class="bg-slate-900 p-6 rounded-xl h-96 overflow-y-auto">
-                            <h3 class="text-2xl font-bold text-yellow-400 mb-4 sticky top-0 bg-slate-900 pb-2">Top 20+ Meta Abilities</h3>
-                            <div v-for="abil in metaAbilities" :key="abil.name" class="mb-4 border-b border-slate-700 pb-2">
-                                <h4 class="font-bold text-white">{{abil.name}} <span class="text-xs bg-slate-700 px-2 rounded ml-2">{{abil.category}}</span></h4>
-                                <p class="text-sm text-slate-400">{{abil.desc}}</p>
-                            </div>
-                        </div>
-                        <!-- Moves -->
-                        <div class="bg-slate-900 p-6 rounded-xl h-96 overflow-y-auto">
-                            <h3 class="text-2xl font-bold text-green-400 mb-4 sticky top-0 bg-slate-900 pb-2">Crucial Meta Moves</h3>
-                            <div v-for="move in metaMoves" :key="move.name" class="mb-4 border-b border-slate-700 pb-2">
-                                <h4 class="font-bold text-white">{{move.name}} <span class="text-xs bg-slate-700 px-2 rounded ml-2">{{move.type}}</span></h4>
-                                <p class="text-sm text-slate-400">{{move.desc}}</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- ส่วนที่ 4: ระบบจัดทีม (Interactive Team Builder) -->
-                <div v-if="currentTab === 'builder'" key="builder" class="max-w-6xl mx-auto">
+                <!-- ส่วนที่ 4: ระบบจัดทีม (จัดทีมโปเกมอน) -->
+                <div v-else-if="currentTab === 'builder'" key="builder" class="max-w-6xl mx-auto">
                     <div class="flex justify-between items-end mb-6">
-                        <h2 class="text-4xl font-bold esport-font text-white border-l-4 border-green-500 pl-4">Interactive Team Builder</h2>
-                        <button @click="resetTeam" class="bg-red-600 hover:bg-red-500 px-4 py-2 rounded font-bold text-sm transition"><i class="fas fa-trash"></i> Reset Team</button>
+                        <h2 class="text-4xl font-bold esport-font text-slate-800 border-l-4 border-green-500 pl-4">จัดทีมโปเกมอน</h2>
+                        <button @click="resetTeam" class="bg-red-600 hover:bg-red-500 px-4 py-2 rounded font-bold text-sm transition"><i class="fas fa-trash"></i> ล้างสมาชิกทีมนี้</button>
                     </div>
 
-                    <div class="flex flex-col xl:flex-row gap-6">
+<div class="team-lineup"><div><span class="eyebrow">MY PARTNERS</span><h3>คู่หูของคุณ <span>{{teamSlots.filter(s=>s.pokemon).length}} / 6</span></h3></div><div class="lineup-slots"><button v-for="(slot,index) in teamSlots" :key="index" @click="openPokemonSearch(index)" :aria-label="'เลือกคู่หูช่อง '+(index+1)" :class="{'has-pokemon':slot.pokemon}"><pokemon-artwork v-if="slot.pokemon" :name="slot.pokemon.name"></pokemon-artwork><span v-else>+</span><small>{{index+1}}</small></button></div></div><section class="bg-white p-4 rounded-xl border border-slate-200 mb-5 space-y-3">
+<div class="rounded-lg bg-blue-50 border border-blue-800 p-3"><label class="flex items-center gap-2 font-semibold text-blue-800"><input type="checkbox" v-model="beginnerMode">โหมดมือใหม่ · อธิบายเป็นภาษาไทย</label><p class="text-xs text-slate-600 mt-2">ชื่ออังกฤษใช้เทียบกับเกม คำไทยเป็นคำอธิบายย่อของเว็บ ไม่ใช่ชื่อแปลทางการ ผลบางอย่างต่างกันตามยุคเกม</p><button @click="helpTopic='stats'" class="help-button mt-2">ⓘ อ่านค่าสเตตัส</button><button @click="helpTopic='targeting'" class="help-button mt-2 ml-2">ⓘ ใครได้รับผล</button></div>
+
+<div class="grid md:grid-cols-2 gap-3"><label class="text-xs">ชื่อทีม<input v-model="teamName" maxlength="80" class="field" placeholder="ตั้งชื่อทีม"></label><label class="text-xs">ทีมที่บันทึก<select :value="activeTeamId" @change="loadTeam($event.target.value)" class="field"><option v-if="!savedTeams.some(t=>t.id===activeTeamId)" :value="activeTeamId">ทีมปัจจุบัน</option><option v-for="team in savedTeams" :key="team.id" :value="team.id">{{team.name}}</option></select></label></div>
+<div class="flex flex-wrap gap-2"><button @click="newTeam(false)" class="action">+ ทีมใหม่</button><button @click="newTeam(true)" class="action">ทำสำเนาทีม</button><button @click="openImport" class="action">นำเข้า Showdown</button><button @click="openExport" class="action">ส่งออก / สำรองทีม</button></div>
+<p role="status" class="text-xs text-blue-700">{{saveStatus}} · เก็บในเบราว์เซอร์เครื่องนี้</p><p v-if="storageError" role="alert" class="text-xs text-red-700">{{storageError}}</p>
+<label class="block text-xs">กติกา / โหมดตรวจทีม<select v-model="ruleProfile" class="field"><option v-for="rule in ruleProfiles" :value="rule.id">{{rule.name}}</option></select></label><p class="text-xs text-slate-500">{{currentRule.desc}} · ตรวจเบื้องต้น ไม่รับรอง legality ครบทุกเงื่อนไข</p>
+</section>
+                    <div class="flex flex-col 2xl:flex-row gap-6">
                         <!-- 6 Slots -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 flex-1">
-                            <div v-for="(slot, index) in teamSlots" :key="index" class="bg-slate-900 p-4 rounded-xl border-2 transition" :class="slot.pokemon ? 'border-green-500' : 'border-slate-700 border-dashed hover:border-slate-500 cursor-pointer'">
+                        <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 flex-1 min-w-0">
+                            <div v-for="(slot, index) in teamSlots" :key="index" class="team-slot bg-white p-4 rounded-xl border-2 transition" :class="slot.pokemon ? 'border-green-500' : 'border-slate-200 border-dashed hover:border-slate-500 cursor-pointer'">
                                 
                                 <!-- Empty Slot -->
-                                <div v-if="!slot.pokemon" @click="openPokemonSearch(index)" class="h-48 flex flex-col items-center justify-center text-slate-500">
+                                <div v-if="!slot.pokemon" @click="openPokemonSearch(index)" class="empty-slot flex flex-col items-center justify-center text-slate-500">
                                     <i class="fas fa-plus-circle text-4xl mb-2"></i>
-                                    <p>Select Pokémon</p>
+                                    <p class="font-semibold">เลือกคู่หูตัวที่ {{index+1}}</p><small>เริ่มต้นเรื่องราวของทีมคุณ</small>
                                 </div>
 
                                 <!-- Filled Slot -->
                                 <div v-else class="space-y-3 relative">
-                                    <button @click="removePokemon(index)" class="absolute top-0 right-0 text-red-500 hover:text-red-400"><i class="fas fa-times"></i></button>
-                                    <div class="flex justify-between items-center border-b border-slate-700 pb-2">
-                                        <h4 class="font-bold text-lg text-white">{{slot.pokemon.name}}</h4>
-                                        <div class="flex gap-1">
-                                            <span v-for="t in slot.pokemon.types" :class="getTypeColor(t)" class="text-[10px] px-1 rounded">{{t}}</span>
-                                        </div>
+                                    <div class="slot-header">
+                                        <div class="slot-heading"><h4 class="font-bold text-lg text-slate-800">{{slot.pokemon.name}}</h4><div class="slot-types"><span v-for="t in slot.pokemon.types" :key="t" :class="getTypeColor(t)" class="text-[10px] px-2 py-1 rounded">{{typeLabel(t)}}</span></div></div>
+                                        <button type="button" @click="removePokemon(index)" class="slot-remove-button" :aria-label="'เอา '+slot.pokemon.name+' ออกจากทีม'" title="เอาโปเกมอนออกจากทีม"><i class="fas fa-times" aria-hidden="true"></i></button>
                                     </div>
 
+                                    <pokemon-artwork :name="slot.pokemon.name" class="slot-art"></pokemon-artwork>
+                                    <p class="text-xs text-blue-700 text-center">{{generationLabel(slot.pokemon.name)}}</p>
+                                    <div v-if="beginnerMode" class="grid grid-cols-2 gap-2 text-xs"><div v-for="stat in ['hp','atk','def','spa','spd','spe']" :key="stat" class="bg-slate-50 rounded p-2"><span class="block text-slate-500">{{statLabel(stat)}}</span><strong>{{calculateStat(slot,stat)}}</strong></div></div>
+                                    <details :open="!beginnerMode"><summary class="cursor-pointer text-xs text-blue-700 mb-2">ปรับค่าการฝึก EV <button type="button" @click.prevent="helpTopic='ev'" class="help-button" aria-label="อธิบาย EV">ⓘ</button></summary>
                                     <!-- IV/EV Sliders -->
                                     <div class="space-y-1 text-xs">
                                         <div v-for="stat in ['hp','atk','def','spa','spd','spe']" :key="stat" class="flex items-center gap-2">
-                                            <span class="w-6 uppercase font-bold text-slate-400">{{stat}}</span>
-                                            <input type="range" min="0" max="252" step="4" v-model.number="slot.evs[stat]" class="flex-1 h-1 bg-slate-700 rounded-lg appearance-none cursor-pointer">
-                                            <span class="w-6 text-right text-purple-400">{{slot.evs[stat]}}</span>
-                                            <span class="w-8 text-right font-bold text-white">{{calculateStat(slot, stat)}}</span>
+                                            <span class="w-28 shrink-0 font-bold text-slate-600">{{statLabel(stat)}}</span>
+                                            <input type="range" min="0" max="252" step="4" v-model.number="slot.evs[stat]" class="flex-1 min-w-0 w-12 h-1 bg-slate-100 rounded-lg appearance-none cursor-pointer">
+                                            <span class="w-6 text-right text-violet-700">{{slot.evs[stat]}}</span>
+                                            <span class="w-8 text-right font-bold text-slate-800">{{calculateStat(slot, stat)}}</span>
                                         </div>
-                                        <div class="text-right mt-1" :class="totalEVs(slot.evs) > 510 ? 'text-red-500' : 'text-slate-400'">EVs: {{totalEVs(slot.evs)}} / 510</div>
+                                        <div class="text-right mt-1" :class="totalEVs(slot.evs) > 510 ? 'text-red-500' : 'text-slate-500'">แต้มฝึก EV รวม: {{totalEVs(slot.evs)}} / 510</div>
                                     </div>
 
+                                    </details>
                                     <!-- Nature & Ability -->
                                     <div class="grid grid-cols-2 gap-2 text-xs">
-                                        <select v-model="slot.nature" class="bg-slate-800 text-white rounded p-1 border border-slate-700">
-                                            <option v-for="n in natures" :value="n.name">{{n.name}} (+{{n.plus}} -{{n.minus}})</option>
-                                        </select>
-                                        <select v-model="slot.ability" class="bg-slate-800 text-white rounded p-1 border border-slate-700">
-                                            <option v-for="a in slot.pokemon.abilities" :value="a">{{a}}</option>
-                                        </select>
+                                        <label>นิสัย <button type="button" @click="helpTopic='nature'" class="help-button" aria-label="อธิบายนิสัย">ⓘ</button><select :title="natureLabel(natures.find(n=>n.name===slot.nature)||{name:slot.nature})" aria-label="เลือกนิสัย" v-model="slot.nature" class="bg-slate-50 text-slate-800 rounded p-1 border border-slate-200">
+                                            <option v-for="n in sortedNatures(slot)" :key="n.name" :value="n.name">{{natureAdvice(slot,n)?'⭐ ':''}}{{natureLabel(n)}}</option>
+                                        </select></label>
+                                        <label>ความสามารถ <button type="button" @click="helpTopic='ability'" class="help-button" aria-label="อธิบายความสามารถ">ⓘ</button><select :title="thaiName('abilities',slot.ability)" aria-label="เลือกความสามารถ" v-model="slot.ability" class="bg-slate-50 text-slate-800 rounded p-1 border border-slate-200">
+                                            <option v-for="a in slot.pokemon.abilities" :value="a">{{thaiName('abilities',a)}}</option>
+                                        </select></label>
                                     </div>
 
-                                    <!-- Moves Placeholder -->
-                                    <div class="grid grid-cols-2 gap-1 text-xs">
-                                        <input v-for="m in 4" type="text" placeholder="Move" class="bg-slate-800 border border-slate-700 rounded p-1 text-white text-center">
+                                    <div class="recommendation-box"><p class="selected-field-name">นิสัยที่เลือก: {{natureLabel(natures.find(n=>n.name===slot.nature)||{name:slot.nature})}}</p><p v-if="natureAdvice(slot,natures.find(n=>n.name===slot.nature)||{name:slot.nature})">⭐ {{natureAdvice(slot,natures.find(n=>n.name===slot.nature)||{name:slot.nature})}}</p><p v-else>ตัวเลือกที่มีดาว: {{sortedNatures(slot).filter(n=>natureAdvice(slot,n)).map(n=>n.name).join(' / ')||'ชุดท่าผสมนี้ยังไม่มีคำแนะนำเฉพาะ ลองเลือกตามหน้าที่ในทีม'}}</p><p class="text-xs mt-2">แนะนำโดยเว็บ ไม่ใช่สถิติทัวร์ · ดูว่าต้องการความเร็ว พลังโจมตี หรือความทนทานเพิ่ม ระบบไม่เปลี่ยนนิสัยให้อัตโนมัติ</p></div>
+                                    <div class="thai-explanation text-xs mt-2"><p class="selected-field-name">{{thaiName('abilities',slot.ability)}}</p><p><strong class="text-blue-800">ทำอะไร:</strong> {{thaiEntry('abilities',slot.ability).effect}}</p><template v-if="beginnerMode"><p><strong class="text-emerald-800">ใช้เมื่อ:</strong> {{thaiEntry('abilities',slot.ability).use}}</p><p><strong class="text-amber-800">ข้อจำกัด:</strong> {{thaiEntry('abilities',slot.ability).limit}}</p></template><p v-if="!thaiEntry('abilities',slot.ability).reviewed" class="text-[10px] text-slate-500">ยังไม่มีคำแปลที่ตรวจสอบได้ · ดูข้อมูลต้นฉบับประกอบ</p><details class="text-[11px] text-slate-500"><summary class="cursor-pointer">ดูคำอธิบายอังกฤษต้นฉบับ</summary>{{originalDescription('abilities',slot.ability)}}</details></div>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <div class="text-xs">ไอเทม <button type="button" @click="helpTopic='item'" class="help-button" aria-label="อธิบายไอเทม">ⓘ</button><button type="button" @click="openItemPicker(index)" class="field item-trigger" :aria-label="'เลือกไอเทมช่อง '+(index+1)"><item-artwork :name="slot.item"></item-artwork><span><strong>{{slot.item||'เลือกไอเทม'}}</strong><small>{{slot.item?thaiEntry('items',slot.item).title||'แตะเพื่อเปลี่ยนไอเทม':'ค้นหาพร้อมดูรูป'}}</small></span><i class="fas fa-chevron-down" aria-hidden="true"></i></button></div>
+                                        <label class="text-xs">ธาตุเทรา <button type="button" @click="helpTopic='tera'" class="help-button" aria-label="อธิบายเทรา">ⓘ</button><select v-model="slot.teraType" class="field"><option v-for="type in [...typesList,'Stellar']" :value="type">{{typeLabel(type)}}</option></select></label>
+                                    </div><div v-if="slot.item"><div class="thai-explanation text-xs mt-2"><p><strong class="text-blue-800">ทำอะไร:</strong> {{thaiEntry('items',slot.item).effect}}</p><template v-if="beginnerMode"><p><strong class="text-emerald-800">ใช้เมื่อ:</strong> {{thaiEntry('items',slot.item).use}}</p><p><strong class="text-amber-800">ข้อจำกัด:</strong> {{thaiEntry('items',slot.item).limit}}</p></template><p v-if="!thaiEntry('items',slot.item).reviewed" class="text-[10px] text-slate-500">ยังไม่มีคำแปลที่ตรวจสอบได้ · ดูข้อมูลต้นฉบับประกอบ</p><details class="text-[11px] text-slate-500"><summary class="cursor-pointer">ดูคำอธิบายอังกฤษต้นฉบับ</summary>{{originalDescription('items',slot.item)}}</details></div></div>
+                                    <label class="text-xs block">เลเวล<input v-model.number="slot.level" type="number" min="1" max="100" class="field"></label>
+                                    <details class="text-xs"><summary class="cursor-pointer text-blue-700">ปรับค่า IV / ชื่อเล่น / สีพิเศษ</summary><label class="block mt-2">ชื่อเล่น<input v-model="slot.nickname" maxlength="40" class="field"></label><label class="flex gap-2 my-2"><input v-model="slot.shiny" type="checkbox">สีพิเศษ (Shiny)</label><button type="button" @click="helpTopic='iv'" class="help-button">ⓘ ค่า IV คืออะไร</button><div class="grid grid-cols-2 gap-2"><label v-for="stat in ['hp','atk','def','spa','spd','spe']" >{{statLabel(stat)}}<input type="number" min="0" max="31" v-model.number="slot.ivs[stat]" class="field"></label></div></details>
+                                    <section class="recommendation-box"><p><strong>⭐ แนะนำโดยเว็บ</strong> · เรียงตัวเลือกที่เข้ากับตัวนี้ขึ้นก่อน</p><p class="text-xs mt-2">เป็นแนวทางเริ่มต้นจากชนิดท่าและบทบาท ไม่ใช่สถิติความนิยมในทัวร์ ต้องดูเพื่อนร่วมทีมและคู่ต่อสู้ด้วย</p><template v-if="recommendedSet(slot).length===4"><p class="text-xs mt-2">ชุดเริ่มต้น: {{recommendedSet(slot).map(m=>m.name).join(' / ')}}</p><button type="button" @click="applyRecommendedSet(slot)" class="action mt-2">ใส่ชุดนี้แทน 4 ท่าปัจจุบัน</button></template></section>
+                                    <div class="space-y-2">
+                                        <div v-for="m in 4" :key="m" class="block text-xs">ท่า {{m}} <span v-if="slot.moves[m-1]" class="text-emerald-800">· {{thaiMoveTag(slot.moves[m-1])}}</span>
+                                            <select :title="thaiName('moves',slot.moves[m-1])" :aria-label="'เลือกท่า '+m" v-model="slot.moves[m-1]" class="field"><option value="">เลือกท่า</option><option v-if="slot.moves[m-1]&&!eligibleMoves(slot).some(x=>x.name===slot.moves[m-1])" :value="slot.moves[m-1]">{{slot.moves[m-1]}} (นอกชุดท่า)</option><option v-for="move in eligibleMoves(slot)" :key="move.id" :value="move.name">{{moveRecommendation(slot,move)?'⭐ ':''}}{{thaiName('moves',move.name)}}</option></select>
+                                            <p v-if="slot.moves[m-1]&&moveRecommendation(slot,eligibleMoves(slot).find(m=>m.name===slot.moves[m-1])||{})" class="recommendation-reason">⭐ {{moveRecommendation(slot,eligibleMoves(slot).find(m=>m.name===slot.moves[m-1])||{})}}</p><div v-if="slot.moves[m-1]"><div class="thai-explanation text-xs mt-2"><p class="selected-field-name">{{thaiName('moves',slot.moves[m-1])}}</p><p><strong class="text-blue-800">ทำอะไร:</strong> {{thaiEntry('moves',slot.moves[m-1]).effect}}</p><template v-if="beginnerMode"><p><strong class="text-emerald-800">ใช้เมื่อ:</strong> {{thaiEntry('moves',slot.moves[m-1]).use}}</p><p><strong class="text-amber-800">ข้อจำกัด:</strong> {{thaiEntry('moves',slot.moves[m-1]).limit}}</p></template><p v-if="!thaiEntry('moves',slot.moves[m-1]).reviewed" class="text-[10px] text-slate-500">ยังไม่มีคำแปลที่ตรวจสอบได้ · ดูข้อมูลต้นฉบับประกอบ</p><details class="text-[11px] text-slate-500"><summary class="cursor-pointer">ดูคำอธิบายอังกฤษต้นฉบับ</summary>{{originalDescription('moves',slot.moves[m-1])}}</details></div></div>
+                                        </div>
                                     </div>
+                                    <p v-if="pokemonEligibility(slot.pokemon).length" class="text-xs text-red-700">{{pokemonEligibility(slot.pokemon).join(' · ')}}</p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Dashboard จุดอ่อน-จุดแข็ง -->
-                        <div class="w-full xl:w-80 bg-slate-900 p-6 rounded-xl neon-border h-fit">
-                            <h3 class="text-xl font-bold text-white mb-4 esport-font"><i class="fas fa-chart-pie text-purple-500"></i> Team Type Analyzer</h3>
-                            <div v-if="teamSlots.filter(s => s.pokemon).length === 0" class="text-sm text-slate-400 text-center">เพิ่มโปเกมอนเพื่อดูการวิเคราะห์ธาตุ</div>
+                        <div class="w-full 2xl:w-80 bg-white p-6 rounded-xl neon-border h-fit">
+                            <h3 class="text-xl font-bold text-slate-800 mb-4 esport-font"><i class="fas fa-chart-pie text-purple-500"></i> วิเคราะห์ธาตุของทีม</h3>
+                            <div v-if="teamSlots.filter(s => s.pokemon).length === 0" class="text-sm text-slate-500 text-center">เพิ่มโปเกมอนเพื่อดูการวิเคราะห์ธาตุ</div>
                             <div v-else class="space-y-4 max-h-96 overflow-y-auto">
                                 <div>
-                                    <h4 class="text-red-400 font-bold text-sm mb-2">จุดอ่อนร่วม (Shared Weaknesses)</h4>
+                                    <h4 class="text-red-700 font-bold text-sm mb-2">จุดอ่อนร่วม (Shared Weaknesses)</h4>
                                     <div class="space-y-1">
-                                        <div v-for="(count, type) in calculateTeamWeaknesses" :key="type" class="flex justify-between items-center bg-slate-800 p-1 px-2 rounded">
-                                            <span :class="getTypeColor(type)" class="text-xs px-2 py-0.5 rounded">{{type}}</span>
-                                            <span class="text-xs font-bold text-white" :class="count >= 3 ? 'text-red-500' : ''">{{count}} ตัวแพ้ธาตุนี้</span>
+                                        <div v-for="(count, type) in calculateTeamWeaknesses" :key="type" class="flex justify-between items-center bg-slate-50 p-1 px-2 rounded">
+                                            <span :class="getTypeColor(type)" class="text-xs px-2 py-0.5 rounded">{{typeLabel(type)}}</span>
+                                            <span class="text-xs font-bold text-slate-800" :class="count >= 3 ? 'text-red-500' : ''">{{count}} ตัวแพ้ธาตุนี้</span>
                                         </div>
                                     </div>
                                     <p v-if="hasMajorWeakness" class="text-xs text-red-500 mt-2 font-bold">⚠️ คำเตือน: ทีมมีตัวแพ้ทางธาตุเดียวกันเกิน 3 ตัว!</p>
@@ -216,72 +223,88 @@
                         </div>
                     </div>
 
-                    <!-- Search Modal -->
-                    <div v-if="showSearchModal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-                        <div class="bg-slate-800 rounded-xl w-full max-w-2xl max-h-[80vh] flex flex-col border border-slate-600">
-                            <div class="p-4 border-b border-slate-700 flex justify-between items-center">
-                                <h3 class="text-xl font-bold text-white">Select Pokémon for Slot {{activeSearchSlot + 1}}</h3>
-                                <button @click="showSearchModal = false" class="text-slate-400 hover:text-white"><i class="fas fa-times text-xl"></i></button>
-                            </div>
-                            <div class="p-4 border-b border-slate-700">
-                                <input type="text" v-model="searchQuery" placeholder="Search by name or type..." class="w-full bg-slate-900 border border-slate-600 rounded p-2 text-white outline-none focus:border-purple-500">
-                            </div>
-                            <div class="p-4 overflow-y-auto grid grid-cols-2 md:grid-cols-3 gap-2 flex-1">
-                                <button v-for="p in filteredPokemon" :key="p.name" @click="selectPokemon(p)" class="bg-slate-700 hover:bg-purple-600 p-2 rounded text-left transition flex justify-between items-center">
-                                    <span class="font-bold text-sm text-white">{{p.name}}</span>
-                                    <div class="flex flex-col gap-1">
-                                        <span v-for="t in p.types" :class="getTypeColor(t)" class="text-[8px] px-1 rounded text-center">{{t}}</span>
+<section class="bg-white border border-slate-200 rounded-xl p-4 mt-6 overflow-x-auto">
+<h3 class="text-2xl font-bold mb-2">ตารางรับดาเมจของทีม</h3><label class="flex gap-2 text-sm mb-2"><input type="checkbox" v-model="teraView">ดูหลังใช้ Tera (แสดงทีละตัวเพื่อเปรียบเทียบ)</label>
+<p class="text-xs text-slate-500 mb-4">คำนวณธาตุและ Ability ที่รองรับ · แดง: แพ้ · เขียว: ต้าน · 0: ไม่รับดาเมจ · ไม่รวมไอเทม สภาพอากาศ ท่าเฉพาะ การโจมตีทะลุ Ability และเงื่อนไข HP · Stellar คงธาตุป้องกันเดิม</p>
+<table class="w-full text-xs text-center"><thead><tr><th class="p-2">ธาตุโจมตี</th><th v-for="(slot,i) in teamSlots" :key="i" class="p-2 min-w-[100px]">{{slot.pokemon?.name||'ช่อง '+(i+1)}}</th></tr></thead><tbody><tr v-for="type in typesList" :key="type"><th :class="getTypeColor(type)" class="p-2">{{typeLabel(type)}}</th><td v-for="(slot,i) in teamSlots" :key="i" :class="defenseColor(defenseMultiplier(slot,type))" class="p-2 border border-slate-200">{{slot.pokemon?defenseMultiplier(slot,type)+'×':'—'}}</td></tr></tbody></table>
+</section>
+<section class="bg-white border border-slate-200 rounded-xl p-4 mt-5"><h3 class="text-2xl font-bold mb-3">ตรวจทีมเบื้องต้น</h3><p class="text-xs text-slate-500 mb-3">ตรวจซ้ำสายพันธุ์ ไอเทม ท่า EV/IV Ability และข้อจำกัดโหมด · ไม่ตรวจ event / transfer / ท่าที่เรียนร่วมกันไม่ได้ครบทุกกรณี</p><ul v-if="validationIssues.length" class="list-disc pl-5 text-sm text-amber-800 space-y-1"><li v-for="(issue,i) in validationIssues" :key="i">{{issue}}</li></ul><p v-else class="text-emerald-800 text-sm">ผ่านรายการตรวจพื้นฐานแล้ว ควรตรวจซ้ำในตัวตรวจทีมของเกมหรือ Showdown</p></section>
+                    <!-- Search Modal: one scroll surface, compact title bar -->
+                    <div v-if="showSearchModal" class="pokemon-picker-overlay fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4" @click.self="showSearchModal=false" @keydown.esc="showSearchModal=false">
+                        <section role="dialog" aria-modal="true" aria-labelledby="pokemon-picker-title" class="pokemon-picker-dialog bg-slate-50 border border-slate-300">
+                            <header class="pokemon-picker-header"><h3 id="pokemon-picker-title" class="font-bold">เลือกโปเกมอนช่องที่ {{activeSearchSlot + 1}}</h3><button type="button" @click="showSearchModal=false" class="picker-close-button" aria-label="ปิดรายการโปเกมอน"><i class="fas fa-times" aria-hidden="true"></i></button></header>
+                            <div class="pokemon-picker-scroll">
+                                <div class="pokemon-picker-controls"><label for="pokemon-search" class="block text-xs text-slate-600">ค้นหาชื่อหรือธาตุ</label><input id="pokemon-search" type="search" v-model="searchQuery" placeholder="ค้นหาชื่ออังกฤษหรือธาตุไทย…" class="field">
+                                <details class="pokemon-picker-filters"><summary>ตัวกรองเพิ่มเติม <span class="text-xs text-slate-500">ธาตุ · บทบาท · Gen</span></summary><div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-3">
+                                    <label class="text-xs">ธาตุ<select v-model="selectedType" class="field"><option value="all">ทุกธาตุ</option><option v-for="type in typesList" :key="type" :value="type">{{typeLabel(type)}}</option></select></label>
+                                    <label class="text-xs">บทบาท<select v-model="selectedRole" class="field"><option value="all">ทุกบทบาท</option><option v-for="role in roleOptions" :key="role.id" :value="role.id">{{role.name}}</option></select></label>
+                                    <label class="text-xs">นับ Gen ตาม<select v-model="generationMode" class="field"><option value="generation">สายพันธุ์</option><option value="formGeneration">ร่างพิเศษ</option></select></label>
+                                    <label class="text-xs">Gen<select v-model="selectedGeneration" class="field"><option value="all">ทุก Gen</option><option v-for="gen in generationOptions" :key="gen.id" :value="gen.id">Gen {{gen.id}} · {{gen.region}}</option></select></label>
+                                </div><label class="flex items-start gap-2 text-xs"><input type="checkbox" v-model="onlyEligible">แสดงเฉพาะตัวที่ผ่านเกณฑ์สายพันธุ์ของโหมด {{currentRule.name}}</label><p class="text-[11px] text-slate-500 mt-2">บทบาทเป็นคำแนะนำจากสเตตัสและท่าที่เรียนได้</p></details>
+                                <div class="picker-results-status"><p role="status" aria-live="polite">พบ {{filteredPokemon.length}} รายการ<span v-if="selectedType!=='all'"> · {{typeLabel(selectedType)}}</span><span v-if="selectedGeneration!=='all'"> · Gen {{selectedGeneration}}</span><span v-if="selectedRole!=='all'"> · {{roleOptions.find(r=>r.id===selectedRole)?.name}}</span><span v-if="onlyEligible"> · กรองตามโหมด</span></p><button type="button" @click="clearPokemonFilters" class="text-blue-700 underline">ล้างตัวกรอง</button></div></div>
+                                <div class="pokemon-picker-grid">
+                                <button v-for="p in visiblePokemon" :key="p.name" @click="selectPokemon(p)" class="picker-card flex flex-col items-center gap-2">
+                                    <pokemon-artwork :name="p.name" class="picker-art"></pokemon-artwork>
+                                    <span class="font-bold text-sm text-slate-800">{{p.name}}</span>
+                                    <span class="text-[10px] rounded bg-white text-blue-800 px-2 py-1">{{generationLabel(p.name)}}</span>
+                                    <span class="text-[10px] text-slate-600">{{roleOptions.filter(r=>p.roles.includes(r.id)).map(r=>r.name).join(' · ')}}</span>
+                                    <span v-if="pokemonEligibility(p).length" class="text-[10px] text-red-700">{{pokemonEligibility(p).join(' · ')}}</span>
+                                    <div class="flex gap-1">
+                                        <span v-for="t in p.types" :class="getTypeColor(t)" class="text-[8px] px-1 rounded text-center">{{typeLabel(t)}}</span>
                                     </div>
                                 </button>
+                                <button v-if="visibleCount<filteredPokemon.length" @click="visibleCount+=60" class="action col-span-full">โหลดเพิ่ม ({{visibleCount}} / {{filteredPokemon.length}})</button>
+                                <p v-if="filteredPokemon.length === 0" class="col-span-full py-8 text-center text-slate-500">ไม่พบโปเกมอน ลองเปลี่ยน Gen หรือคำค้นหา</p>
+                                </div>
                             </div>
-                        </div>
+                        </section>
                     </div>
                 </div>
 
-                <!-- ส่วนที่ 5: AI Team Analyst -->
-                <div v-if="currentTab === 'ai'" key="ai" class="max-w-4xl mx-auto text-center space-y-6">
-                    <h2 class="text-4xl font-bold esport-font text-white border-l-4 border-yellow-500 pl-4 text-left">AI Team Analyst</h2>
+                <!-- ส่วนที่ 5: วิเคราะห์ทีม -->
+                <div v-else-if="currentTab === 'ai'" key="ai" class="max-w-4xl mx-auto text-center space-y-6">
+                    <h2 class="text-4xl font-bold esport-font text-slate-800 border-l-4 border-yellow-500 pl-4 text-left">วิเคราะห์ทีม</h2>
                     
-                    <div class="bg-slate-900 p-10 rounded-xl border border-slate-700">
+                    <div class="bg-white p-10 rounded-xl border border-slate-200">
                         <div v-if="teamSlots.filter(s => s.pokemon).length < 6">
                             <i class="fas fa-robot text-6xl text-slate-600 mb-4"></i>
-                            <h3 class="text-2xl font-bold text-slate-400">กรุณาจัดทีมให้ครบ 6 ตัวในหน้า Builder ก่อน</h3>
+                            <h3 class="text-2xl font-bold text-slate-500">กรุณาจัดทีมให้ครบ 6 ตัวในหน้า Builder ก่อน</h3>
                         </div>
                         <div v-else-if="!aiAnalyzed && !aiLoading">
                             <i class="fas fa-brain text-6xl text-purple-500 mb-4 animate-pulse"></i>
-                            <h3 class="text-2xl font-bold text-white mb-4">ทีมพร้อมสำหรับการวิเคราะห์ด้วย AI</h3>
-                            <button @click="analyzeTeam" class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 px-8 py-3 rounded-full font-bold text-lg transition shadow-[0_0_15px_rgba(168,85,247,0.5)]">
-                                Analyze Team with AI <i class="fas fa-magic ml-2"></i>
+                            <h3 class="text-2xl font-bold text-slate-800 mb-4">วิเคราะห์จากข้อมูลทีมจริง</h3>
+                            <button @click="analyzeActualTeam" class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 px-8 py-3 rounded-full font-bold text-lg transition shadow-[0_0_15px_rgba(168,85,247,0.5)]">
+                                วิเคราะห์ทีม <i class="fas fa-magic ml-2"></i>
                             </button>
                         </div>
                         <div v-else-if="aiLoading" class="py-10">
                             <i class="fas fa-circle-notch fa-spin text-6xl text-blue-500 mb-4"></i>
-                            <h3 class="text-xl text-blue-300">AI is analyzing synergy, meta matchups, and win conditions...</h3>
+                            <h3 class="text-xl text-blue-700">กำลังวิเคราะห์ทีม…</h3>
                         </div>
                         
                         <!-- AI Results -->
                         <div v-else class="text-left space-y-6">
                             <div class="flex justify-between items-center mb-6">
-                                <h3 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">AI Analysis Complete</h3>
-                                <button @click="aiAnalyzed = false" class="text-slate-400 hover:text-white text-sm border border-slate-600 px-3 py-1 rounded">Re-Analyze</button>
+                                <h3 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">วิเคราะห์ทีม</h3>
+                                <button @click="aiAnalyzed = false" class="text-slate-500 hover:text-slate-800 text-sm border border-slate-300 px-3 py-1 rounded">Re-Analyze</button>
                             </div>
                             
                             <div class="grid md:grid-cols-2 gap-4">
-                                <div class="bg-slate-800 p-5 rounded-lg border-l-4 border-green-500">
-                                    <h4 class="font-bold text-green-400 text-lg mb-2"><i class="fas fa-arrow-up"></i> จุดเด่นของทีม (Strengths)</h4>
-                                    <p class="text-sm text-slate-300">{{aiReport.strengths}}</p>
+                                <div class="bg-slate-50 p-5 rounded-lg border-l-4 border-green-500">
+                                    <h4 class="font-bold text-emerald-700 text-lg mb-2"><i class="fas fa-arrow-up"></i> จุดเด่นของทีม (Strengths)</h4>
+                                    <p class="text-sm text-slate-600">{{aiReport.strengths}}</p>
                                 </div>
-                                <div class="bg-slate-800 p-5 rounded-lg border-l-4 border-red-500">
-                                    <h4 class="font-bold text-red-400 text-lg mb-2"><i class="fas fa-arrow-down"></i> จุดอ่อนของทีม (Weaknesses)</h4>
-                                    <p class="text-sm text-slate-300">{{aiReport.weaknesses}}</p>
+                                <div class="bg-slate-50 p-5 rounded-lg border-l-4 border-red-500">
+                                    <h4 class="font-bold text-red-700 text-lg mb-2"><i class="fas fa-arrow-down"></i> จุดอ่อนของทีม (Weaknesses)</h4>
+                                    <p class="text-sm text-slate-600">{{aiReport.weaknesses}}</p>
                                 </div>
-                                <div class="bg-slate-800 p-5 rounded-lg border-l-4 border-blue-500">
-                                    <h4 class="font-bold text-blue-400 text-lg mb-2"><i class="fas fa-gamepad"></i> วิธีการเล่น (Playstyle/Lead)</h4>
-                                    <p class="text-sm text-slate-300">{{aiReport.playstyle}}</p>
+                                <div class="bg-slate-50 p-5 rounded-lg border-l-4 border-blue-500">
+                                    <h4 class="font-bold text-blue-700 text-lg mb-2"><i class="fas fa-gamepad"></i> วิธีการเล่น (Playstyle/Lead)</h4>
+                                    <p class="text-sm text-slate-600">{{aiReport.playstyle}}</p>
                                 </div>
-                                <div class="bg-slate-800 p-5 rounded-lg border-l-4 border-yellow-500">
-                                    <h4 class="font-bold text-yellow-400 text-lg mb-2"><i class="fas fa-shield-alt"></i> การแก้ทาง (Counters)</h4>
-                                    <p class="text-sm text-slate-300">{{aiReport.counters}}</p>
+                                <div class="bg-slate-50 p-5 rounded-lg border-l-4 border-yellow-500">
+                                    <h4 class="font-bold text-amber-700 text-lg mb-2"><i class="fas fa-shield-alt"></i> การแก้ทาง (Counters)</h4>
+                                    <p class="text-sm text-slate-600">{{aiReport.counters}}</p>
                                 </div>
                             </div>
                         </div>
@@ -289,66 +312,85 @@
                 </div>
 
                 <!-- ส่วนที่ 6: ตัวอย่างทีมแข่งขัน (10 Sample Teams) -->
-                <div v-if="currentTab === 'teams'" key="teams" class="max-w-6xl mx-auto">
-                    <h2 class="text-4xl font-bold esport-font text-white border-l-4 border-red-500 pl-4 mb-8">VGC Meta Sample Teams (10 Archetypes)</h2>
+                <div v-else-if="currentTab === 'teams'" key="teams" class="max-w-6xl mx-auto">
+                    <h2 class="text-4xl font-bold esport-font text-slate-800 border-l-4 border-red-500 pl-4 mb-8">ไอเดียจัดทีม · หาแผนที่ใช่สำหรับคุณ</h2>
                     
+                    <p class="text-sm text-slate-500 mb-5">ชุดฝึกเล่นโดยเว็บ · มีข้อมูลครบ 6 ตัวสำหรับโหมด SV Doubles พื้นฐาน ไม่ใช่ทีมแชมป์หรือการรับรองว่าผ่าน Regulation ปัจจุบัน</p>
                     <div class="grid md:grid-cols-2 gap-6">
-                        <div v-for="(team, index) in sampleTeams" :key="index" class="bg-slate-900 border border-slate-700 rounded-xl overflow-hidden hover:border-red-500 transition cursor-pointer" @click="viewTeam(team)">
-                            <div class="bg-slate-800 p-3 border-b border-slate-700 flex justify-between items-center">
-                                <h3 class="font-bold text-white esport-font text-xl">{{team.name}}</h3>
-                                <span class="text-xs bg-red-600 text-white px-2 py-1 rounded">{{team.archetype}}</span>
+                        <div v-for="(team, index) in sampleTeams" :key="index" class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-red-500 transition cursor-pointer" @click="viewTeam(team)">
+                            <div class="bg-slate-50 p-3 border-b border-slate-200 flex justify-between items-center">
+                                <h3 class="font-bold text-slate-800 esport-font text-xl">{{team.name}}</h3>
+                                <span class="text-xs bg-red-600 text-slate-800 px-2 py-1 rounded">{{team.archetype}}</span>
                             </div>
                             <div class="p-4">
-                                <div class="flex gap-2 flex-wrap mb-4">
-                                    <span v-for="mon in team.members" class="text-sm font-bold bg-slate-800 border border-slate-600 px-2 py-1 rounded">{{mon}}</span>
+                                <div class="team-roster mb-4">
+                                    <div v-for="mon in team.members" :key="mon" class="team-member">
+                                        <pokemon-artwork :name="mon"></pokemon-artwork><span>{{mon}}</span><small class="text-[10px] text-blue-700">{{generationLabel(mon)}}</small>
+                                    </div>
                                 </div>
-                                <p class="text-sm text-slate-400 line-clamp-2">{{team.desc}}</p>
+                                <p class="text-sm text-slate-500 line-clamp-2">{{team.desc}}</p><div class="idea-card-actions"><button type="button" @click.stop="viewTeam(team)" class="action">ดูแผนและชุดครบ</button><button type="button" @click.stop="useTeamIdea(team)" class="action">นำทีมนี้ไปปรับต่อ →</button></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Modal ดูรายละเอียดทีม -->
-                    <div v-if="selectedTeam" class="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4">
-                        <div class="bg-slate-900 rounded-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto border border-slate-600">
-                            <div class="p-6 border-b border-slate-700 flex justify-between items-center sticky top-0 bg-slate-900 z-10">
+                    <div v-if="selectedTeam" class="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4" @click.self="selectedTeam=null" @keydown.esc="selectedTeam=null">
+                        <div role="dialog" aria-modal="true" aria-labelledby="idea-team-title" class="bg-white rounded-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto border border-slate-300">
+                            <div class="p-6 border-b border-slate-200 flex justify-between items-center sticky top-0 bg-white z-10">
                                 <div>
-                                    <h2 class="text-2xl font-bold text-white">{{selectedTeam.name}}</h2>
-                                    <p class="text-red-400">{{selectedTeam.archetype}}</p>
+                                    <h2 id="idea-team-title" class="text-2xl font-bold text-slate-800">{{selectedTeam.name}}</h2>
+                                    <p class="text-red-700">{{selectedTeam.archetype}}</p>
                                 </div>
-                                <button @click="selectedTeam = null" class="text-slate-400 hover:text-white"><i class="fas fa-times text-2xl"></i></button>
+                                <button @click="selectedTeam = null" class="text-slate-500 hover:text-slate-800"><i class="fas fa-times text-2xl"></i></button>
                             </div>
                             <div class="p-6">
-                                <p class="text-slate-300 mb-6 leading-relaxed">{{selectedTeam.desc}}</p>
-                                <h4 class="font-bold text-purple-400 mb-2">Showdown Paste (จำลอง):</h4>
-                                <div class="bg-slate-950 p-4 rounded font-mono text-xs text-green-400 whitespace-pre-line border border-slate-800">
-                                    {{selectedTeam.paste}}
-                                </div>
+                                <p class="text-xs text-slate-500 mb-4">{{selectedTeam.source}} · ตรวจเบื้องต้นด้วยคลังท่าของเว็บ</p>
+                                <section class="idea-plan"><h3 class="text-xl font-bold mb-3">เริ่มด้วยคู่ไหนดี?</h3><div class="idea-lead"><div v-for="mon in selectedTeam.lead" :key="mon" class="team-member"><pokemon-artwork :name="mon"></pokemon-artwork><strong>{{mon}}</strong></div></div><ol class="idea-plan-steps"><li><strong>1 · เปิดเกม</strong><p>{{selectedTeam.opening}}</p></li><li><strong>2 · ประคองจังหวะ</strong><p>{{selectedTeam.middle}}</p></li><li><strong>3 · ปิดเกม</strong><p>{{selectedTeam.closing}}</p></li></ol></section>
+                                <div class="idea-import"><button type="button" @click="useTeamIdea(selectedTeam)" class="primary-button">นำทีมนี้ไปปรับต่อ <i class="fas fa-arrow-right" aria-hidden="true"></i></button><p class="text-xs text-slate-500">สร้างเป็นทีมใหม่พร้อมข้อมูลครบ ทีมเดิมยังอยู่ในรายการที่บันทึก</p></div>
+                                <h3 class="text-xl font-bold mb-4">รู้จักหน้าที่ของทั้ง 6 ตัว</h3><div class="idea-sets"><article v-for="(set,i) in selectedTeam.sets" :key="i" class="idea-set"><div class="idea-set-header"><pokemon-artwork :name="set.pokemon.name"></pokemon-artwork><div><h4 class="font-bold">{{set.pokemon.name}}</h4><p class="text-xs text-blue-700">{{set.role}}</p></div></div><p class="text-xs leading-6 text-slate-600 mb-3">{{set.why}}</p><dl class="idea-set-fields"><div><dt>ไอเทม</dt><dd><item-artwork :name="set.item"></item-artwork>{{thaiName('items',set.item)}}</dd></div><div><dt>ความสามารถ</dt><dd>{{thaiName('abilities',set.ability)}}</dd></div><div><dt>นิสัย</dt><dd>{{natureLabel(natures.find(n=>n.name===set.nature))}}</dd></div><div><dt>ธาตุเทรา</dt><dd>{{typeLabel(set.teraType)}} · เลเวล {{set.level}}</dd></div><div><dt>แต้มฝึก EV</dt><dd><span v-for="stat in ['hp','atk','def','spa','spd','spe']" :key="stat" v-show="set.evs[stat]">{{statLabel(stat)}} {{set.evs[stat]}} · </span></dd></div><div><dt>ค่า IV</dt><dd><span v-for="stat in ['hp','atk','def','spa','spd','spe']" :key="stat">{{statLabel(stat)}} {{set.ivs[stat]}} · </span></dd></div></dl><div class="idea-set-moves"><details v-for="move in set.moves" :key="move"><summary>{{thaiName('moves',move)}}</summary><p>{{thaiEntry('moves',move).effect}}</p></details></div></article></div>
+                                <details class="mt-5"><summary class="text-blue-700 cursor-pointer">ดูข้อความ Showdown ของทีมครบทั้ง 6 ตัว</summary><pre class="idea-paste">{{teamIdeaPaste(selectedTeam)}}</pre></details>
                             </div>
                         </div>
                     </div>
                 </div>
 
             </transition>
+            <footer class="max-w-6xl mx-auto mt-10 pt-4 border-t border-slate-200 text-xs text-slate-500 leading-relaxed">
+                ภาพโปเกมอนจาก <a href="https://www.pokemon.com/us/pokedex" target="_blank" rel="noopener noreferrer" class="text-blue-700 underline">Pokémon Pokédex ทางการ</a> · © Pokémon / Nintendo / Creatures Inc. / GAME FREAK inc.<br>
+                ข้อมูลท่า / ไอเทม / Ability จาก <a href="https://github.com/smogon/pokemon-showdown" target="_blank" rel="noopener noreferrer" class="underline">Pokémon Showdown</a> · เว็บแฟนโปรเจกต์ ไม่มีความเกี่ยวข้องกับ The Pokémon Company
+            </footer>
         </main>
 
-        <nav class="md:hidden fixed bottom-0 left-0 w-full bg-slate-900 border-t border-slate-700 flex justify-around items-center p-2 z-50 shadow-[0_-5px_15px_rgba(0,0,0,0.5)]">
-            <button @click="currentTab = 'home'" :class="currentTab === 'home' ? 'text-purple-400' : 'text-slate-400'" class="flex flex-col items-center p-2 transition w-1/5">
+        <div v-if="itemPickerOpen" class="fixed inset-0 bg-black/80 flex items-center justify-center z-[70] p-4" @click.self="itemPickerOpen=false" @keydown.esc="itemPickerOpen=false">
+<section role="dialog" aria-modal="true" aria-labelledby="item-picker-heading" class="item-picker bg-white border border-slate-300 rounded-xl w-full max-w-3xl flex flex-col">
+<header class="p-4 border-b border-slate-200"><div class="flex justify-between items-center gap-3"><div><h2 id="item-picker-heading" class="text-xl font-bold">เลือกไอเทมให้คู่หู</h2><p class="text-xs text-slate-500 mt-1">{{teamSlots[itemPickerSlot].pokemon?.name}} · {{currentRule.name}}</p></div><button @click="itemPickerOpen=false" class="action" aria-label="ปิดรายการไอเทม">ปิด</button></div><label class="block text-xs mt-3">ค้นหาไอเทม · ⭐ แนะนำโดยเว็บเรียงก่อน<input v-model="itemSearch" type="search" class="field" placeholder="ชื่ออังกฤษ หรือผลภาษาไทย เช่น ความเร็ว"></label><div class="flex justify-between items-center mt-3"><p role="status" aria-live="polite" class="text-xs text-slate-500">พบ {{filteredItems.length}} รายการ</p><button @click="selectItem('')" class="action">ไม่ถือไอเทม</button></div></header>
+<div class="item-picker-results p-4"><button v-for="item in filteredItems.slice(0,itemLimit)" :key="item.id" @click="selectItem(item.name)" class="item-choice" :class="{'item-choice-selected':teamSlots[itemPickerSlot].item===item.name}" :aria-pressed="teamSlots[itemPickerSlot].item===item.name"><item-artwork :name="item.name"></item-artwork><span><strong>{{itemRecommendation(teamSlots[itemPickerSlot],item)?'⭐ ':''}}{{item.name}}</strong><small v-if="itemRecommendation(teamSlots[itemPickerSlot],item)" class="recommendation-reason">{{itemRecommendation(teamSlots[itemPickerSlot],item)}}</small><small>{{thaiEntry('items',item.name).effect}}</small></span><i v-if="teamSlots[itemPickerSlot].item===item.name" class="fas fa-check" aria-hidden="true"></i></button><p v-if="!filteredItems.length" class="text-center text-sm text-slate-500 p-5">ไม่พบไอเทม ลองเปลี่ยนคำค้นหา</p><button v-if="itemLimit<filteredItems.length" @click="itemLimit+=60" class="action item-load-more">ดูเพิ่ม ({{Math.min(itemLimit,filteredItems.length)}} / {{filteredItems.length}})</button></div>
+<footer class="p-3 text-xs text-slate-500 border-t border-slate-200">ภาพจากคลัง PokeAPI และ Smogon / Pokémon Showdown · ไอเทมเก่าบางรายการยังไม่มีภาพที่ยืนยันตรงชื่อ</footer>
+</section></div>
+        <div v-if="helpContent" class="fixed inset-0 bg-black/80 flex items-center justify-center z-[80] p-4" @click.self="helpTopic=''" @keydown.esc="helpTopic=''">
+<section role="dialog" aria-modal="true" aria-labelledby="help-heading" class="bg-white border border-blue-700 rounded-xl p-6 max-w-xl w-full max-h-[85vh] overflow-y-auto"><div class="flex justify-between items-start gap-3"><h2 id="help-heading" class="text-xl font-bold text-blue-800">{{helpContent.title}}</h2><button @click="helpTopic=''" class="action" aria-label="ปิดคำอธิบาย">ปิด</button></div><p class="text-sm leading-7 mt-4">{{helpContent.text}}</p><div class="flex flex-wrap gap-2 mt-5"><button v-for="(entry,key) in glossary" :key="key" @click="helpTopic=key" class="help-button">{{entry.title.split('—')[0]}}</button></div></section>
+</div>
+        <div v-if="ioOpen" class="fixed inset-0 bg-black/80 flex items-center justify-center z-[70] p-4" @click.self="ioOpen=false" @keydown.esc="ioOpen=false">
+            <section role="dialog" aria-modal="true" aria-labelledby="io-heading" class="bg-white border border-slate-300 rounded-xl p-5 w-full max-w-3xl max-h-[90vh] overflow-y-auto"><div class="flex justify-between items-center"><h2 id="io-heading" class="text-2xl font-bold">Pokémon Showdown · นำเข้า / ส่งออก</h2><button @click="ioOpen=false" aria-label="ปิดหน้าต่าง" class="action">ปิด</button></div><p class="text-xs text-blue-700 my-3">{{ioMessage}}</p><textarea v-model="ioText" rows="14" class="field font-mono" aria-label="ข้อความทีม Showdown" spellcheck="false"></textarea><p v-if="ioError" role="alert" class="text-red-700 text-sm my-2">{{ioError}}</p><div class="flex flex-wrap gap-2 mt-3"><button @click="doImport" class="action bg-purple-700">นำเข้าเป็นทีมใหม่</button><button @click="copyExport" class="action">คัดลอกข้อความ</button><button @click="downloadExport" class="action">ดาวน์โหลด .txt</button></div></section>
+        </div>
+        <nav class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 flex justify-around items-center p-2 z-50 shadow-[0_-5px_15px_rgba(0,0,0,0.5)]">
+            <button @click="currentTab = 'home'" :class="currentTab === 'home' ? 'text-violet-700' : 'text-slate-500'" class="flex flex-col items-center p-2 transition w-1/5">
                 <i class="fas fa-home text-xl mb-1"></i>
                 <span class="text-[10px] font-bold">หน้าแรก</span>
             </button>
-            <button @click="currentTab = 'database'" :class="currentTab === 'database' ? 'text-purple-400' : 'text-slate-400'" class="flex flex-col items-center p-2 transition w-1/5">
+            <button @click="currentTab = 'database'" :class="currentTab === 'database' ? 'text-violet-700' : 'text-slate-500'" class="flex flex-col items-center p-2 transition w-1/5">
                 <i class="fas fa-database text-xl mb-1"></i>
                 <span class="text-[10px] font-bold">ข้อมูล</span>
             </button>
-            <button @click="currentTab = 'builder'" :class="currentTab === 'builder' ? 'text-purple-400' : 'text-slate-400'" class="flex flex-col items-center p-2 transition w-1/5">
+            <button @click="currentTab = 'builder'" :class="currentTab === 'builder' ? 'text-violet-700' : 'text-slate-500'" class="flex flex-col items-center p-2 transition w-1/5">
                 <i class="fas fa-tools text-xl mb-1"></i>
                 <span class="text-[10px] font-bold">จัดทีม</span>
             </button>
-            <button @click="currentTab = 'ai'" :class="currentTab === 'ai' ? 'text-purple-400' : 'text-slate-400'" class="flex flex-col items-center p-2 transition w-1/5">
+            <button @click="currentTab = 'ai'" :class="currentTab === 'ai' ? 'text-violet-700' : 'text-slate-500'" class="flex flex-col items-center p-2 transition w-1/5">
                 <i class="fas fa-robot text-xl mb-1"></i>
-                <span class="text-[10px] font-bold">AI</span>
+                <span class="text-[10px] font-bold">วิเคราะห์</span>
             </button>
-            <button @click="currentTab = 'teams'" :class="currentTab === 'teams' ? 'text-purple-400' : 'text-slate-400'" class="flex flex-col items-center p-2 transition w-1/5">
+            <button @click="currentTab = 'teams'" :class="currentTab === 'teams' ? 'text-violet-700' : 'text-slate-500'" class="flex flex-col items-center p-2 transition w-1/5">
                 <i class="fas fa-trophy text-xl mb-1"></i>
                 <span class="text-[10px] font-bold">ทีมเมต้า</span>
             </button>
@@ -357,7 +399,17 @@
     </div>
 
     <!-- โหลดสคริปต์แยก (ในโปรเจกต์จริงให้แยกไฟล์ แต่เพื่อความสมบูรณ์ในการส่งงาน ผมรวมไว้ที่นี่) -->
+    <script src="catalog.js"></script>
+    <script src="builder-core.js"></script>
+    <script src="pokemon-metadata.js"></script>
+    <script src="team-ideas.js"></script>
     <script src="database.js"></script>
+    <script src="pokemon-images.js"></script>
+    <script src="thai-text.js"></script>
+    <script src="thai-ui.js"></script>
+    <script src="item-images.js?v=2"></script>
+    <script src="item-artwork.js?v=2"></script>
+    <script src="recommendations.js?v=nature-1"></script>
     <script src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,56 @@
+// Official Pokémon artwork, stored locally. Sources: image-sources.json.
+const POKEMON_IMAGES = {
+  "Floette (Mega)": "assets/pokemon/670_f3.png",
+  "Charizard (Mega Y)": "assets/pokemon/006_f3.png",
+  "Whimsicott": "assets/pokemon/547.png",
+  "Basculegion": "assets/pokemon/902.png",
+  "Garchomp": "assets/pokemon/445.png",
+  "Kingambit": "assets/pokemon/983.png",
+  "Incineroar": "assets/pokemon/727.png",
+  "Rillaboom": "assets/pokemon/812.png",
+  "Urshifu (Rapid)": "assets/pokemon/892_f2.png",
+  "Urshifu (Single)": "assets/pokemon/892.png",
+  "Flutter Mane": "assets/pokemon/987.png",
+  "Amoonguss": "assets/pokemon/591.png",
+  "Tornadus": "assets/pokemon/641.png",
+  "Gholdengo": "assets/pokemon/1000.png",
+  "Chien-Pao": "assets/pokemon/1002.png",
+  "Dragonite": "assets/pokemon/149.png",
+  "Ogerpon (Hearth)": "assets/pokemon/1017_f3.png",
+  "Ogerpon (Well)": "assets/pokemon/1017_f2.png",
+  "Iron Hands": "assets/pokemon/992.png",
+  "Bloodmoon Ursaluna": "assets/pokemon/901_f2.png",
+  "Landorus (Therian)": "assets/pokemon/645_f2.png",
+  "Cresselia": "assets/pokemon/488.png",
+  "Heatran": "assets/pokemon/485.png",
+  "Torkoal": "assets/pokemon/324.png",
+  "Lilligant (Hisui)": "assets/pokemon/549_f2.png",
+  "Farigiraf": "assets/pokemon/981.png",
+  "Porygon2": "assets/pokemon/233.png",
+  "Indeedee (F)": "assets/pokemon/876_f2.png",
+  "Armarouge": "assets/pokemon/936.png",
+  "Tyranitar": "assets/pokemon/248.png",
+  "Excadrill": "assets/pokemon/530.png",
+  "Pelipper": "assets/pokemon/279.png",
+  "Archaludon": "assets/pokemon/1018.png",
+  "Garganacl": "assets/pokemon/934.png",
+  "Sinistcha": "assets/pokemon/1013.png",
+  "Metagross": "assets/pokemon/376.png",
+  "Volcarona": "assets/pokemon/637.png",
+  "Ting-Lu": "assets/pokemon/1003.png",
+  "Chi-Yu": "assets/pokemon/1004.png",
+  "Clefairy": "assets/pokemon/035.png",
+  "Articuno (Snow)": "assets/pokemon/144.png",
+  "Ninetales (Alola)": "assets/pokemon/038_f2.png",
+  "Gothitelle": "assets/pokemon/576.png"
+};
+const PokemonArtwork = {
+    props: { name: { type: String, required: true } },
+    data() { return { failed: false }; },
+    computed: { imageSrc() { return findPokemon(this.name)?.image || POKEMON_IMAGES[this.name] || null; } },
+    watch: { name() { this.failed = false; } },
+    template: `<div class="pokemon-artwork">
+      <img v-if="imageSrc && !failed" :src="imageSrc" :alt="name" width="475" height="475" loading="lazy" decoding="async" @error="failed = true">
+      <div v-else class="artwork-placeholder" role="img" :aria-label="'ยังไม่มีรูปสำหรับ ' + name"><span aria-hidden="true">?</span><small>ยังไม่มีรูปทางการ</small></div>
+    </div>`
+};

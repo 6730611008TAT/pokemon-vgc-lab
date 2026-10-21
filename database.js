@@ -106,36 +106,7 @@ const RAW_POKEMON_DATA = [
 ];
 
 // แปลง Data ขยะเป็น Object จริงตอนโหลด
-const POKEMON_DB = RAW_POKEMON_DATA.map(str => {
-    let [name, types, stats, abilities] = str.split('|');
-    let [hp, atk, def, spa, spd, spe] = stats.split(',').map(Number);
-    return {
-        name, 
-        types: types.split(','),
-        baseStats: { hp, atk, def, spa, spd, spe },
-        abilities: abilities.split(',')
-    };
-});
-// เพิ่มโคลนให้ครบ 100 ตัวเพื่อจำลองสเกลของฐานข้อมูลใหญ่
-while(POKEMON_DB.length < 100) {
-    POKEMON_DB.push({ name: `Dummy Mon #${POKEMON_DB.length+1}`, types: ["Normal"], baseStats: { hp:50, atk:50, def:50, spa:50, spd:50, spe:50 }, abilities: ["Run Away"] });
-}
+const POKEMON_DB = CATALOG.pokemon;
 
-// 5. Sample Teams (10 ทีม)
-const SAMPLE_TEAMS = [
-    {
-        name: "Team A (Big 6) - Regulation M-B", archetype: "Balance / Good Stuffs",
-        members: ["Charizard (Mega Y)", "Floette (Mega)", "Whimsicott", "Basculegion", "Garchomp", "Kingambit"],
-        desc: "ทีมมาตรฐานสมดุลสูง เริ่ม Win Condition ด้วยแดดจาก Mega Charizard Y คุมบอร์ดด้วย Tailwind จาก Whimsicott หากบอร์ดเสียเปรียบสามารถ Pivot เอา Garchomp มากวาดสนาม หรือรอเลทเกมให้ Kingambit ปิดเกมด้วย Defiant ที่ได้รับบัฟเมื่อเพื่อนตาย (Supreme Overlord)",
-        paste: `Charizard-Mega-Y @ Charizardite Y\nAbility: Drought\nEVs: 4 HP / 252 SpA / 252 Spe\nTimid Nature\n- Heat Wave\n- Solar Beam\n- Tailwind\n- Protect\n\nKingambit @ Black Glasses\n... (แสดงตัวอย่าง Showdown Paste แบบย่อ)`
-    },
-    { name: "Rain Dance Sweep", archetype: "Weather Offense", members: ["Pelipper", "Basculegion", "Archaludon", "Urshifu (Rapid)", "Amoonguss", "Incineroar"], desc: "สร้างฝนด้วย Pelipper เพื่อบัฟดาเมจน้ำและเร่งสปีดของ Basculegion มี Archaludon คอยรับดาเมจและโจมตีด้วย Electro Shot แบบไม่ต้องชาร์จในเทิร์นฝน", paste: "Pelipper @ Damp Rock..." },
-    { name: "Hard Trick Room", archetype: "Speed Control", members: ["Cresselia", "Bloodmoon Ursaluna", "Iron Hands", "Torkoal", "Amoonguss", "Kingambit"], desc: "บิดเบือนมิติเวลาให้ตัวช้าได้ตีก่อน เปิดเกมด้วย Cresselia + Fake out จาก Iron Hands แล้วสลับ Torkoal/Ursaluna มาพ่นดาเมจมหาศาล", paste: "Cresselia @ Mental Herb..." },
-    { name: "Sun Room (Hybrid)", archetype: "Flex Control", members: ["Torkoal", "Farigiraf", "Flutter Mane", "Chi-Yu", "Ogerpon (Hearth)", "Incineroar"], desc: "ลูกผสมระหว่างสภาพอากาศแดดและ Trick Room หากเจอทีมเร็วมากจะเซ็ต Room แต่ถ้าเจอทีมช้าจะใช้ Flutter Mane บุกทันที", paste: "Farigiraf @ Sitrus Berry..." },
-    { name: "Snow Veil Defense", archetype: "Weather Defense", members: ["Ninetales (Alola)", "Articuno (Snow)", "Garchomp", "Gholdengo", "Incineroar", "Amoonguss"], desc: "ใช้ Ninetales กางหิมะเพิ่มเกราะ (Defense x1.5 ให้ธาตุน้ำแข็ง) และกาง Aurora Veil ลดดาเมจให้ทั้งทีม 50%", paste: "Ninetales-Alola @ Light Clay..." },
-    { name: "Sandstorm Excadrill", archetype: "Weather Offense", members: ["Tyranitar", "Excadrill", "Ogerpon (Well)", "Tornadus", "Gholdengo", "Incineroar"], desc: "Tyranitar กางทรายเพื่อทลาย Focus Sash ศัตรู และเปิดบัฟความเร็วให้ Excadrill พุ่งเข้าโจมตีทะลุ Protect", paste: "Tyranitar @ Assault Vest..." },
-    { name: "Psychic Terrain Spam", archetype: "Field Control", members: ["Indeedee (F)", "Armarouge", "Urshifu (Single)", "Tornadus", "Gholdengo", "Kingambit"], desc: "Indeedee กางพื้นพลังจิตกันท่า Priority ทั้งหมด และเสริมดาเมจให้ Armarouge ใช้ท่า Expanding Force โจมตีหมู่แบบแรงทะลุมิติ", paste: "Indeedee-F @ Psychic Seed..." },
-    { name: "Perish Trap", archetype: "Stall/Trap", members: ["Gothitelle", "Flutter Mane", "Incineroar", "Amoonguss", "Urshifu (Rapid)", "Rillaboom"], desc: "ล็อกไม่ให้ศัตรูหนีด้วย Ability ของ Gothitelle (Shadow Tag) แล้วใช้ท่า Perish Song นับถอยหลังตายใน 3 เทิร์น", paste: "Gothitelle @ Sitrus Berry..." },
-    { name: "Tailwind Hyper Offense", archetype: "Hyper Offense", members: ["Tornadus", "Urshifu (Rapid)", "Flutter Mane", "Chi-Yu", "Ogerpon (Hearth)", "Chien-Pao"], desc: "ไม่มีแทงค์ เน้นกาง Tailwind จาก Tornadus แล้วใช้ตัวดาเมจที่รวดเร็วและรุนแรงกวาดบอร์ดให้จบภายใน 3 เทิร์นแรก", paste: "Tornadus @ Covert Cloak..." },
-    { name: "Wolfe's Balance (World Champ)", archetype: "Balance", members: ["Incineroar", "Amoonguss", "Urshifu (Rapid)", "Gholdengo", "Ogerpon (Well)", "Tornadus"], desc: "ทีมสมดุลระดับแชมป์โลก อาศัยการ Cycle เปลี่ยนตัวรับดาเมจ (Intimidate + Regenerator) เพื่อหาจังหวะสวนกลับที่ปลอดภัยที่สุด", paste: "Incineroar @ Safety Goggles..." }
-];
+// 5. Complete educational team ideas
+const SAMPLE_TEAMS = TEAM_IDEAS;
