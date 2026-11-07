@@ -5,9 +5,10 @@ createApp({
     setup() {
         // --- State Management ---
         const currentTab = ref('home');
+        watch(currentTab,()=>Vue.nextTick(()=>globalThis.scrollTo?.({top:0,behavior:'instant'})));
         const isLoggedin = ref(false);
         const typesList = ["Normal", "Fire", "Water", "Grass", "Electric", "Ice", "Fighting", "Poison", "Ground", "Flying", "Psychic", "Bug", "Rock", "Ghost", "Dragon", "Dark", "Steel", "Fairy"];
-        
+
         // Natures: ส่งผล +10% และ -10% ต่อสเตตัส
         const natures = [
             { name: "Timid", plus: "spe", minus: "atk" }, { name: "Modest", plus: "spa", minus: "atk" },
@@ -118,7 +119,7 @@ createApp({
             const iv = slot.ivs[statKey];
             const ev = slot.evs[statKey];
             const level = slot.level || 50;
-            
+
             if(statKey === 'hp') {
                 if(slot.pokemon.id === 'shedinja') return 1;
                 return Math.floor(( (2 * base + iv + Math.floor(ev / 4)) * level) / 100) + level + 10;
@@ -237,8 +238,31 @@ createApp({
         const copyExport=async()=>{try{await navigator.clipboard.writeText(ioText.value);ioMessage.value='คัดลอกแล้ว';}catch{ioMessage.value='กรุณาเลือกข้อความแล้วกด Ctrl+C';}};
         const downloadExport=()=>{const url=URL.createObjectURL(new Blob([ioText.value],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=(library.teamName.value.replace(/[\\/:*?"<>|]/g,'_')||'team')+'.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
         const catalogSearch=ref(''),catalogKind=ref('moves'),catalogLimit=ref(40);
-        const catalogEntries=computed(()=>CATALOG[catalogKind.value].filter(entry=>(entry.name+' '+(entry.type||'')+' '+entry.desc+' '+description(catalogKind.value,entry.name)+' '+thaiName(catalogKind.value,entry.name)+' '+(THAI_TYPES[entry.type]||'')).toLowerCase().includes(catalogSearch.value.toLowerCase())));
-        watch([catalogSearch,catalogKind],()=>catalogLimit.value=40);
+        // Learning tools use only the standard type chart: no team mutation or battle simulation.
+        const fullChartOpen=ref(false);
+        const knowledgeTab=ref('types'), moveTypeFilter=ref('all'), moveCategoryFilter=ref('all');
+        const knowledgeTabs=[{id:'types',name:'เรียนรู้เรื่องธาตุ'},{id:'moves',name:'ท่า'},{id:'items',name:'ไอเทม'},{id:'abilities',name:'Ability'}];
+        const attackType=ref('Fire'), defenderOne=ref('Grass'), defenderTwo=ref('Steel'), defenderMode=ref('manual');
+        const exampleQuery=ref(''), exampleLimit=ref(24), exampleName=ref('Ferrothorn');
+        const examplePokemon=computed(()=>findPokemon(exampleName.value));
+        const exampleResults=computed(()=>CATALOG.pokemon.filter(p=>(p.name+' '+p.types.join(' ')+' '+p.types.map(t=>THAI_TYPES[t]).join(' ')).toLowerCase().includes(exampleQuery.value.trim().toLowerCase())).slice(0,exampleLimit.value));
+        watch(exampleQuery,()=>exampleLimit.value=24);
+        const defenderTypes=computed(()=>defenderMode.value==='pokemon'?(examplePokemon.value?.types||[]):[defenderOne.value,defenderTwo.value].filter(Boolean));
+        watch(defenderOne,value=>{if(defenderTwo.value===value)defenderTwo.value='';},{flush:'sync'});
+        const matchupParts=computed(()=>defenderTypes.value.map(type=>({type,value:getTypeEffectiveness(attackType.value,type)})));
+        const matchupValue=computed(()=>matchupParts.value.reduce((n,part)=>n*part.value,1));
+        const multiplierLabel=value=>value===0?'ไม่มีผล':value>1?'ได้ผลดีมาก':value<1?'ถูกต้านทาน':'ได้ผลปกติ';
+        const multiplierClass=value=>value===0?'match-immune':value>1?'match-strong':value<1?'match-resist':'match-normal';
+        const selectExample=name=>{if(!findPokemon(name))return;exampleName.value=name;defenderMode.value='pokemon';};
+        const setMatchup=(attack,one,two='')=>{defenderMode.value='manual';attackType.value=attack;defenderOne.value=one;defenderTwo.value=two;};
+        const exampleDefenses=computed(()=>typesList.map(type=>({type,value:(examplePokemon.value?.types||[]).reduce((n,def)=>n*getTypeEffectiveness(type,def),1)})));
+        const exploreType=ref('Fire'), exploreDirection=ref('attack');
+        const typeRelations=computed(()=>typesList.map(type=>({type,value:exploreDirection.value==='attack'?getTypeEffectiveness(exploreType.value,type):getTypeEffectiveness(type,exploreType.value)})));
+        const knowledge={fullChartOpen,knowledgeTab,knowledgeTabs,moveTypeFilter,moveCategoryFilter,attackType,defenderOne,defenderTwo,defenderMode,exampleQuery,exampleLimit,exampleName,examplePokemon,exampleResults,defenderTypes,matchupParts,matchupValue,multiplierLabel,multiplierClass,selectExample,setMatchup,exampleDefenses,exploreType,exploreDirection,typeRelations};
+        watch(knowledgeTab,value=>{if(value!=='types')catalogKind.value=value;});
+
+        const catalogEntries=computed(()=>CATALOG[catalogKind.value].filter(entry=>(catalogKind.value!=='moves'||((moveTypeFilter.value==='all'||entry.type===moveTypeFilter.value)&&(moveCategoryFilter.value==='all'||entry.category===moveCategoryFilter.value)))&&(entry.name+' '+(entry.type||'')+' '+entry.desc+' '+description(catalogKind.value,entry.name)+' '+thaiName(catalogKind.value,entry.name)+' '+(THAI_TYPES[entry.type]||'')).toLowerCase().includes(catalogSearch.value.toLowerCase())));
+        watch([catalogSearch,catalogKind,moveTypeFilter,moveCategoryFilter],()=>catalogLimit.value=40);
         const showDex=()=>{currentTab.value='database';};
         // Reports are derived from the actual team; no remote AI or fabricated win rate.
         const analyzeActualTeam=()=>{
@@ -267,7 +291,7 @@ createApp({
         const features={useTeamIdea,teamIdeaPaste,natureAdvice,sortedNatures,moveRecommendation,itemRecommendation,recommendedSet,applyRecommendedSet,itemPickerOpen,itemPickerSlot,itemSearch,itemLimit,filteredItems,openItemPicker,selectItem,selectedType,selectedRole,onlyEligible,visibleCount,visiblePokemon,roleOptions,ruleProfiles,currentRule,pokemonEligibility,eligibleMoves,itemOptions,description,teraView,defenseMultiplier,defenseColor,validationIssues,ioOpen,ioText,ioError,ioMessage,openExport,openImport,doImport,copyExport,downloadExport,catalogSearch,catalogKind,catalogLimit,catalogEntries,showDex,analyzeActualTeam};
 
         return {
-            ...library, ...features, ...thaiInterface, originalDescription,
+            ...library, ...features, ...knowledge, ...thaiInterface, originalDescription,
             currentTab, isLoggedin, typesList, getTypeColor, getTypeEffectiveness, getTypeEffectColor,
             steps, metaAbilities: CATALOG.abilities.slice(0,40), metaMoves: CATALOG.moves.slice(0,40), sampleTeams: SAMPLE_TEAMS,
             teamSlots, natures, showSearchModal, activeSearchSlot, searchQuery, filteredPokemon,

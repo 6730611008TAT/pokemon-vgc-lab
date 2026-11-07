@@ -13,15 +13,16 @@
     <!-- Vue 3 สำหรับทำ SPA และจัดการ State -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <link rel="stylesheet" href="theme.css?v=team-ideas-1">
+    <link rel="stylesheet" href="theme.css?v=knowledge-1">
 </head>
 <body>
     <div id="app" v-cloak class="app-shell">
-        
+
         <header class="site-header">
             <div class="header-inner"><button @click="currentTab='home'" class="brand" aria-label="กลับหน้าแรก"><span class="brand-ball" aria-hidden="true"></span><span>Poké<span class="brand-blue">Team</span><small>จัดทีมสนุก เข้าใจง่าย ในภาษาไทย</small></span></button>
             <nav aria-label="เมนูหลัก" class="desktop-nav">
 <button @click="currentTab='home'" :class="{'is-active':currentTab==='home'}"><i class="fas fa-home" aria-hidden="true"></i> เริ่มต้น</button>
+<button @click="currentTab='knowledge'" :class="{'is-active':currentTab==='knowledge'}"><i class="fas fa-book-open" aria-hidden="true"></i> คลังข้อมูล</button>
 <button @click="currentTab='database'" :class="{'is-active':currentTab==='database'}"><i class="fas fa-compass" aria-hidden="true"></i> โปเกเด็กซ์</button>
 <button @click="currentTab='builder'" :class="{'is-active':currentTab==='builder'}"><i class="fas fa-layer-group" aria-hidden="true"></i> จัดทีมของฉัน</button>
 <button @click="currentTab='ai'" :class="{'is-active':currentTab==='ai'}"><i class="fas fa-chart-pie" aria-hidden="true"></i> วิเคราะห์ทีม</button>
@@ -31,7 +32,7 @@
         <main class="main-content">
 <div class="page-intro"><span class="eyebrow">EXPLORE · LEARN · BUILD</span><p>พื้นที่เล็ก ๆ สำหรับเทรนเนอร์ทุกคน <span class="intro-dot"></span> อ่านง่าย เล่นสนุก</p></div>
             <transition name="fade" mode="out-in">
-                
+
                 <!-- ส่วนที่ 2: หน้าแรก (Home & Educational Guide) -->
                 <div v-if="currentTab === 'home'" key="home" class="max-w-6xl mx-auto space-y-8">
                     <section class="artwork-hero">
@@ -41,9 +42,10 @@
                         <div class="hero-facts"><span><strong>1,025</strong> สายพันธุ์หลัก</span><span><strong>9</strong> เจเนอเรชัน</span><span><strong>TH</strong> อธิบายภาษาไทย</span></div></div>
                         <div class="hero-art" aria-label="คู่หูโปเกมอน"><div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div><span class="hero-spark spark-one">✦</span><span class="hero-spark spark-two">✧</span><div class="hero-mon hero-mon-main"><pokemon-artwork name="Charizard (Mega Y)"></pokemon-artwork><span>พร้อมลุยไปด้วยกัน!</span></div><div class="hero-mon hero-mon-left"><pokemon-artwork name="Rillaboom"></pokemon-artwork></div><div class="hero-mon hero-mon-right"><pokemon-artwork name="Incineroar"></pokemon-artwork></div><div class="hero-caption"><span class="brand-ball" aria-hidden="true"></span> YOUR NEXT ADVENTURE STARTS HERE</div></div>
                     </section>
-                    <section class="quick-paths" aria-label="เลือกสิ่งที่อยากทำ"><button @click="currentTab='database'"><span class="path-icon path-blue"><i class="fas fa-compass"></i></span><span><strong>รู้จักคู่หูให้มากขึ้น</strong><small>ค้นหาตาม Gen ธาตุ และบทบาท</small></span><i class="fas fa-arrow-right"></i></button><button @click="currentTab='builder'"><span class="path-icon path-coral"><i class="fas fa-layer-group"></i></span><span><strong>สร้างทีมในแบบคุณ</strong><small>เลือกท่า ไอเทม และความสามารถ</small></span><i class="fas fa-arrow-right"></i></button><button @click="currentTab='teams'"><span class="path-icon path-yellow"><i class="fas fa-lightbulb"></i></span><span><strong>หาไอเดียใหม่ ๆ</strong><small>ดูตัวอย่างและลองวางแผนทีม</small></span><i class="fas fa-arrow-right"></i></button></section>
+                    <section class="learning-invite"><span aria-hidden="true">✦</span><div><h2>เพิ่งเริ่มเล่น? เริ่มรู้จักธาตุที่นี่</h2><p>ลองเลือกท่าและฝ่ายรับ ดูผลพร้อมเหตุผล แล้วค่อยนำไปจัดทีม</p></div><button @click="currentTab='knowledge';knowledgeTab='types'" class="secondary-button">เปิดคลังข้อมูล →</button></section>
+<section class="quick-paths" aria-label="เลือกสิ่งที่อยากทำ"><button @click="currentTab='database'"><span class="path-icon path-blue"><i class="fas fa-compass"></i></span><span><strong>รู้จักคู่หูให้มากขึ้น</strong><small>ค้นหาตาม Gen ธาตุ และบทบาท</small></span><i class="fas fa-arrow-right"></i></button><button @click="currentTab='builder'"><span class="path-icon path-coral"><i class="fas fa-layer-group"></i></span><span><strong>สร้างทีมในแบบคุณ</strong><small>เลือกท่า ไอเทม และความสามารถ</small></span><i class="fas fa-arrow-right"></i></button><button @click="currentTab='teams'"><span class="path-icon path-yellow"><i class="fas fa-lightbulb"></i></span><span><strong>หาไอเดียใหม่ ๆ</strong><small>ดูตัวอย่างและลองวางแผนทีม</small></span><i class="fas fa-arrow-right"></i></button></section>
                     <h2 class="text-4xl font-bold esport-font text-slate-800 border-l-4 border-purple-500 pl-4">รู้จักศึกคู่ ก่อนเริ่มผจญภัย</h2>
-                    
+
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="bg-white p-6 rounded-xl neon-border">
                             <h3 class="text-2xl font-bold text-blue-700 mb-4"><i class="fas fa-gavel"></i> กฎพื้นฐาน (Basic Rules)</h3>
@@ -77,8 +79,8 @@
 
                 <!-- ส่วนที่ 3: คลังข้อมูล (Database & Type Chart) -->
                 <div v-else-if="currentTab === 'database'" key="database" class="max-w-6xl mx-auto space-y-8">
-                    <h2 class="text-4xl font-bold esport-font text-slate-800 border-l-4 border-blue-500 pl-4">คลังข้อมูลและตารางธาตุ</h2>
-                    
+                    <h2 class="text-4xl font-bold esport-font text-slate-800 border-l-4 border-blue-500 pl-4">โปเกเด็กซ์</h2>
+
 <section class="bg-white p-5 rounded-xl border border-slate-200">
 <h3 class="text-2xl text-blue-700 font-bold mb-3">Pokédex · {{filteredPokemon.length}} รายการ</h3>
 <label class="text-xs">ค้นหาชื่อหรือธาตุ<input type="search" v-model="searchQuery" class="field" placeholder="Pikachu, Fire, Dragon…"></label>
@@ -98,34 +100,52 @@
 </article></div><p v-if="!filteredPokemon.length" class="p-5 text-center text-slate-500">ไม่พบโปเกมอนตามตัวกรอง</p>
 <button v-if="visibleCount<filteredPokemon.length" @click="visibleCount+=60" class="action mt-4">โหลดเพิ่ม ({{visibleCount}} / {{filteredPokemon.length}})</button>
 </section>
-<section class="bg-white p-5 rounded-xl border border-slate-200">
+                </div>
+                <div v-else-if="currentTab === 'knowledge'" key="knowledge" class="max-w-6xl mx-auto knowledge-page space-y-6">
+                    <div><p class="learn-eyebrow">อ่านสั้น ๆ แล้วลองด้วยตัวเอง</p><h2 class="text-4xl font-bold">คลังข้อมูล</h2><p class="learn-muted">รู้จักธาตุ ท่า ไอเทม และความสามารถ ก่อนเลือกคู่หูเข้าทีม</p></div>
+                    <div class="knowledge-tabs" role="group" aria-label="หมวดคลังข้อมูล"><button v-for="tab in knowledgeTabs" :key="tab.id" @click="knowledgeTab=tab.id" :aria-pressed="knowledgeTab===tab.id" :class="{'is-active':knowledgeTab===tab.id}">{{tab.name}}</button></div>
+<div v-if="knowledgeTab==='types'" class="type-learning">
+<nav class="learning-shortcuts" aria-label="ทางลัดบทเรียนธาตุ"><a href="#type-matchup">ทดลองจับคู่ธาตุ ↓</a><a href="#pokemon-examples">ดูตัวอย่างโปเกมอนจริง ↓</a><a href="#full-type-chart" @click="fullChartOpen=true">ตารางธาตุเต็ม 18 × 18 ↓</a></nav>
+<section class="learn-panel">
+ <p class="learn-eyebrow">01 · รู้จักก่อนลอง</p><h3>ธาตุของท่า ≠ ธาตุของโปเกมอน</h3>
+ <div class="learn-basics"><article><strong>ท่าใช้ธาตุของตัวท่า</strong><p>เช่น Flamethrower เป็นท่าไฟ แม้ผู้ใช้จะไม่ใช่โปเกมอนธาตุไฟ ก็ยังคิดแพ้–ชนะจากธาตุไฟ</p></article><article><strong>ฝ่ายรับมีได้ 1 หรือ 2 ธาตุ</strong><p>ถ้ามีสองธาตุ ให้นำผลต่อแต่ละธาตุมาคูณกัน เช่น ไฟใส่พืช/เหล็ก: ×2 × ×2 = ×4</p></article><article><strong>ตัวคูณไม่ใช่ความเสียหายสุดท้าย</strong><p>ยังมีพลังท่า ค่าสเตตัส STAB, Ability ไอเทม และสภาพสนามร่วมด้วย</p></article></div>
+</section>
+<section id="type-matchup" class="learn-panel" aria-labelledby="matchup-title">
+ <p class="learn-eyebrow">02 · ลองจับคู่ธาตุ</p><h3 id="matchup-title">ท่านี้โจมตีฝ่ายรับได้ผลแค่ไหน?</h3><p class="learn-muted">คิดจากตารางธาตุมาตรฐาน ไม่รวม Ability ไอเทม สภาพสนาม STAB หรือ Tera</p>
+ <div class="matchup-layout"><div><label>ธาตุของท่าโจมตี<select v-model="attackType" aria-label="ธาตุของท่าโจมตี" class="field"><option v-for="type in typesList" :value="type">{{typeLabel(type)}}</option></select></label>
+ <label>เลือกฝ่ายรับจาก<select v-model="defenderMode" class="field"><option value="manual">กำหนดธาตุเอง</option><option value="pokemon">โปเกมอนตัวอย่างด้านล่าง</option></select></label>
+ <div v-if="defenderMode==='manual'" class="learn-controls"><label>ฝ่ายรับ · ธาตุที่ 1<select v-model="defenderOne" class="field"><option v-for="type in typesList" :value="type">{{typeLabel(type)}}</option></select></label><label>ฝ่ายรับ · ธาตุที่ 2<select v-model="defenderTwo" class="field"><option value="">ไม่มีธาตุที่สอง</option><option v-for="type in typesList.filter(t=>t!==defenderOne)" :value="type">{{typeLabel(type)}}</option></select></label></div>
+ <div v-else class="selected-example"><pokemon-artwork :name="exampleName"></pokemon-artwork><div><strong>{{exampleName}}</strong><p>{{defenderTypes.map(typeLabel).join(' / ')}}</p><a href="#pokemon-examples" class="learn-link">เลือกโปเกมอนตัวอื่น ↓</a></div></div>
+ </div><div class="matchup-result" :class="multiplierClass(matchupValue)" role="status" aria-live="polite" aria-atomic="true"><span>ตัวคูณจากธาตุ</span><strong class="matchup-number">×{{matchupValue}}</strong><h4>{{multiplierLabel(matchupValue)}}</h4><p v-for="part in matchupParts" :key="part.type">ท่า{{typeLabel(attackType)}} → ฝ่ายรับ{{typeLabel(part.type)}} <b>×{{part.value}}</b></p><p v-if="matchupParts.length===2" class="matchup-equation">×{{matchupParts[0].value}} × ×{{matchupParts[1].value}} = ×{{matchupValue}}</p><small v-if="matchupValue===0">เมื่อธาตุหนึ่งไม่มีผล ผลรวมจากธาตุจะเป็น ×0</small><small v-else>เทียบกับการโจมตีที่ได้ผลปกติ ภายใต้เงื่อนไขอื่นเหมือนกัน</small></div></div>
+ <div class="example-shortcuts" aria-label="ตัวอย่างคู่ธาตุ"><span>ลองตัวอย่าง:</span><button @click="setMatchup('Fire','Grass','Steel')">ไฟ → พืช/เหล็ก ×4</button><button @click="setMatchup('Electric','Water','Ground')">ไฟฟ้า → น้ำ/ดิน ×0</button><button @click="setMatchup('Fire','Water','Dragon')">ไฟ → น้ำ/มังกร ×0.25</button></div>
+</section>
+<section id="pokemon-examples" class="learn-panel">
+ <p class="learn-eyebrow">03 · ดูจากคู่หูจริง</p><h3>โปเกมอนตัวนี้แพ้และต้านธาตุไหน?</h3><p class="learn-muted">เลือกตัวอย่างเพื่อส่งธาตุไปยังตัวทดลองด้านบน การเลือกที่นี่ไม่เปลี่ยนทีมของคุณ</p>
+ <div class="example-shortcuts"><button v-for="name in ['Pikachu','Charizard','Garchomp','Ferrothorn','Gengar']" @click="selectExample(name)" :aria-pressed="exampleName===name">{{name}}</button></div>
+ <label>ค้นหาโปเกมอนตัวอย่าง<input v-model="exampleQuery" type="search" class="field" placeholder="ชื่ออังกฤษ หรือธาตุไทย / อังกฤษ"></label>
+ <div class="example-picker" role="group" aria-label="ผลค้นหาโปเกมอนตัวอย่าง"><button v-for="p in exampleResults" :key="p.id" @click="selectExample(p.name)" :aria-pressed="exampleName===p.name" :class="{'is-active':exampleName===p.name}"><pokemon-artwork :name="p.name"></pokemon-artwork><strong>{{p.name}}</strong><small>{{p.types.map(typeLabel).join(' / ')}}</small></button></div>
+ <p v-if="!exampleResults.length" class="learn-muted">ไม่พบโปเกมอน ลองค้นหาด้วยชื่ออังกฤษหรือธาตุ</p><button v-if="exampleResults.length===exampleLimit" @click="exampleLimit+=24" class="action">ดูตัวอย่างเพิ่ม</button>
+ <div v-if="examplePokemon" class="example-summary"><div class="example-heading"><pokemon-artwork :name="exampleName"></pokemon-artwork><div><h4>{{exampleName}}</h4><p>{{examplePokemon.types.map(typeLabel).join(' / ')}}</p><small>ดูเฉพาะธาตุ · เช่น Gengar ยังอาจป้องกันท่าบางอย่างได้ด้วย Ability ตามภาคที่เล่น</small></div></div><div class="defense-groups"><article v-for="group in [{id:'weak',title:'แพ้ทาง · รับแรงขึ้น'},{id:'resist',title:'ต้านทาน · รับเบาลง'},{id:'immune',title:'ไม่มีผลจากธาตุ'}]" :key="group.id"><h4>{{group.title}}</h4><div class="type-chip-list"><span v-for="row in exampleDefenses.filter(r=>group.id==='weak'?r.value>1:group.id==='resist'?r.value>0&&r.value<1:r.value===0)" :key="row.type" :class="multiplierClass(row.value)">{{typeLabel(row.type)}} · ×{{row.value}}</span></div><p v-if="!exampleDefenses.some(r=>group.id==='weak'?r.value>1:group.id==='resist'?r.value>0&&r.value<1:r.value===0)" class="learn-muted">ไม่มี</p></article></div><p class="learn-muted">ธาตุที่ไม่อยู่ในรายการเหล่านี้รับได้ผลปกติ ×1</p></div>
+</section>
+<section class="learn-panel"><p class="learn-eyebrow">04 · เปิดดูทีละธาตุ</p><h3>รู้จักหน้าที่ของแต่ละธาตุ</h3><div class="learn-controls"><label>ธาตุที่อยากรู้<select v-model="exploreType" class="field"><option v-for="type in typesList" :value="type">{{typeLabel(type)}}</option></select></label><label>มุมมอง<select v-model="exploreDirection" class="field"><option value="attack">เมื่อใช้ท่าธาตุนี้โจมตี</option><option value="defense">เมื่อโปเกมอนธาตุนี้รับการโจมตี</option></select></label></div><p class="learn-muted">{{exploreDirection==='attack'?'แต่ละป้ายคือธาตุของฝ่ายรับ':'แต่ละป้ายคือธาตุของท่าที่โจมตีเข้ามา'}} · ตัวอย่างนี้คิดฝ่ายรับธาตุเดียว</p><div class="type-relations"><div v-for="row in typeRelations" :key="row.type" :class="multiplierClass(row.value)"><strong>{{typeLabel(row.type)}}</strong><span>×{{row.value}} · {{multiplierLabel(row.value)}}</span></div></div></section>
+<section class="learn-panel"><p class="learn-eyebrow">05 · อ่านเพิ่มเติมเมื่อพร้อม</p><h3>เรื่องที่ช่วยให้เข้าใจการต่อสู้มากขึ้น</h3>
+ <details class="learn-lesson"><summary>STAB คืออะไร? ทำไมท่าตรงธาตุถึงแรงขึ้น</summary><p>โดยทั่วไป ถ้าโปเกมอนใช้ท่าโจมตีธาตุเดียวกับตัวเอง จะได้โบนัสความเสียหาย ×1.5 เรียกว่า STAB เช่น Pikachu ใช้ Thunderbolt ซึ่งเป็นท่าไฟฟ้า ทั้งนี้ Ability และกลไกพิเศษบางอย่างอาจเปลี่ยนโบนัสได้</p></details>
+ <details class="learn-lesson"><summary>Tera เปลี่ยนการรับธาตุอย่างไร?</summary><p>โดยทั่วไป เมื่อแปลง Tera จะรับการโจมตีตามธาตุ Tera ที่เลือกแทนธาตุเดิม ส่วนโบนัสท่าตรงธาตุยังมีเงื่อนไขของธาตุเดิมและธาตุ Tera ร่วมกัน กรณี Stellar มีกฎพิเศษและยังรับตามธาตุเดิม ตัวทดลองหน้านี้ไม่รวม Tera</p></details>
+ <details class="learn-lesson"><summary>โจมตีกายภาพกับโจมตีพิเศษต่างกันอย่างไร?</summary><p>โดยทั่วไป ท่ากายภาพใช้พลังโจมตีของผู้ใช้เทียบกับพลังป้องกันของเป้าหมาย ส่วนท่าพิเศษใช้พลังโจมตีพิเศษเทียบกับพลังป้องกันพิเศษ ประเภทท่าแยกจากธาตุ และบางท่ามีกฎเฉพาะ ให้ดูคำอธิบายท่าประกอบ</p></details>
+ <details class="learn-lesson"><summary>ทำไมดูธาตุแล้ว บางครั้งยังโจมตีไม่เข้า?</summary><p>Ability เช่น Levitate ทำให้ผู้ใช้ไม่รับผลจากท่าดินตามเงื่อนไขปกติ และท่าป้องกัน ไอเทม หรือสภาพสนามอาจเปลี่ยนผลได้ ตารางธาตุช่วยดูพื้นฐาน แต่ไม่ได้จำลองการต่อสู้ทั้งหมด</p></details>
+ <details id="full-type-chart" class="learn-lesson" :open="fullChartOpen" @toggle="fullChartOpen=$event.target.open"><summary>เปิดตารางธาตุเต็ม 18 × 18</summary><p>อ่านจากแถวธาตุของท่า ไปยังคอลัมน์ธาตุฝ่ายรับ · ×2 ได้ผลดี · ×1 ปกติ · ×0.5 ถูกต้าน · ×0 ไม่มีผล</p><div class="full-type-chart" tabindex="0" role="region" aria-label="ตารางธาตุเต็ม เลื่อนได้ทั้งแนวตั้งและแนวนอน"><table><caption>ธาตุของท่าโจมตี → ธาตุของฝ่ายรับหนึ่งธาตุ</caption><thead><tr><th scope="col">ท่า ↓ / รับ →</th><th v-for="type in typesList" :key="type" scope="col" :class="getTypeColor(type)">{{typeLabel(type)}}</th></tr></thead><tbody><tr v-for="atk in typesList" :key="atk"><th scope="row" :class="getTypeColor(atk)">{{typeLabel(atk)}}</th><td v-for="def in typesList" :key="def" :class="multiplierClass(getTypeEffectiveness(atk,def))">×{{getTypeEffectiveness(atk,def)}}</td></tr></tbody></table></div></details>
+ <button @click="currentTab='builder'" class="primary-button learn-start">เข้าใจแล้ว ไปจัดทีมของฉัน →</button>
+</section>
+</div>
+<section v-else class="bg-white p-5 rounded-xl border border-slate-200">
 <h3 class="text-2xl text-violet-700 mb-3 font-bold">คลังท่า · ไอเทม · Ability</h3>
-<div class="flex flex-col sm:flex-row gap-3"><select v-model="catalogKind" class="field"><option value="moves">ท่าโจมตีและท่าสถานะ</option><option value="items">ไอเทม</option><option value="abilities">Ability</option></select><input type="search" v-model="catalogSearch" class="field" placeholder="ค้นหาชื่อ ธาตุ หรือคำอธิบายไทย / อังกฤษ"></div>
-<p class="text-xs text-slate-500 my-3">พบ {{catalogEntries.length}} รายการ · คำแปลช่วยอ่านจากข้อมูล Pokémon Showdown · คำไทยไม่ใช่ชื่อทางการ</p>
+<div class="flex flex-col sm:flex-row gap-3"><input type="search" v-model="catalogSearch" class="field" placeholder="ค้นหาชื่อ ธาตุ หรือคำอธิบายไทย / อังกฤษ"></div>
+<div v-if="knowledgeTab==='moves'" class="learn-controls"><label>ธาตุของท่า<select v-model="moveTypeFilter" aria-label="ธาตุของท่า" class="field"><option value="all">ทุกธาตุ</option><option v-for="type in typesList" :value="type">{{typeLabel(type)}}</option></select></label><label>ประเภทท่า<select v-model="moveCategoryFilter" aria-label="ประเภทท่า" class="field"><option value="all">ทุกประเภท</option><option value="Physical">โจมตีกายภาพ</option><option value="Special">โจมตีพิเศษ</option><option value="Status">ท่าสถานะ</option></select></label></div><p class="text-xs text-slate-500 my-3">พบ {{catalogEntries.length}} รายการ · คำแปลช่วยอ่านจากข้อมูล Pokémon Showdown · คำไทยไม่ใช่ชื่อทางการ</p>
 <div class="grid md:grid-cols-2 gap-3"><article v-for="entry in catalogEntries.slice(0,catalogLimit)" :key="entry.id" class="bg-slate-50 p-3 rounded"><item-artwork v-if="catalogKind==='items'" :name="entry.name" class="catalog-item-art"></item-artwork><h4 class="font-bold">{{thaiName(catalogKind,entry.name)}} <span class="text-xs text-blue-700">{{typeLabel(entry.type)}} {{categoryLabel(entry.category)}}</span></h4><p v-if="entry.pp" class="text-xs text-slate-500">พลังท่า {{entry.basePower||'—'}} · ความแม่นยำ {{entry.accuracy===true?'ไม่เช็ก':entry.accuracy+'%'}} · จำนวนครั้งพื้นฐาน {{entry.pp}}</p><div class="thai-explanation text-xs mt-2"><p><strong class="text-blue-800">ทำอะไร:</strong> {{thaiEntry(catalogKind,entry.name).effect}}</p><template v-if="beginnerMode"><p><strong class="text-emerald-800">ใช้เมื่อ:</strong> {{thaiEntry(catalogKind,entry.name).use}}</p><p><strong class="text-amber-800">ข้อจำกัด:</strong> {{thaiEntry(catalogKind,entry.name).limit}}</p></template><p v-if="!thaiEntry(catalogKind,entry.name).reviewed" class="text-[10px] text-slate-500">ยังไม่มีคำแปลที่ตรวจสอบได้ · ดูข้อมูลต้นฉบับประกอบ</p><details class="text-[11px] text-slate-500"><summary class="cursor-pointer">ดูคำอธิบายอังกฤษต้นฉบับ</summary>{{originalDescription(catalogKind,entry.name)}}</details></div></article></div>
 <p v-if="!catalogEntries.length" class="p-4">ไม่พบข้อมูล</p><button v-if="catalogLimit<catalogEntries.length" @click="catalogLimit+=40" class="action mt-4">โหลดเพิ่ม</button>
 </section>
-                    <!-- Type Chart Interactive -->
-                    <div class="bg-white p-6 rounded-xl overflow-x-auto">
-                        <h3 class="text-2xl font-bold mb-4">ตารางแพ้ชนะธาตุ</h3>
-                        <p class="text-sm text-slate-500 mb-4">ตารางความแพ้-ชนะธาตุ <span class="text-emerald-700 px-2">2x (Super Effective)</span> <span class="text-red-700 px-2">0.5x (Resist)</span> <span class="text-gray-500 px-2">0x (Immune)</span></p>
-                        <table class="w-full text-xs text-center border-collapse"><tbody>
-                            <tr>
-                                <th class="p-1 border border-slate-200">โจมตี / รับ</th>
-                                <th v-for="type in typesList" :key="type" :class="getTypeColor(type)" class="p-1 border border-slate-200 font-bold rounded">{{typeLabel(type)}}</th>
-                            </tr>
-                            <tr v-for="atk in typesList" :key="atk">
-                                <th :class="getTypeColor(atk)" class="p-1 border border-slate-200 font-bold rounded">{{typeLabel(atk)}}</th>
-                                <td v-for="def in typesList" :key="def" class="p-1 border border-slate-200 font-bold" :class="getTypeEffectColor(getTypeEffectiveness(atk, def))">
-                                    {{ getTypeEffectiveness(atk, def) }}
-                                </td>
-                            </tr>
-                        </tbody></table>
-                    </div>
-
                 </div>
 
-                <!-- ส่วนที่ 4: ระบบจัดทีม (จัดทีมโปเกมอน) -->
                 <div v-else-if="currentTab === 'builder'" key="builder" class="max-w-6xl mx-auto">
                     <div class="flex justify-between items-end mb-6">
                         <h2 class="text-4xl font-bold esport-font text-slate-800 border-l-4 border-green-500 pl-4">จัดทีมโปเกมอน</h2>
@@ -144,7 +164,7 @@
                         <!-- 6 Slots -->
                         <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 flex-1 min-w-0">
                             <div v-for="(slot, index) in teamSlots" :key="index" class="team-slot bg-white p-4 rounded-xl border-2 transition" :class="slot.pokemon ? 'border-green-500' : 'border-slate-200 border-dashed hover:border-slate-500 cursor-pointer'">
-                                
+
                                 <!-- Empty Slot -->
                                 <div v-if="!slot.pokemon" @click="openPokemonSearch(index)" class="empty-slot flex flex-col items-center justify-center text-slate-500">
                                     <i class="fas fa-plus-circle text-4xl mb-2"></i>
@@ -264,7 +284,7 @@
                 <!-- ส่วนที่ 5: วิเคราะห์ทีม -->
                 <div v-else-if="currentTab === 'ai'" key="ai" class="max-w-4xl mx-auto text-center space-y-6">
                     <h2 class="text-4xl font-bold esport-font text-slate-800 border-l-4 border-yellow-500 pl-4 text-left">วิเคราะห์ทีม</h2>
-                    
+
                     <div class="bg-white p-10 rounded-xl border border-slate-200">
                         <div v-if="teamSlots.filter(s => s.pokemon).length < 6">
                             <i class="fas fa-robot text-6xl text-slate-600 mb-4"></i>
@@ -281,14 +301,14 @@
                             <i class="fas fa-circle-notch fa-spin text-6xl text-blue-500 mb-4"></i>
                             <h3 class="text-xl text-blue-700">กำลังวิเคราะห์ทีม…</h3>
                         </div>
-                        
+
                         <!-- AI Results -->
                         <div v-else class="text-left space-y-6">
                             <div class="flex justify-between items-center mb-6">
                                 <h3 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">วิเคราะห์ทีม</h3>
                                 <button @click="aiAnalyzed = false" class="text-slate-500 hover:text-slate-800 text-sm border border-slate-300 px-3 py-1 rounded">Re-Analyze</button>
                             </div>
-                            
+
                             <div class="grid md:grid-cols-2 gap-4">
                                 <div class="bg-slate-50 p-5 rounded-lg border-l-4 border-green-500">
                                     <h4 class="font-bold text-emerald-700 text-lg mb-2"><i class="fas fa-arrow-up"></i> จุดเด่นของทีม (Strengths)</h4>
@@ -314,7 +334,7 @@
                 <!-- ส่วนที่ 6: ตัวอย่างทีมแข่งขัน (10 Sample Teams) -->
                 <div v-else-if="currentTab === 'teams'" key="teams" class="max-w-6xl mx-auto">
                     <h2 class="text-4xl font-bold esport-font text-slate-800 border-l-4 border-red-500 pl-4 mb-8">ไอเดียจัดทีม · หาแผนที่ใช่สำหรับคุณ</h2>
-                    
+
                     <p class="text-sm text-slate-500 mb-5">ชุดฝึกเล่นโดยเว็บ · มีข้อมูลครบ 6 ตัวสำหรับโหมด SV Doubles พื้นฐาน ไม่ใช่ทีมแชมป์หรือการรับรองว่าผ่าน Regulation ปัจจุบัน</p>
                     <div class="grid md:grid-cols-2 gap-6">
                         <div v-for="(team, index) in sampleTeams" :key="index" class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-red-500 transition cursor-pointer" @click="viewTeam(team)">
@@ -373,14 +393,15 @@
         <div v-if="ioOpen" class="fixed inset-0 bg-black/80 flex items-center justify-center z-[70] p-4" @click.self="ioOpen=false" @keydown.esc="ioOpen=false">
             <section role="dialog" aria-modal="true" aria-labelledby="io-heading" class="bg-white border border-slate-300 rounded-xl p-5 w-full max-w-3xl max-h-[90vh] overflow-y-auto"><div class="flex justify-between items-center"><h2 id="io-heading" class="text-2xl font-bold">Pokémon Showdown · นำเข้า / ส่งออก</h2><button @click="ioOpen=false" aria-label="ปิดหน้าต่าง" class="action">ปิด</button></div><p class="text-xs text-blue-700 my-3">{{ioMessage}}</p><textarea v-model="ioText" rows="14" class="field font-mono" aria-label="ข้อความทีม Showdown" spellcheck="false"></textarea><p v-if="ioError" role="alert" class="text-red-700 text-sm my-2">{{ioError}}</p><div class="flex flex-wrap gap-2 mt-3"><button @click="doImport" class="action bg-purple-700">นำเข้าเป็นทีมใหม่</button><button @click="copyExport" class="action">คัดลอกข้อความ</button><button @click="downloadExport" class="action">ดาวน์โหลด .txt</button></div></section>
         </div>
-        <nav class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 flex justify-around items-center p-2 z-50 shadow-[0_-5px_15px_rgba(0,0,0,0.5)]">
+        <nav aria-label="เมนูหลักบนมือถือ" class="mobile-nav md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 flex justify-around items-center p-2 z-50 shadow-[0_-5px_15px_rgba(0,0,0,0.5)]">
             <button @click="currentTab = 'home'" :class="currentTab === 'home' ? 'text-violet-700' : 'text-slate-500'" class="flex flex-col items-center p-2 transition w-1/5">
                 <i class="fas fa-home text-xl mb-1"></i>
                 <span class="text-[10px] font-bold">หน้าแรก</span>
             </button>
+<button @click="currentTab='knowledge'" :class="currentTab==='knowledge'?'text-violet-700':'text-slate-500'" class="flex flex-col items-center p-2 transition"><i class="fas fa-book-open text-xl mb-1" aria-hidden="true"></i><span class="text-[10px] font-bold">คลังข้อมูล</span></button>
             <button @click="currentTab = 'database'" :class="currentTab === 'database' ? 'text-violet-700' : 'text-slate-500'" class="flex flex-col items-center p-2 transition w-1/5">
                 <i class="fas fa-database text-xl mb-1"></i>
-                <span class="text-[10px] font-bold">ข้อมูล</span>
+                <span class="text-[10px] font-bold">โปเกเด็กซ์</span>
             </button>
             <button @click="currentTab = 'builder'" :class="currentTab === 'builder' ? 'text-violet-700' : 'text-slate-500'" class="flex flex-col items-center p-2 transition w-1/5">
                 <i class="fas fa-tools text-xl mb-1"></i>
@@ -392,7 +413,7 @@
             </button>
             <button @click="currentTab = 'teams'" :class="currentTab === 'teams' ? 'text-violet-700' : 'text-slate-500'" class="flex flex-col items-center p-2 transition w-1/5">
                 <i class="fas fa-trophy text-xl mb-1"></i>
-                <span class="text-[10px] font-bold">ทีมเมต้า</span>
+                <span class="text-[10px] font-bold">ไอเดียทีม</span>
             </button>
         </nav>
 
@@ -410,6 +431,6 @@
     <script src="item-images.js?v=2"></script>
     <script src="item-artwork.js?v=2"></script>
     <script src="recommendations.js?v=nature-1"></script>
-    <script src="app.js"></script>
+    <script src="app.js?v=knowledge-1"></script>
 </body>
 </html>
