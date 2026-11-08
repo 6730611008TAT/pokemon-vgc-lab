@@ -24,7 +24,7 @@ createApp({
         // --- Team Builder State ---
         const teamSlots = ref(Array.from({length:6}, freshSlot));
         const library = useTeamLibrary(teamSlots);
-        const {ruleProfile} = library;
+        const {ruleProfile,statMode} = library;
 
 
         const showSearchModal = ref(false);
@@ -111,11 +111,69 @@ createApp({
         };
 
         const totalEVs = (evs) => Object.values(evs).reduce((a, b) => a + b, 0);
+        const totalStatPoints = (points) => Object.values(points).reduce((a, b) => a + b, 0);
+        const maxEV = (slot, stat) => Math.max(0, Math.min(252, 510 - totalEVs(slot.evs) + slot.evs[stat]));
+        const maxStatPoint = (slot, stat) => Math.max(0, Math.min(32, 66 - totalStatPoints(slot.statPoints) + slot.statPoints[stat]));
+        const boundedInteger = (raw, max) => Math.max(0, Math.min(max, Number.isFinite(Number(raw)) ? Math.floor(Number(raw)) : 0));
+        const setEV = (slot, stat, raw) => { slot.evs[stat] = boundedInteger(raw, maxEV(slot, stat)); };
+        const setIV = (slot, stat, raw) => { slot.ivs[stat] = boundedInteger(raw, 31); };
+        const setStatPoint = (slot, stat, raw) => { slot.statPoints[stat] = boundedInteger(raw, maxStatPoint(slot, stat)); };
+        const trainingUndo = ref({});
+        const popularSpreadSource = computed(() => POPULAR_SPREAD_SOURCES[statMode.value === 'champions' ? 'champions' : ruleProfile.value]);
+        const popularSpreads = slot => POPULAR_SPREADS[statMode.value === 'champions' ? 'champions' : ruleProfile.value]?.[slot.pokemon?.id] || [];
+        const spreadMatches = (slot, spread) => slot.nature === spread[0] && STAT_KEYS.every((stat, i) =>
+            (statMode.value === 'champions' ? slot.statPoints : slot.evs)[stat] === spread[1][i]);
+        const rememberTraining = (slot, index) => {
+            trainingUndo.value[index] = {
+                teamId: library.activeTeamId.value, pokemonId: slot.pokemon.id, mode: statMode.value,
+                evs: { ...slot.evs }, ivs: { ...slot.ivs }, statPoints: { ...slot.statPoints }, nature: slot.nature
+            };
+        };
+        const canUndoTraining = (slot, index) => {
+            const previous = trainingUndo.value[index];
+            return !!previous && previous.teamId === library.activeTeamId.value &&
+                previous.pokemonId === slot.pokemon?.id && previous.mode === statMode.value;
+        };
+        const applyPopularSpread = (slot, index, spread) => {
+            if(spreadMatches(slot, spread) || !natures.some(n => n.name === spread[0])) return;
+            rememberTraining(slot, index);
+            const field = statMode.value === 'champions' ? 'statPoints' : 'evs';
+            slot[field] = Object.fromEntries(STAT_KEYS.map((stat, i) => [stat, spread[1][i]]));
+            slot.nature = spread[0];
+        };
+        const applyIVShortcut = (slot, index, kind) => {
+            rememberTraining(slot, index);
+            slot.ivs = Object.fromEntries(STAT_KEYS.map(stat => [stat, 31]));
+            if(kind === 'attack' || kind === 'both') slot.ivs.atk = 0;
+            if(kind === 'speed' || kind === 'both') slot.ivs.spe = 0;
+        };
+        const undoTraining = (slot, index) => {
+            if(!canUndoTraining(slot, index)) return;
+            const previous = trainingUndo.value[index];
+            slot.evs = { ...previous.evs }; slot.ivs = { ...previous.ivs };
+            slot.statPoints = { ...previous.statPoints }; slot.nature = previous.nature;
+            delete trainingUndo.value[index];
+        };
+        const applyStatPreset = (slot, kind) => {
+            slot.statPoints = Object.fromEntries(STAT_KEYS.map(stat => [stat, 0]));
+            if(kind === 'physical' || kind === 'special') {
+                slot.statPoints.hp = 2;
+                slot.statPoints[kind === 'physical' ? 'atk' : 'spa'] = 32;
+                slot.statPoints.spe = 32;
+            }
+        };
 
         // VGC Level 50 Stat Calculation Formula
         const calculateStat = (slot, statKey) => {
             if(!slot.pokemon) return 0;
             const base = slot.pokemon.baseStats[statKey];
+            if(statMode.value === 'champions') {
+                const points = slot.statPoints[statKey];
+                if(statKey === 'hp') return slot.pokemon.id === 'shedinja' ? 1 : base + points + 75;
+                const nat = natures.find(n => n.name === slot.nature);
+                const value = base + points + 20;
+                return Math.floor(value * (nat?.plus === statKey ? 1.1 : nat?.minus === statKey ? 0.9 : 1));
+            }
             const iv = slot.ivs[statKey];
             const ev = slot.evs[statKey];
             const level = slot.level || 50;
@@ -140,6 +198,10 @@ createApp({
                 return matchesText && matchesGen && (selectedType.value==='all'||p.types.includes(selectedType.value)) && (selectedRole.value==='all'||p.roles.includes(selectedRole.value)) && (!onlyEligible.value||pokemonEligibility(p).length===0);
             });
         });
+        // Mega forms remain available in formats that allow them, but the main Pokédex
+        // lists base Pokémon rather than treating transformed forms as separate species.
+        const dexPokemon = computed(() => filteredPokemon.value.filter(p => !/(?:^|[- ])Mega(?:[- ]|$)/i.test(p.name)));
+        const visibleDexPokemon = computed(() => dexPokemon.value.slice(0, visibleCount.value));
 
         // คำนวณจุดอ่อนรวมของทีม (เพื่อแสดงคำเตือน)
         const calculateTeamWeaknesses = computed(() => {
@@ -215,9 +277,14 @@ createApp({
                 if(p.requiredItem&&slot.item!==p.requiredItem)add('ร่างนี้ต้องถือ '+p.requiredItem);
                 if(p.requiredTeraType&&slot.teraType!==p.requiredTeraType)add('ร่างนี้ต้องใช้ Tera '+p.requiredTeraType);
                 if(!p.abilities.includes(slot.ability))add('Ability ไม่ตรงสายพันธุ์');
-                if(totalEVs(slot.evs)>510)add('EV รวมเกิน 510');
-                for(const stat of STAT_KEYS){if(!Number.isInteger(slot.evs[stat])||slot.evs[stat]<0||slot.evs[stat]>252)add('EV '+stat+' ต้องอยู่ในช่วง 0–252');if(!Number.isInteger(slot.ivs[stat])||slot.ivs[stat]<0||slot.ivs[stat]>31)add('IV '+stat+' ต้องอยู่ในช่วง 0–31');}
-                if(!Number.isInteger(slot.level)||slot.level<1||slot.level>100)add('Level ต้องเป็น 1–100');
+                if(statMode.value==='champions'){
+                    if(totalStatPoints(slot.statPoints)>66)add('Stat Points รวมเกิน 66');
+                    for(const stat of STAT_KEYS)if(!Number.isInteger(slot.statPoints[stat])||slot.statPoints[stat]<0||slot.statPoints[stat]>32)add('Stat Points '+stat+' ต้องอยู่ในช่วง 0–32');
+                }else{
+                    if(totalEVs(slot.evs)>510)add('EV รวมเกิน 510');
+                    for(const stat of STAT_KEYS){if(!Number.isInteger(slot.evs[stat])||slot.evs[stat]<0||slot.evs[stat]>252)add('EV '+stat+' ต้องอยู่ในช่วง 0–252');if(!Number.isInteger(slot.ivs[stat])||slot.ivs[stat]<0||slot.ivs[stat]>31)add('IV '+stat+' ต้องอยู่ในช่วง 0–31');}
+                    if(!Number.isInteger(slot.level)||slot.level<1||slot.level>100)add('Level ต้องเป็น 1–100');
+                }
                 if(!natures.some(n=>n.name===slot.nature))add('Nature ไม่ถูกต้อง');
                 if(![...typesList,'Stellar'].includes(slot.teraType))add('กรุณาเลือก Tera Type');
                 const moves=slot.moves.filter(Boolean);if(moves.length<4)add('เลือกท่ายังไม่ครบ 4 ช่อง');
@@ -232,9 +299,9 @@ createApp({
         watch([searchQuery,selectedGeneration,generationMode,selectedType,selectedRole,onlyEligible,ruleProfile],()=>visibleCount.value=60);
         watch(teamSlots,()=>{aiAnalyzed.value=false;},{deep:true});
         const ioOpen=ref(false),ioText=ref(''),ioError=ref(''),ioMessage=ref('');
-        const openExport=()=>{ioText.value=exportShowdown(teamSlots.value);ioError.value='';ioMessage.value='คัดลอกข้อความด้านล่างไปวางใน Pokémon Showdown';ioOpen.value=true;};
-        const openImport=()=>{ioText.value='';ioError.value='';ioMessage.value='การนำเข้าจะสร้างทีมใหม่ ทีมเดิมยังอยู่';ioOpen.value=true;};
-        const doImport=()=>{try{const slots=importShowdown(ioText.value,natures.map(n=>n.name),typesList);library.storeImported(slots);ioOpen.value=false;}catch(e){ioError.value=e.message;}};
+        const openExport=()=>{ioText.value=exportShowdown(teamSlots.value,statMode.value);ioError.value='';ioMessage.value=statMode.value==='champions'?'สำรองทีม Champions ด้วยรูปแบบ SPs ของเว็บนี้ ไม่ใช่ข้อความนำเข้า Showdown มาตรฐาน':'คัดลอกข้อความด้านล่างไปวางใน Pokémon Showdown';ioOpen.value=true;};
+        const openImport=()=>{ioText.value='';ioError.value='';ioMessage.value='รองรับทีม Showdown แบบ VGC หรือไฟล์ SPs ของเว็บนี้สำหรับ Champions · การนำเข้าจะสร้างทีมใหม่';ioOpen.value=true;};
+        const doImport=()=>{try{const slots=importShowdown(ioText.value,natures.map(n=>n.name),typesList);library.storeImported(slots,{statMode:slots.statMode});ioOpen.value=false;}catch(e){ioError.value=e.message;}};
         const copyExport=async()=>{try{await navigator.clipboard.writeText(ioText.value);ioMessage.value='คัดลอกแล้ว';}catch{ioMessage.value='กรุณาเลือกข้อความแล้วกด Ctrl+C';}};
         const downloadExport=()=>{const url=URL.createObjectURL(new Blob([ioText.value],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=(library.teamName.value.replace(/[\\/:*?"<>|]/g,'_')||'team')+'.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
         const catalogSearch=ref(''),catalogKind=ref('moves'),catalogLimit=ref(40);
@@ -288,7 +355,7 @@ createApp({
         const sortedNatures=slot=>[...natures].sort((a,b)=>Number(!!natureAdvice(slot,b))-Number(!!natureAdvice(slot,a))||a.name.localeCompare(b.name));
         const useTeamIdea=team=>{library.storeImported(team.sets,{name:team.name+' (ปรับต่อ)',rule:team.rule});selectedTeam.value=null;currentTab.value='builder';};
         const teamIdeaPaste=team=>exportShowdown(team.sets);
-        const features={useTeamIdea,teamIdeaPaste,natureAdvice,sortedNatures,moveRecommendation,itemRecommendation,recommendedSet,applyRecommendedSet,itemPickerOpen,itemPickerSlot,itemSearch,itemLimit,filteredItems,openItemPicker,selectItem,selectedType,selectedRole,onlyEligible,visibleCount,visiblePokemon,roleOptions,ruleProfiles,currentRule,pokemonEligibility,eligibleMoves,itemOptions,description,teraView,defenseMultiplier,defenseColor,validationIssues,ioOpen,ioText,ioError,ioMessage,openExport,openImport,doImport,copyExport,downloadExport,catalogSearch,catalogKind,catalogLimit,catalogEntries,showDex,analyzeActualTeam};
+        const features={useTeamIdea,teamIdeaPaste,natureAdvice,sortedNatures,moveRecommendation,itemRecommendation,recommendedSet,applyRecommendedSet,itemPickerOpen,itemPickerSlot,itemSearch,itemLimit,filteredItems,openItemPicker,selectItem,selectedType,selectedRole,onlyEligible,visibleCount,visiblePokemon,dexPokemon,visibleDexPokemon,roleOptions,ruleProfiles,currentRule,pokemonEligibility,eligibleMoves,itemOptions,description,teraView,defenseMultiplier,defenseColor,validationIssues,ioOpen,ioText,ioError,ioMessage,openExport,openImport,doImport,copyExport,downloadExport,catalogSearch,catalogKind,catalogLimit,catalogEntries,showDex,analyzeActualTeam};
 
         return {
             ...library, ...features, ...knowledge, ...thaiInterface, originalDescription,
@@ -297,7 +364,8 @@ createApp({
             teamSlots, natures, showSearchModal, activeSearchSlot, searchQuery, filteredPokemon,
             selectedGeneration, generationMode, generationOptions, generationLabel, clearPokemonFilters,
             openPokemonSearch, selectPokemon, removePokemon, resetTeam,
-            totalEVs, calculateStat, calculateTeamWeaknesses, hasMajorWeakness,
+            totalEVs, totalStatPoints, maxEV, maxStatPoint, setEV, setIV, setStatPoint, applyStatPreset, calculateStat, calculateTeamWeaknesses, hasMajorWeakness,
+            popularSpreadSource, popularSpreads, spreadMatches, canUndoTraining, applyPopularSpread, applyIVShortcut, undoTraining,
             aiLoading, aiAnalyzed, aiReport, analyzeTeam: analyzeActualTeam,
             selectedTeam, viewTeam
         }

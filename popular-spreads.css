@@ -1,0 +1,23 @@
+/* Popular training spreads stay readable inside narrow team cards. */
+.popular-training{min-width:0;padding:13px;border:1px solid #51788c;border-radius:14px;background:#172d42;color:#e7f3fb}
+.popular-training-heading,.popular-spread-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.popular-training-heading strong{font-size:13px;line-height:1.5}
+.popular-training-heading span{font-size:10px;color:#9eddd2;white-space:nowrap}
+.popular-source{margin:6px 0 11px;font-size:10px;line-height:1.7;color:#b8cbd9}
+.popular-source a{color:#9de1f7;text-decoration:underline;text-underline-offset:2px}
+.popular-spread-list{display:grid;gap:8px}
+.popular-spread-card{min-width:0;padding:10px;border:1px solid #436177;border-radius:10px;background:#203a50}
+.popular-spread-card.is-active{border-color:#75d5bb;background:#244b51}
+.popular-spread-top strong{font-size:11px;color:#edf8fd}
+.popular-spread-top span{font-size:10px;color:#99dfce;white-space:nowrap}
+.popular-spread-card p{margin:7px 0 9px;font-size:10px;line-height:1.6;color:#c4d9e7;overflow-wrap:anywhere}
+.popular-spread-card button,.iv-shortcuts button,.training-undo{min-height:32px;padding:6px 10px;border:1px solid #6aa7bb;border-radius:8px;background:#2d6880;color:#f0fbff;font-size:10px;font-weight:600;line-height:1.4}
+.popular-spread-card button:hover,.iv-shortcuts button:hover,.training-undo:hover{background:#397f96}
+.popular-spread-card button:disabled{opacity:.75;cursor:default;background:#286353;border-color:#60aa90}
+.popular-empty{font-size:11px;line-height:1.7;color:#c3d7e5}
+.iv-shortcuts{margin-top:12px;padding-top:11px;border-top:1px solid #47657b}
+.iv-shortcuts>strong{display:block;font-size:11px;margin-bottom:8px}
+.iv-shortcuts>div{display:flex;flex-wrap:wrap;gap:5px}
+.iv-shortcuts small{display:block;margin-top:8px;font-size:10px;line-height:1.6;color:#aec7d7}
+.training-undo{display:block;margin-top:11px;width:100%;background:#3b4757;border-color:#728da1}
+@media(max-width:380px){.popular-spread-top{display:block}.popular-spread-top span{display:block;margin-top:3px}}
